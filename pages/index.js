@@ -1,6 +1,15 @@
 import styled from "styled-components";
-import { Title } from "../components/Title";
+import { MyTitle } from "../components/Testing/MyTittle";
+import Layout from "../layout/Layout";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Home() {
-  return <Title>My page</Title>;
+  return (
+    <>
+      <Navbar />
+      <Layout>
+        <MyTitle></MyTitle>
+      </Layout>
+    </>
+  );
 }
