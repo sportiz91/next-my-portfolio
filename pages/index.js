@@ -7,6 +7,8 @@ import { useState } from "react";
 import HiddenNavbarItems from "../components/Navbar/HiddenNavbarItems";
 import useClick from "../hooks/useClick";
 import useDisabled from "../hooks/useDisabled";
+import Welcome from "../components/Welcome/Welcome";
+import Projects from "../components/Projects/Projects";
 
 export default function Home() {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -38,7 +40,8 @@ export default function Home() {
       </BurgerDiv>
       <Navbar />
       <Layout>
-        <TestingComp />
+        <Welcome />
+        <Projects />
       </Layout>
     </>
   );

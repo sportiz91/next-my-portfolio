@@ -9,7 +9,8 @@ export const NavContainer = styled.section`
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
   align-items: center;
-  border-bottom: 1px solid rgba(208 187 87 / 0.3);
+  /* border-bottom: 1px solid rgba(208 187 87 / 0.3); */
+  border-bottom: 1px solid ${(props) => props.theme.colors.button3};
   /* background-color: rgba(6 9 16 / 0.3); */
   background-color: rgba(0 0 0 / 0.9);
 
