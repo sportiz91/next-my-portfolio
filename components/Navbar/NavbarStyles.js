@@ -130,8 +130,11 @@ export const BurgerDiv = styled.div`
     width: 100%;
     top: 3px;
     left: 0;
-    background-color: white;
-    transition: transform 1.2s;
+    /* background-color: white; */
+    /* 6b3030 */
+    background-color: ${(props) =>
+      props.state ? "rgba(255 255 255 / 0.75)" : "white"};
+    transition: transform 1.2s, background-color 1.2s;
     transform: ${(props) =>
       props.state ? "rotate(-45deg) translate(-5px, 8px)" : ""};
   }
@@ -143,8 +146,11 @@ export const BurgerDiv = styled.div`
     width: ${(props) => (props.state ? "100%" : "80%")};
     bottom: 4px;
     left: 0;
-    background-color: white;
-    transition: transform 1.2s;
+    /* background-color: white; */
+    /* 6b3030 */
+    background-color: ${(props) =>
+      props.state ? "rgba(255 255 255 / 0.75)" : "white"};
+    transition: transform 1.2s, background-color 1.2s;
     transform: ${(props) =>
       props.state ? "rotate(45deg) translate(-5px, -7px)" : ""};
   }
@@ -161,7 +167,10 @@ export const BurgerSpan = styled.span`
   top: 12px;
   height: 3px;
   width: 100%;
-  background-color: white;
+  /* background-color: white; */
+  /* 6b3030 */
+  background-color: ${(props) =>
+    props.state ? "rgba(255 255 255 / 0.75)" : "white"};
   z-index: 2;
   display: ${(props) => (props.state ? "none" : "inline")};
 `;
