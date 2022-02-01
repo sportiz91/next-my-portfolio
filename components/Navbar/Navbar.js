@@ -1,9 +1,4 @@
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillInstagram,
-  AiFillCaretRight,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
 import { DiCssdeck } from "react-icons/di";
 
@@ -11,11 +6,12 @@ import {
   NavContainer,
   NavDivOne,
   PortfolioText,
-  NavDiv,
-  MiddleText,
+  NavDivThree,
   AnchorNav,
   IconDiv,
 } from "./NavbarStyles";
+
+import NavbarItems from "./NavbarItems";
 
 import Link from "next/link";
 
@@ -30,27 +26,10 @@ const Navbar = () => {
           </a>
         </Link>
       </NavDivOne>
-      <NavDiv center>
-        <Link href="#projects">
-          <a>
-            <MiddleText first>Projects</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </a>
-        </Link>
-        <Link href="#technologies">
-          <a>
-            <MiddleText>Technologies</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </a>
-        </Link>
-        <Link href="#about">
-          <a>
-            <MiddleText>About</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </a>
-        </Link>
-      </NavDiv>
-      <NavDiv icons>
+
+      <NavbarItems />
+
+      <NavDivThree>
         <AnchorNav href="https://google.com">
           <IconDiv>
             <AiFillGithub size="3rem" />
@@ -68,7 +47,7 @@ const Navbar = () => {
             <AiFillInstagram size="3rem" />
           </IconDiv>
         </AnchorNav>
-      </NavDiv>
+      </NavDivThree>
     </NavContainer>
   );
 };

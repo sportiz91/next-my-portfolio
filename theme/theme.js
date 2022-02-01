@@ -10,4 +10,7 @@ export const theme = {
   background: {
     bg1: "#0F1624",
   },
+  breakpoints: {
+    break864: "(max-width: 864px)",
+  },
 };

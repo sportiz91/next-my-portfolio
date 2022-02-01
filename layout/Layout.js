@@ -1,12 +1,13 @@
-import Header from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+
+import { BodyLayout } from "./LayoutStyles";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <BodyLayout>
       {children}
       <Footer />
-    </div>
+    </BodyLayout>
   );
 };
 
