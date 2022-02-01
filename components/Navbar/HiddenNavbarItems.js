@@ -16,7 +16,7 @@ const HiddenNavbarItems = ({ state }) => {
         </Link>
       </DivWrapper>
 
-      <DivWrapper state={state}>
+      <DivWrapper state={state} middle>
         <Link href="#technologies">
           <a>
             <MiddleText mobile>Technologies</MiddleText>

@@ -199,6 +199,25 @@ export const NavDivHidden = styled.div`
 export const DivWrapper = styled.div`
   position: relative;
   transition: left 0.2s linear;
-  transition-delay: 1.2s; /* first we have to finish the nav scroll down effect */
-  left: ${(props) => (props.state ? "0%" : "100%")};
+  /* left: ${(props) => (props.state ? "0%" : "100%")}; */
+  left: ${(props) =>
+    props.middle && props.state
+      ? "0%"
+      : props.middle
+      ? "-100%"
+      : props.state
+      ? "0%"
+      : "100%"};
+
+  &:nth-child(1) {
+    transition-delay: 1.2s; /* first we have to finish the nav scroll down effect */
+  }
+
+  &:nth-child(2) {
+    transition-delay: 1.3s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 1.4s;
+  }
 `;
