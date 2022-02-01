@@ -182,7 +182,7 @@ export const HiddenNavbar = styled.section`
   z-index: 1;
   background-color: rgba(0 0 0 / 0.98);
   top: ${(props) => (props.state ? "0%" : "-100%")};
-  transition: top 1.2s ease-in-out;
+  transition: top 1.2s linear;
 `;
 
 export const NavDivHidden = styled.div`
@@ -194,4 +194,11 @@ export const NavDivHidden = styled.div`
   gap: 7rem;
   padding-top: 31vh;
   position: fixed;
+`;
+
+export const DivWrapper = styled.div`
+  position: relative;
+  transition: left 0.2s linear;
+  transition-delay: 1.2s; /* first we have to finish the nav scroll down effect */
+  left: ${(props) => (props.state ? "0%" : "100%")};
 `;

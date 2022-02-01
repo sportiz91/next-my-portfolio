@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <HiddenNavbar state={mobileNavbar}>
-        <HiddenNavbarItems />
+        <HiddenNavbarItems state={mobileNavbar} />
       </HiddenNavbar>
       <BurgerDiv
         onClick={() => setMobileNavbar(!mobileNavbar)}
