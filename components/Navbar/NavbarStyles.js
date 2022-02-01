@@ -38,7 +38,7 @@ export const NavDivTwo = styled.div`
   justify-content: center;
 
   @media ${(props) => props.theme.breakpoints.break864} {
-    display: none;
+    display: ${(props) => (props.mobileBoolean ? "inline" : "none")};
   }
 `;
 
@@ -57,7 +57,7 @@ export const NavDivThree = styled.div`
 `;
 
 export const MiddleText = styled.span`
-  font-size: 2rem;
+  font-size: ${({ mobile }) => (mobile ? "4rem" : "2rem")};
   color: ${(props) => props.theme.colors.links};
   margin-bottom: 5px; /* adjustment to center */
   margin-left: ${(props) => (props.first ? "65px" : "0")};
@@ -72,6 +72,11 @@ export const MiddleText = styled.span`
     top: 4px;
     transition: color 0.5s ease;
     visibility: hidden;
+  }
+
+  & + .icon.mobile {
+    font-size: 3rem;
+    margin: 0;
   }
 
   &:hover {
@@ -115,6 +120,8 @@ export const BurgerDiv = styled.div`
   position: fixed;
   display: none;
   z-index: 2;
+  transition: transform 1.2s;
+  transform: ${(props) => (props.state ? "rotate(1080deg)" : "")};
 
   &:before {
     content: "";
@@ -124,16 +131,23 @@ export const BurgerDiv = styled.div`
     top: 3px;
     left: 0;
     background-color: white;
+    transition: transform 1.2s;
+    transform: ${(props) =>
+      props.state ? "rotate(-45deg) translate(-5px, 8px)" : ""};
   }
 
   &:after {
     content: "";
     position: absolute;
     height: 3px;
-    width: 80%;
+    width: ${(props) => (props.state ? "100%" : "80%")};
     bottom: 4px;
     left: 0;
     background-color: white;
+    transition: transform 1.2s;
+    transform: ${(props) =>
+      props.state ? "rotate(45deg) translate(-5px, -7px)" : ""};
+  }
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
@@ -149,6 +163,7 @@ export const BurgerSpan = styled.span`
   width: 100%;
   background-color: white;
   z-index: 2;
+  display: ${(props) => (props.state ? "none" : "inline")};
 `;
 
 export const HiddenNavbar = styled.section`
@@ -159,4 +174,15 @@ export const HiddenNavbar = styled.section`
   background-color: rgba(0 0 0 / 0.98);
   top: ${(props) => (props.state ? "0%" : "-100%")};
   transition: top 1.2s ease-in-out;
+`;
+
+export const NavDivHidden = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+  padding-top: 31vh;
+  position: fixed;
 `;

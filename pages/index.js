@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { HiddenNavbar } from "../components/Navbar/NavbarStyles";
 import { BurgerDiv, BurgerSpan } from "../components/Navbar/NavbarStyles";
 import { useState } from "react";
-import NavbarItems from "../components/Navbar/NavbarItems";
+import HiddenNavbarItems from "../components/Navbar/HiddenNavbarItems";
 
 export default function Home() {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -12,10 +12,13 @@ export default function Home() {
   return (
     <>
       <HiddenNavbar state={mobileNavbar}>
-        <NavbarItems />
+        <HiddenNavbarItems />
       </HiddenNavbar>
-      <BurgerDiv onClick={() => setMobileNavbar(!mobileNavbar)}>
-        <BurgerSpan />
+      <BurgerDiv
+        onClick={() => setMobileNavbar(!mobileNavbar)}
+        state={mobileNavbar}
+      >
+        <BurgerSpan state={mobileNavbar} />
       </BurgerDiv>
       <Navbar />
       <Layout>
