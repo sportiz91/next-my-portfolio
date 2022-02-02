@@ -7,7 +7,8 @@ import {
 import {
   SectionTitle,
   SectionParagraph,
-  SectionSeparator,
+  SpanUnderline,
+  SectionMiniParagraph,
 } from "../../globalcomponents";
 
 import { SectionButton } from "../../globalcomponents/Buttons";
@@ -18,16 +19,17 @@ const Welcome = () => {
   return (
     <WelcomeSection>
       <DivWelcomeContent>
-        <SectionTitle>
-          Welcome To <br /> My Personal Portfolio
+        <SectionMiniParagraph>Hi, my name is</SectionMiniParagraph>
+        <SectionTitle name>Santiago Ortiz.</SectionTitle>
+        <SectionTitle sub>
+          Welcome to my <SpanUnderline>Portfolio.</SpanUnderline>
         </SectionTitle>
         <SectionParagraph>
-          The purpose of JavaScript Mastery is to help aspiring and established
-          developers to take their development skills to the next level and
-          build awesome apps.
+          Full-Stack Developer, BA in Economics, Master in Finance. I'm
+          self-taught and I love making things on the web, focusing mainly on
+          JavaScript.
         </SectionParagraph>
         <SectionButton>Learn More</SectionButton>
-        <SectionSeparator />
       </DivWelcomeContent>
       <DivWelcomeSVG>
         <BackgroundAnimation />

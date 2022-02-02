@@ -7,8 +7,9 @@ export const theme = {
     paragraph: "rgba(255 255 255 / 0.5)",
     links: "rgba(255 255 255 / 0.75)",
     button1: "rgba(148 93 214 / 1)",
-    button2: "rgba(244 103 55 / 0.8)",
+    button2: "rgba(244 103 55 / 1)",
     button3: "rgba(19 173 199 / 1)",
+    button4: "rgba(100 255 218 / 1)",
   },
   background: {
     bg1: "#0F1624",

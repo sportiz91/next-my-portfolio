@@ -25,7 +25,7 @@ export const PortfolioText = styled.span`
   margin-left: 8px;
 
   &:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid ${(props) => props.theme.colors.button3};
   }
 `;
 
@@ -81,12 +81,12 @@ export const MiddleText = styled.span`
   }
 
   &:hover {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.button3};
     font-weight: 500;
     left: 6px;
 
     & + .icon {
-      color: rgba(255 255 255 / 1);
+      color: ${(props) => props.theme.colors.button3};
       left: 6px;
       visibility: visible;
     }
@@ -102,7 +102,8 @@ export const IconDiv = styled.div`
 
   &:hover {
     background-color: #212d45;
-    transform: scale(1.15);
+    color: ${(props) => props.theme.colors.button3};
+    transform: scale(1.05);
   }
 `;
 
