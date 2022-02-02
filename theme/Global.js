@@ -24,8 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.background.bg1};
     font-size: 1.6rem;
     font-family: ${(props) => props.theme.fonts.main};
-    min-height: 100vh;
     color: ${(props) => props.theme.colors.primary};
-    position: relative; /* used for positioning HiddenNavbar later on */
+    position: relative;
   }
 `;

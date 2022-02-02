@@ -14,10 +14,19 @@ import {
 import { SectionButton } from "../../globalcomponents/Buttons";
 
 import BackgroundAnimation from "./BackgroundAnimation";
+import { useEffect, useState } from "react";
 
 const Welcome = () => {
+  const [showSection, setShowSection] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowSection(true);
+    }, 100);
+  }, []);
+
   return (
-    <WelcomeSection>
+    <WelcomeSection showSection={showSection}>
       <DivWelcomeContent>
         <SectionMiniParagraph>Hi, my name is</SectionMiniParagraph>
         <SectionTitle name>Santiago Ortiz.</SectionTitle>

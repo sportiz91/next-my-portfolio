@@ -6,6 +6,7 @@ export const NavContainer = styled.section`
   padding: 0 3rem;
   display: grid;
   position: fixed;
+  z-index: 1;
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
   align-items: center;

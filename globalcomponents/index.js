@@ -7,7 +7,7 @@ export const SectionMiniParagraph = styled.p`
 
 export const SectionTitle = styled.h1`
   font-size: ${(props) => (props.sub ? "5rem" : "7rem")};
-  width: 150%;
+  width: ${(props) => (props.notmain ? "auto" : "150%")};
   /* background: linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%); */
   background: ${(props) =>
     props.projects
