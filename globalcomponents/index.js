@@ -1,8 +1,30 @@
 import styled from "styled-components";
 
 export const SectionMiniParagraph = styled.p`
-  color: ${(props) => props.theme.colors.primary1};
-  margin-bottom: 2rem;
+  color: ${(props) =>
+    props.project ? props.theme.colors.button3 : props.theme.colors.paragraph};
+  margin-bottom: ${(props) => (props.project ? "0.6rem" : "2rem")};
+  font-weight: ${(props) => (props.project ? "700" : "")};
+`;
+
+export const SectionTitleAndLine = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+`;
+
+export const SectionLine = styled.span`
+  width: 29%;
+  height: 1px;
+  background: ${(props) => props.theme.colors.button2};
+  opacity: 0.5;
+  margin-top: 15px;
+`;
+
+export const SectionParagraphColor = styled.span`
+  color: ${(props) => props.theme.colors.button3};
 `;
 
 export const SectionTitle = styled.h1`
@@ -11,11 +33,12 @@ export const SectionTitle = styled.h1`
   /* background: linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%); */
   background: ${(props) =>
     props.projects
-      ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 10%)"
+      ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 70%)"
       : "linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%)"};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: ${(props) => (props.name ? "2rem" : "4rem")};
+  margin-bottom: ${(props) =>
+    props.nomargin ? "0rem" : props.name ? "2rem" : "4rem"};
 `;
 
 export const SectionParagraph = styled.p`

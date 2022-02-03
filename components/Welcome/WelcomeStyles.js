@@ -4,7 +4,7 @@ export const WelcomeSection = styled.section`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 17rem;
+  margin-bottom: 25rem;
   opacity: ${(props) => (props.showSection ? "1" : "0")};
   transform: translateX(${(props) => (props.showSection ? "0" : "2rem")});
   transition: all 0.2s;
