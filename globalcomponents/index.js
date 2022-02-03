@@ -34,6 +34,8 @@ export const SectionTitle = styled.h1`
   background: ${(props) =>
     props.projects
       ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 70%)"
+      : props.other
+      ? "linear-gradient(135deg, white 10%, rgba(255 255 255 / 0.66) 30%)"
       : "linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%)"};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

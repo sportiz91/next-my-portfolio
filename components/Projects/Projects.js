@@ -112,6 +112,10 @@ const Projects = ({ windowHeight, windowScroll }) => {
           );
         })}
       </ProjectsWrapper>
+
+      <SectionTitle sub notmain other>
+        Other Projects
+      </SectionTitle>
     </ProjectsSection>
   );
 };

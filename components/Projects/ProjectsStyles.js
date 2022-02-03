@@ -28,6 +28,10 @@ export const ProjectDiv = styled.div`
       grid-area: 1 / 1 / 2 / 5;
     }
   }
+
+  &:last-child {
+    padding-bottom: 12rem;
+  }
 `;
 
 export const ProjectImgDiv = styled.div`

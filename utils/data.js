@@ -19,5 +19,16 @@ export default {
       links: ["https://github.com/sportiz91/next-my-portfolio", "#!"],
       img: "/Images/Project2.png",
     },
+    {
+      title: "Hackernews Reader",
+      description:
+        "This App gets the latest news from the Hackernews API. Now you can stay up to date with the latest tech news!",
+      tags: ["React", "API", "React Testing Library", "JEST", "CSS"],
+      links: [
+        "https://github.com/sportiz91/portfolio-app-react-router",
+        "https://hackernews-newsreader.vercel.app/",
+      ],
+      img: "/Images/Project3.png",
+    },
   ],
 };
