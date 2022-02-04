@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import {
+  PageSection,
   SectionTitle,
   SectionTitleAndLine,
   SectionLine,
@@ -8,7 +9,6 @@ import {
 } from "../../globalcomponents";
 
 import {
-  ProjectsSection,
   ProjectDiv,
   ProjectsWrapper,
   ProjectImgDiv,
@@ -50,7 +50,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
   }, [windowScroll]);
 
   return (
-    <ProjectsSection ref={projectsRef} showSection={showSection}>
+    <PageSection ref={projectsRef} showSection={showSection}>
       <SectionTitleAndLine>
         <SectionTitle projects notmain nomargin>
           Projects
@@ -117,7 +117,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
       </ProjectsWrapper>
 
       <OtherProjects />
-    </ProjectsSection>
+    </PageSection>
   );
 };
 

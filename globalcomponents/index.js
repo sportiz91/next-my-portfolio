@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const PageSection = styled.section`
+  opacity: ${(props) => (props.showSection ? "1" : "0")};
+  transition: opacity 1.5s;
+  transition-delay: 0.4s;
+  padding: 0 5rem;
+  margin-bottom: 25rem;
+`;
+
 export const SectionMiniParagraph = styled.p`
   color: ${(props) =>
     props.project ? props.theme.colors.button3 : props.theme.colors.paragraph};

@@ -10,6 +10,7 @@ import useClick from "../../hooks/useClick";
 import useDisabled from "../../hooks/useDisabled";
 import Welcome from "../Welcome/Welcome";
 import Projects from "../Projects/Projects";
+import Technologies from "../Technologies/Technologies";
 
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -58,6 +59,7 @@ const AppWrapper = () => {
       <Layout>
         <Welcome />
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
+        <Technologies windowHeight={windowHeight} windowScroll={windowScroll} />
       </Layout>
     </AppDivWrapper>
   );

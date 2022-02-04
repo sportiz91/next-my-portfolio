@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const ProjectsSection = styled.section`
-  opacity: ${(props) => (props.showSection ? "1" : "0")};
-  transition: opacity 1.5s;
-  transition-delay: 0.4s;
-  padding: 0 5rem;
-`;
-
 export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
