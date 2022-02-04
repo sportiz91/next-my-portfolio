@@ -31,4 +31,39 @@ export default {
       img: "/Images/Project3.png",
     },
   ],
+
+  other: [
+    {
+      title: "Weather App",
+      description:
+        "This App was made in order to practice my 'hitting api' skills. Easy peacy!",
+      github: "https://github.com/sportiz91/weather-app-react",
+      source: "https://weather-app-react-rho.vercel.app/",
+      tags: ["React", "Weather API"],
+    },
+    {
+      title: "Mike Smith's Portfolio",
+      description:
+        "A single page web app for helping Mike showcase his experience and projects done",
+      github: "https://github.com/sportiz91/portfolio-app-react-router",
+      source: "https://portfolio-app-react-router.vercel.app/",
+      tags: ["React", "React Router", "SASS"],
+    },
+    {
+      title: "TinDog Website",
+      description:
+        "One of the first Apps I've ever done. This taught me a lot of Bootstrap and core concepts of web developing",
+      github: "https://github.com/sportiz91/TinDog-website",
+      source: "https://tin-dog-website-sportiz91.vercel.app/",
+      tags: ["Vanilla JS", "CSS", "Bootstrap"],
+    },
+    {
+      title: "Beautiful TodoApp",
+      description:
+        "This beautiful TodoApp taught me a lot of CSS and JavaScript. Beautiful transitions, effects and drag & drop!",
+      github: "https://github.com/sportiz91/Todo-App-Frontend-Mentor",
+      source: "https://todo-app-frontend-mentor-sigma.vercel.app/",
+      tags: ["Vanilla JS", "CSS"],
+    },
+  ],
 };

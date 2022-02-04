@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const SectionMiniParagraph = styled.p`
   color: ${(props) =>
     props.project ? props.theme.colors.button3 : props.theme.colors.paragraph};
-  margin-bottom: ${(props) => (props.project ? "0.6rem" : "2rem")};
+  margin-bottom: ${(props) =>
+    props.project ? "0.6rem" : props.other ? "0rem" : "2rem"};
   font-weight: ${(props) => (props.project ? "700" : "")};
 `;
 
@@ -40,7 +41,13 @@ export const SectionTitle = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: ${(props) =>
-    props.nomargin ? "0rem" : props.name ? "2rem" : "4rem"};
+    props.nomargin
+      ? "0rem"
+      : props.name
+      ? "2rem"
+      : props.other
+      ? "1rem"
+      : "4rem"};
 `;
 
 export const SectionParagraph = styled.p`

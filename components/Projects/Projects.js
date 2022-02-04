@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+
 import {
   SectionTitle,
   SectionTitleAndLine,
@@ -21,6 +22,8 @@ import {
   ProjectTitleDiv,
   ProjectSocialsAnchor,
 } from "./ProjectsStyles";
+
+import OtherProjects from "./OtherProjects";
 
 import { AiFillGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
@@ -113,9 +116,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
         })}
       </ProjectsWrapper>
 
-      <SectionTitle sub notmain other>
-        Other Projects
-      </SectionTitle>
+      <OtherProjects />
     </ProjectsSection>
   );
 };

@@ -101,16 +101,19 @@ export const ProjectInfoDiv = styled.div`
 export const ProjectTitleDiv = styled.div``;
 
 export const ProjectInfoName = styled.h2`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) =>
+    props.other ? props.theme.colors.button3 : props.theme.colors.primary};
+  font-size: ${(props) => (props.other ? "2rem" : "")};
 `;
 
 export const ProjectInfoDescription = styled.div`
-  width: 111%;
-  padding: 2rem;
+  width: ${(props) => (props.other ? "100%" : "111%")};
+  padding: ${(props) => (props.nopadding ? "0" : "2rem")};
   color: ${(props) => props.theme.colors.paragraph};
-  background: ${(props) => props.theme.colors.description};
+  background: ${(props) =>
+    props.nobackground ? "" : props.theme.colors.description};
   border-radius: 5px;
-  margin: 3rem 0 0;
+  margin: ${(props) => (props.other ? "1.5rem 0 3rem" : "3rem 0 0")};
   line-height: 1.5;
 `;
 

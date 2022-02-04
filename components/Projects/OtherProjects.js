@@ -1,0 +1,83 @@
+import { SectionTitle, SectionMiniParagraph } from "../../globalcomponents";
+
+import {
+  OtherProjectsDiv,
+  ProjectDiv,
+  ProjectLinksDiv,
+  ProjectLinksSourceDiv,
+} from "./OtherProjectsStyles";
+
+import {
+  ProjectInfoDescription,
+  ProjectInfoName,
+  ProjectInfoTags,
+} from "./ProjectsStyles";
+
+import { MiddleText } from "../Navbar/NavbarStyles";
+
+import {
+  AiFillCaretRight,
+  AiFillGithub,
+  AiOutlineFolder,
+} from "react-icons/ai";
+
+import { FiExternalLink } from "react-icons/fi";
+
+import data from "../../utils/data";
+
+const OtherProjects = () => {
+  return (
+    <>
+      <SectionTitle sub notmain other>
+        Other Projects
+      </SectionTitle>
+      <a
+        href="https://github.com/sportiz91"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MiddleText>View the archive</MiddleText>
+        <AiFillCaretRight className="icon" />
+      </a>
+
+      <OtherProjectsDiv>
+        {data.other.map((item, index) => {
+          return (
+            <ProjectDiv key={index}>
+              <ProjectLinksDiv>
+                <AiOutlineFolder size={"3.2rem"} className="icon" />
+                <ProjectLinksSourceDiv>
+                  <a
+                    href={item.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillGithub size={"3rem"} />
+                  </a>
+                  <a
+                    href={item.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiExternalLink size={"3rem"} />
+                  </a>
+                </ProjectLinksSourceDiv>
+              </ProjectLinksDiv>
+              <ProjectInfoName other>{item.title}</ProjectInfoName>
+              <ProjectInfoDescription nobackground nopadding other>
+                {item.description}
+              </ProjectInfoDescription>
+              <ProjectInfoTags>
+                {item.tags.map((tech, index) => {
+                  <SectionMiniParagraph>{tech}</SectionMiniParagraph>;
+                })}
+              </ProjectInfoTags>
+            </ProjectDiv>
+          );
+        })}
+      </OtherProjectsDiv>
+    </>
+  );
+};
+
+export default OtherProjects;
