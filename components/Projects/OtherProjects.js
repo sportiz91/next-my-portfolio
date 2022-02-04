@@ -69,7 +69,9 @@ const OtherProjects = () => {
               </ProjectInfoDescription>
               <ProjectInfoTags>
                 {item.tags.map((tech, index) => {
-                  <SectionMiniParagraph>{tech}</SectionMiniParagraph>;
+                  return (
+                    <SectionMiniParagraph other>{tech}</SectionMiniParagraph>
+                  );
                 })}
               </ProjectInfoTags>
             </ProjectDiv>

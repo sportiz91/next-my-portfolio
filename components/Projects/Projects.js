@@ -85,7 +85,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
                   <ProjectInfoName>{item.title}</ProjectInfoName>
                 </ProjectTitleDiv>
 
-                <ProjectInfoDescription>
+                <ProjectInfoDescription className="info">
                   {item.description}
                 </ProjectInfoDescription>
                 <ProjectInfoTags>

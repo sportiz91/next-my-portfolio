@@ -11,12 +11,17 @@ import {
 import {
   TechButton,
   TechButtonsDiv,
+  TechDetailBrandDiv,
   TechDetailDiv,
   TechInfoDiv,
+  TechParagraph,
 } from "./TechnologiesStyles";
+
+import data from "../../utils/data";
 
 const Technologies = ({ windowHeight, windowScroll }) => {
   const [showSection, setShowSection] = useState(false);
+  const [front, setFront] = useState("front");
   const projectsRef = useRef();
 
   useEffect(() => {
@@ -45,15 +50,33 @@ const Technologies = ({ windowHeight, windowScroll }) => {
 
       <TechInfoDiv>
         <TechButtonsDiv>
-          <TechButton>
-            <SectionMiniParagraph other>Front-End</SectionMiniParagraph>
+          <TechButton onClick={() => setFront("front")} state={front}>
+            <TechParagraph>Front-End</TechParagraph>
           </TechButton>
-          <TechButton>
-            <SectionMiniParagraph other>Back-End</SectionMiniParagraph>
+          <TechButton onClick={() => setFront("back")} state={front}>
+            <TechParagraph>Back-End</TechParagraph>
+          </TechButton>
+          <TechButton onClick={() => setFront("devops")} state={front}>
+            <TechParagraph>DevOps & Tools</TechParagraph>
           </TechButton>
         </TechButtonsDiv>
 
-        <TechDetailDiv></TechDetailDiv>
+        <TechDetailDiv>
+          {front === "front"
+            ? data.tech[0].front.map((item, index) => {
+                return (
+                  <TechDetailBrandDiv>
+                    <img src={item.img} alt="logo-img" className="size" />
+                    <SectionMiniParagraph other hidden className="show">
+                      {item.name}
+                    </SectionMiniParagraph>
+                  </TechDetailBrandDiv>
+                );
+              })
+            : front === "back"
+            ? ""
+            : ""}
+        </TechDetailDiv>
       </TechInfoDiv>
     </PageSection>
   );

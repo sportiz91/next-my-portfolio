@@ -14,6 +14,9 @@ export const SectionMiniParagraph = styled.p`
   margin-bottom: ${(props) =>
     props.project ? "0.6rem" : props.other ? "0rem" : "2rem"};
   font-weight: ${(props) => (props.project ? "700" : "")};
+  font-size: ${(props) => (props.other ? "1.2rem" : "")};
+  visibility: ${(props) => (props.hidden ? "hidden" : "")};
+  transition: ${(props) => (props.hidden ? "visibility 0.3s ease" : "")};
 `;
 
 export const SectionTitleAndLine = styled.div`

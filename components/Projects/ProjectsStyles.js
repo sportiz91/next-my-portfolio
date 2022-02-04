@@ -19,6 +19,10 @@ export const ProjectDiv = styled.div`
 
     & div:nth-child(2) {
       grid-area: 1 / 1 / 2 / 5;
+
+      & .info {
+        width: 100%;
+      }
     }
   }
 
