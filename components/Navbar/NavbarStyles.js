@@ -58,42 +58,6 @@ export const NavDivThree = styled.div`
   }
 `;
 
-export const MiddleText = styled.span`
-  font-size: ${({ mobile }) => (mobile ? "4rem" : "2rem")};
-  color: ${(props) => props.theme.colors.links};
-  margin-bottom: 5px; /* adjustment to center */
-  margin-left: ${(props) => (props.first ? "65px" : "0")};
-  transition: color 0.5s ease;
-  position: relative;
-
-  & + .icon {
-    color: rgba(255 255 255 / 0.75);
-    font-size: 2rem;
-    margin-right: 45px;
-    position: relative;
-    top: 4px;
-    transition: color 0.5s ease;
-    visibility: hidden;
-  }
-
-  & + .icon.mobile {
-    font-size: 3rem;
-    margin: 0;
-  }
-
-  &:hover {
-    color: ${(props) => props.theme.colors.button3};
-    font-weight: 500;
-    left: 6px;
-
-    & + .icon {
-      color: ${(props) => props.theme.colors.button3};
-      left: 6px;
-      visibility: visible;
-    }
-  }
-`;
-
 export const IconDiv = styled.div`
   padding: 6px 6px 1px;
   background-color: transparent;

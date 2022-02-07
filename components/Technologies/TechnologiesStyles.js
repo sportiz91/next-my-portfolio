@@ -9,8 +9,8 @@ export const TechInfoDiv = styled.div`
 `;
 
 export const TechButtonsDiv = styled.div`
-  width: 80%;
-  grid-area: 1 / 1 / 2 / 4;
+  width: 65%;
+  grid-area: 1 / 1 / 2 / 5;
   display: flex;
   flex-direction: column;
 `;
@@ -90,9 +90,9 @@ export const TechParagraph = styled.button`
 `;
 
 export const TechDetailDiv = styled.div`
-  width: 80%;
+  width: 100%;
   height: 100%;
-  grid-area: 1 / 4 / 2 / 11;
+  grid-area: 1 / 5 / 2 / 11;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 2rem;

@@ -11,6 +11,7 @@ import useDisabled from "../../hooks/useDisabled";
 import Welcome from "../Welcome/Welcome";
 import Projects from "../Projects/Projects";
 import Technologies from "../Technologies/Technologies";
+import About from "../About/About";
 
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -60,6 +61,7 @@ const AppWrapper = () => {
         <Welcome />
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
         <Technologies windowHeight={windowHeight} windowScroll={windowScroll} />
+        <About windowHeight={windowHeight} windowScroll={windowScroll} />
       </Layout>
     </AppDivWrapper>
   );

@@ -64,6 +64,25 @@ export default {
     },
   ],
 
+  timeline: [
+    { year: "2013", description: "Graduated - Bachelor in Economics" },
+    {
+      year: "2014",
+      description: "Worked as trader/financial analyst",
+    },
+    { year: "2016", description: "Graduated - Master in Finance" },
+    {
+      year: "2018",
+      description:
+        "Started working as independent financial advisor / personal brand & business",
+    },
+    {
+      year: "2020",
+      description: "Created my first ever website with WordPress",
+    },
+    { year: "2020", description: "Started my Full Stack & MERN Journey" },
+  ],
+
   tech: [
     {
       front: [

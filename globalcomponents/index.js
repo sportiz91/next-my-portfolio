@@ -5,6 +5,7 @@ export const PageSection = styled.section`
   transition: opacity 1.5s;
   transition-delay: 0.4s;
   padding: 0 5rem;
+  max-width: 1120px;
   margin-bottom: 25rem;
 `;
 
@@ -19,16 +20,53 @@ export const SectionMiniParagraph = styled.p`
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
 `;
 
+export const MiddleText = styled.span`
+  font-size: ${({ mobile }) => (mobile ? "4rem" : "2rem")};
+  color: ${(props) => props.theme.colors.links};
+  margin-bottom: 5px; /* adjustment to center */
+  margin-left: ${(props) => (props.first ? "65px" : "0")};
+  transition: color 0.5s ease;
+  position: relative;
+  cursor: ${(props) => (props.timeline ? "pointer" : "")};
+
+  & + .icon {
+    color: rgba(255 255 255 / 0.75);
+    font-size: 2rem;
+    margin-right: 45px;
+    position: relative;
+    top: 4px;
+    transition: color 0.5s ease;
+    visibility: hidden;
+  }
+
+  & + .icon.mobile {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.colors.button3};
+    font-weight: 500;
+    left: 6px;
+
+    & + .icon {
+      color: ${(props) => props.theme.colors.button3};
+      left: 6px;
+      visibility: visible;
+    }
+  }
+`;
+
 export const SectionTitleAndLine = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 2rem;
+  gap: 6rem;
   margin-bottom: 4rem;
 `;
 
 export const SectionLine = styled.span`
-  width: ${(props) => (props.tech ? "40%" : "29%")};
+  width: 100%;
   height: 1px;
   background: ${(props) => props.theme.colors.button2};
   opacity: 0.5;
@@ -48,6 +86,8 @@ export const SectionTitle = styled.h1`
       ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 70%)"
       : props.other
       ? "linear-gradient(135deg, white 10%, rgba(255 255 255 / 0.66) 30%)"
+      : props.timeline
+      ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 30%)"
       : "linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%)"};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

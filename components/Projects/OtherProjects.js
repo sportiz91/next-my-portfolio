@@ -1,4 +1,8 @@
-import { SectionTitle, SectionMiniParagraph } from "../../globalcomponents";
+import {
+  SectionTitle,
+  SectionMiniParagraph,
+  MiddleText,
+} from "../../globalcomponents";
 
 import {
   OtherProjectsDiv,
@@ -12,8 +16,6 @@ import {
   ProjectInfoName,
   ProjectInfoTags,
 } from "./ProjectsStyles";
-
-import { MiddleText } from "../Navbar/NavbarStyles";
 
 import {
   AiFillCaretRight,

@@ -36,7 +36,7 @@ const Welcome = () => {
         <SectionParagraph>
           Full-Stack Developer, BA in Economics, Master in Finance. I'm
           self-taught and I love making things on the web, focusing mainly on
-          JavaScript.
+          JavaScript and MERN Stack.
         </SectionParagraph>
         <SectionButton>Learn More</SectionButton>
       </DivWelcomeContent>

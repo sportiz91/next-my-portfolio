@@ -1,4 +1,5 @@
-import { NavDivHidden, MiddleText, DivWrapper } from "./NavbarStyles";
+import { NavDivHidden, DivWrapper } from "./NavbarStyles";
+import { MiddleText } from "../../globalcomponents";
 
 import { AiFillCaretRight } from "react-icons/ai";
 

@@ -13,10 +13,11 @@ import {
   PortfolioText,
   NavDivTwo,
   NavDivThree,
-  MiddleText,
   AnchorNav,
   IconDiv,
 } from "./NavbarStyles";
+
+import { MiddleText } from "../../globalcomponents";
 
 import Link from "next/link";
 
