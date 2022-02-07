@@ -5,7 +5,6 @@ import {
   SectionTitleAndLine,
   SectionTitle,
   SectionLine,
-  SectionMiniParagraph,
 } from "../../globalcomponents";
 
 import {
@@ -15,6 +14,7 @@ import {
   TechDetailDiv,
   TechInfoDiv,
   TechParagraph,
+  TechMiniParagraph,
 } from "./TechnologiesStyles";
 
 import data from "../../utils/data";
@@ -45,7 +45,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
         <SectionTitle projects notmain nomargin>
           Technologies
         </SectionTitle>
-        <SectionLine />
+        <SectionLine tech />
       </SectionTitleAndLine>
 
       <TechInfoDiv>
@@ -67,15 +67,33 @@ const Technologies = ({ windowHeight, windowScroll }) => {
                 return (
                   <TechDetailBrandDiv>
                     <img src={item.img} alt="logo-img" className="size" />
-                    <SectionMiniParagraph other hidden className="show">
+                    <TechMiniParagraph className="show">
                       {item.name}
-                    </SectionMiniParagraph>
+                    </TechMiniParagraph>
                   </TechDetailBrandDiv>
                 );
               })
             : front === "back"
-            ? ""
-            : ""}
+            ? data.tech[1].back.map((item, index) => {
+                return (
+                  <TechDetailBrandDiv>
+                    <img src={item.img} alt="logo-img" className="size" />
+                    <TechMiniParagraph className="show">
+                      {item.name}
+                    </TechMiniParagraph>
+                  </TechDetailBrandDiv>
+                );
+              })
+            : data.tech[2].devops.map((item, index) => {
+                return (
+                  <TechDetailBrandDiv>
+                    <img src={item.img} alt="logo-img" className="size" />
+                    <TechMiniParagraph className="show">
+                      {item.name}
+                    </TechMiniParagraph>
+                  </TechDetailBrandDiv>
+                );
+              })}
         </TechDetailDiv>
       </TechInfoDiv>
     </PageSection>

@@ -9,8 +9,8 @@ export const TechInfoDiv = styled.div`
 `;
 
 export const TechButtonsDiv = styled.div`
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 3;
+  width: 80%;
+  grid-area: 1 / 1 / 2 / 4;
   display: flex;
   flex-direction: column;
 `;
@@ -26,6 +26,8 @@ export const TechButton = styled.div`
         props.state === "front"
           ? props.theme.colors.button3
           : props.theme.colors.paragraph};
+    background: ${(props) =>
+      props.state === "front" ? "rgba(26 39 64 / 0.9)" : ""};
 
     & button {
       color: ${(props) =>
@@ -41,6 +43,8 @@ export const TechButton = styled.div`
         props.state === "back"
           ? props.theme.colors.button3
           : props.theme.colors.paragraph};
+    background: ${(props) =>
+      props.state === "back" ? "rgba(26 39 64 / 0.9)" : ""};
 
     & button {
       color: ${(props) =>
@@ -56,6 +60,8 @@ export const TechButton = styled.div`
         props.state === "devops"
           ? props.theme.colors.button3
           : props.theme.colors.paragraph};
+    background: ${(props) =>
+      props.state === "devops" ? "rgba(26 39 64 / 0.9)" : ""};
 
     & button {
       color: ${(props) =>
@@ -84,11 +90,11 @@ export const TechParagraph = styled.button`
 `;
 
 export const TechDetailDiv = styled.div`
-  width: 68%;
+  width: 80%;
   height: 100%;
-  grid-area: 1 / 3 / 2 / 11;
+  grid-area: 1 / 4 / 2 / 11;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 2rem;
   background: rgba(26 39 64 / 0.9);
   border-radius: 10px;
@@ -109,9 +115,20 @@ export const TechDetailBrandDiv = styled.div`
     height: 50px;
     width: 50px;
     margin-bottom: 1rem;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &:hover + .show {
-      visibility: visible;
+      opacity: 1;
     }
   }
+`;
+
+export const TechMiniParagraph = styled.p`
+  color: ${(props) => props.theme.colors.paragraph};
+  opacity: 0;
+  transition: 0.3s ease;
 `;
