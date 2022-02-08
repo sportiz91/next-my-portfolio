@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useDisabled = () => {
+const useDisabled = (timeout) => {
   const [disabled, setDisabled] = useState(false);
 
   const prohibit = () => {
@@ -8,7 +8,7 @@ const useDisabled = () => {
 
     setTimeout(() => {
       setDisabled(false);
-    }, 1650); //Why 1.65s ? -> Because we have to consider all the transition delays of the elements.
+    }, timeout); //Why 1.65s ? -> Because we have to consider all the transition delays of the elements.
   };
 
   return [disabled, prohibit];

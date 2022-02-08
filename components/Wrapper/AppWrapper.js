@@ -18,7 +18,7 @@ const AppWrapper = () => {
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowScroll, setWindowScroll] = useState(0);
   const [click, increment] = useClick();
-  const [disabled, prohibit] = useDisabled();
+  const [disabled, prohibit] = useDisabled(1650);
 
   const handleClick = () => {
     if (click === 0) {

@@ -14,9 +14,14 @@ import {
   TimeLineDetailedDiv,
   TimelineDetailedWrapperDiv,
   TimeLineDiv,
+  TimeLineCirclesDiv,
+  TimeLineCircle,
+  TimeLineCircleWrapper,
 } from "./TimeLineStyles";
 
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+
+import useIdle from "../../hooks/useIdle";
 
 import data from "../../utils/data";
 
@@ -24,6 +29,7 @@ const TimelineDetailed = () => {
   const TIMELINE_LENGTH = data.timeline.length;
   const [targetSlide, setTargetSlide] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [disabled, setDisabled] = useState(false);
   const wrapperRef = useRef(null);
   const yearRef = useRef(null);
   const nodeRef = useRef(null);
@@ -34,9 +40,17 @@ const TimelineDetailed = () => {
     const scroll = year.offsetLeft;
 
     wrapper.scrollTo({ left: scroll, behavior: "smooth" });
-
-    setActiveSlide(targetSlide);
   };
+
+  const finishScrolling = () => {
+    setTargetSlide(activeSlide);
+    setDisabled(false);
+  };
+
+  const touchScroll = useIdle({
+    timeout: 50,
+    onIdle: finishScrolling,
+  });
 
   const handleScroll = () => {
     const { scrollLeft } = wrapperRef.current;
@@ -45,18 +59,24 @@ const TimelineDetailed = () => {
     const margin = parseInt(style.marginRight.split("p")[0]);
     const width = yearRef.current.getBoundingClientRect().width;
 
-    console.log(scrollLeft);
-    console.log(margin);
-    console.log(width);
+    setActiveSlide(Math.round(scrollLeft / (width + margin)));
 
-    setTargetSlide(Math.round(scrollLeft / (width + margin)));
+    setDisabled(true);
+    touchScroll();
+  };
+
+  const handleDiv = (index) => {
+    if (disabled) return;
+    setTargetSlide(index);
   };
 
   const handleLeft = () => {
+    if (disabled) return;
     setTargetSlide(Math.max(targetSlide - 1, 0));
   };
 
   const handleRight = () => {
+    if (disabled) return;
     setTargetSlide(Math.min(TIMELINE_LENGTH - 1, targetSlide + 1));
   };
 
@@ -65,35 +85,53 @@ const TimelineDetailed = () => {
   }, [targetSlide]);
 
   return (
-    <TimeLineDiv>
-      <AiFillCaretLeft size={"3rem"} className="icon" onClick={handleLeft} />
+    <>
+      <TimeLineDiv>
+        <TimelineDetailedWrapperDiv ref={wrapperRef} onScroll={handleScroll}>
+          {data.timeline.map((item, index) => {
+            return (
+              <TimeLineDetailedWrappingNode
+                key={index}
+                last={TIMELINE_LENGTH - 1 === index ? true : false}
+                ref={index === 0 ? nodeRef : null}
+              >
+                <TimeLineDetailedDiv
+                  index={index}
+                  onClick={() => handleDiv(index)}
+                  ref={targetSlide === index ? yearRef : null}
+                  last={TIMELINE_LENGTH - 1 === index ? true : false}
+                  active={activeSlide === index}
+                >
+                  <TimeLinedDetailedYear>{item.year}</TimeLinedDetailedYear>
+                  <TimeLineDetailedDescription>
+                    {item.description}
+                  </TimeLineDetailedDescription>
+                </TimeLineDetailedDiv>
+              </TimeLineDetailedWrappingNode>
+            );
+          })}
+        </TimelineDetailedWrapperDiv>
+      </TimeLineDiv>
 
-      <TimelineDetailedWrapperDiv ref={wrapperRef} onScroll={handleScroll}>
+      <TimeLineCirclesDiv>
+        <AiFillCaretLeft size={"2rem"} className="icon" onClick={handleLeft} />
         {data.timeline.map((item, index) => {
           return (
-            <TimeLineDetailedWrappingNode
+            <TimeLineCircleWrapper
               key={index}
-              last={TIMELINE_LENGTH - 1 === index ? true : false}
-              ref={index === 0 ? nodeRef : null}
+              onClick={() => setTargetSlide(index)}
             >
-              <TimeLineDetailedDiv
-                index={index}
-                onClick={() => setTargetSlide(index)}
-                ref={targetSlide === index ? yearRef : null}
-                last={TIMELINE_LENGTH - 1 === index ? true : false}
-              >
-                <TimeLinedDetailedYear>{item.year}</TimeLinedDetailedYear>
-                <TimeLineDetailedDescription>
-                  {item.description}
-                </TimeLineDetailedDescription>
-              </TimeLineDetailedDiv>
-            </TimeLineDetailedWrappingNode>
+              <TimeLineCircle clicked={activeSlide === index} />
+            </TimeLineCircleWrapper>
           );
         })}
-      </TimelineDetailedWrapperDiv>
-
-      <AiFillCaretRight size={"3rem"} className="icon" onClick={handleRight} />
-    </TimeLineDiv>
+        <AiFillCaretRight
+          size={"2rem"}
+          className="icon"
+          onClick={handleRight}
+        />
+      </TimeLineCirclesDiv>
+    </>
   );
 };
 

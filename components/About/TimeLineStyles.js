@@ -4,12 +4,8 @@ export const TimeLineDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 250px;
   gap: 1rem;
-
-  & .icon {
-    cursor: pointer;
-  }
+  margin: 4rem 0;
 `;
 
 export const TimelineDetailedWrapperDiv = styled.div`
@@ -41,6 +37,7 @@ export const TimeLineDetailedDiv = styled.div`
   background: rgba(26 39 64 / 0.9);
   border-radius: 5px;
   scroll-snap-align: start;
+  opacity: ${(props) => (props.active ? "1" : "0.5")};
 `;
 
 export const TimeLinedDetailedYear = styled.h2`
@@ -57,4 +54,34 @@ export const TimeLinedDetailedYear = styled.h2`
 export const TimeLineDetailedDescription = styled.p`
   font-size: 1.25rem;
   color: ${(props) => props.theme.colors.paragraph};
+`;
+
+export const TimeLineCirclesDiv = styled.div`
+  display: flex;
+  gap: 2rem;
+
+  & .icon {
+    cursor: pointer;
+  }
+`;
+
+export const TimeLineCircleWrapper = styled.div`
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+`;
+
+export const TimeLineCircle = styled.div`
+  height: 5px;
+  width: 5px;
+  top: 8px;
+  left: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background: ${(props) =>
+    props.clicked ? props.theme.colors.primary : props.theme.colors.paragraph};
+  transform: ${(props) => (props.clicked ? "scale(1.4)" : "")};
+  transition: 0.3s ease;
 `;
