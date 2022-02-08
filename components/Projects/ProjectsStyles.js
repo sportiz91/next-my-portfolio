@@ -12,6 +12,10 @@ export const ProjectDiv = styled.div`
   grid-template-columns: repeat(12, 1fr);
   padding: 7rem 0;
 
+  &:nth-child(1) {
+    padding-top: 3rem;
+  }
+
   &:nth-child(2n) {
     & div:nth-child(1) {
       grid-area: 1 / 6 / 2 / 13;

@@ -15,13 +15,19 @@ export const TimeLineDiv = styled.div`
 export const TimelineDetailedWrapperDiv = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 2rem;
   width: 100%;
-  overflow: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x-mandatory;
+  position: relative;
 
   &::-webkit-scrollbar {
     display: none;
   }
+`;
+
+export const TimeLineDetailedWrappingNode = styled.div`
+  min-width: ${(props) => (props.last ? "100%" : "min-content")};
+  margin-right: ${(props) => (props.last ? "" : "2rem")};
 `;
 
 export const TimeLineDetailedDiv = styled.div`
@@ -29,11 +35,12 @@ export const TimeLineDetailedDiv = styled.div`
   flex-direction: column;
   align-items: start;
   height: 130px;
-  min-width: 200px;
+  width: 200px;
   gap: 1rem;
   padding: 1.5rem;
   background: rgba(26 39 64 / 0.9);
   border-radius: 5px;
+  scroll-snap-align: start;
 `;
 
 export const TimeLinedDetailedYear = styled.h2`

@@ -9,6 +9,7 @@ export const AboutDivWrapper = styled.div`
     "right right";
   column-gap: 10rem;
   margin-bottom: 12rem;
+  margin-top: 6rem;
 `;
 
 export const AboutMiniParagraph = styled.p`
@@ -47,7 +48,7 @@ export const AboutImgOverlay = styled.div`
   width: 100%;
   border-radius: 5px;
   position: relative;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: 0.3s ease;
 
   &:hover {

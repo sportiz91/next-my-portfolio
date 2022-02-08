@@ -5,7 +5,7 @@ export const TechInfoDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 2rem;
-  margin-top: 11rem;
+  margin-top: 6rem;
 `;
 
 export const TechButtonsDiv = styled.div`
