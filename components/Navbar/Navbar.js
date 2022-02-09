@@ -21,9 +21,9 @@ import { MiddleText } from "../../globalcomponents";
 
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ visible }) => {
   return (
-    <NavContainer>
+    <NavContainer visible={visible}>
       <NavDivOne>
         <Link href="/">
           <a style={{ display: "flex", alignItems: "center", color: "white" }}>
@@ -57,19 +57,31 @@ const Navbar = () => {
       </NavDivTwo>
 
       <NavDivThree>
-        <AnchorNav href="https://google.com">
+        <AnchorNav
+          href="https://github.com/sportiz91"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <IconDiv>
             <AiFillGithub size="3rem" />
           </IconDiv>
         </AnchorNav>
 
-        <AnchorNav href="https://google.com">
+        <AnchorNav
+          href="https://www.linkedin.com/in/santiago-pablo-ortiz-12151266/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <IconDiv>
             <AiFillLinkedin size="3rem" />
           </IconDiv>
         </AnchorNav>
 
-        <AnchorNav href="https://google.com">
+        <AnchorNav
+          href="https://www.instagram.com/santimarkets/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <IconDiv>
             <AiFillInstagram size="3rem" />
           </IconDiv>

@@ -41,7 +41,7 @@ const About = ({ windowHeight, windowScroll }) => {
   }, [windowScroll]);
 
   return (
-    <PageSection ref={projectsRef} showSection={showSection} about>
+    <PageSection ref={projectsRef} showSection={showSection} about id="about">
       <SectionTitleAndLine>
         <SectionTitle notmain nomargin>
           About

@@ -40,7 +40,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
   }, [windowScroll]);
 
   return (
-    <PageSection ref={projectsRef} showSection={showSection}>
+    <PageSection ref={projectsRef} showSection={showSection} id="technologies">
       <SectionTitleAndLine>
         <SectionTitle projects notmain nomargin>
           Technologies

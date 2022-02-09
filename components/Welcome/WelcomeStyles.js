@@ -16,4 +16,9 @@ export const DivWelcomeContent = styled.div`
   flex-direction: column;
 `;
 
+export const WelcomeButtonsDiv = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+
 export const DivWelcomeSVG = styled.div``;

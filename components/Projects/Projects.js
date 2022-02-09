@@ -50,7 +50,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
   }, [windowScroll]);
 
   return (
-    <PageSection ref={projectsRef} showSection={showSection}>
+    <PageSection ref={projectsRef} showSection={showSection} id="projects">
       <SectionTitleAndLine>
         <SectionTitle projects notmain nomargin>
           Projects

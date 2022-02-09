@@ -1,6 +1,7 @@
 import {
   WelcomeSection,
   DivWelcomeContent,
+  WelcomeButtonsDiv,
   DivWelcomeSVG,
 } from "./WelcomeStyles";
 
@@ -36,9 +37,12 @@ const Welcome = () => {
         <SectionParagraph>
           Full-Stack Developer, BA in Economics, Master in Finance. I'm
           self-taught and I love making things on the web, focusing mainly on
-          JavaScript and MERN Stack.
+          JavaScript and the MERN Stack.
         </SectionParagraph>
-        <SectionButton>Learn More</SectionButton>
+        <WelcomeButtonsDiv>
+          <SectionButton href="#projects">See Projects</SectionButton>
+          <SectionButton href="#about">About me</SectionButton>
+        </WelcomeButtonsDiv>
       </DivWelcomeContent>
       <DivWelcomeSVG>
         <BackgroundAnimation />

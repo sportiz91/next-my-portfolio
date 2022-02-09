@@ -18,6 +18,8 @@ const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowScroll, setWindowScroll] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0);
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(1650);
 
@@ -36,9 +38,13 @@ const AppWrapper = () => {
     }
   };
 
-  const handleScroll = () => {
+  const handleScroll = (e) => {
     const windowHeight = window.innerHeight;
     const windowScroll = window.scrollY;
+
+    windowScroll <= lastScroll ? setVisible(true) : setVisible(false);
+
+    setLastScroll(windowScroll);
 
     setWindowHeight(windowHeight);
     setWindowScroll(windowScroll);
@@ -57,7 +63,7 @@ const AppWrapper = () => {
       <BurgerDiv onClick={handleClick} state={mobileNavbar}>
         <BurgerSpan state={mobileNavbar} />
       </BurgerDiv>
-      <Navbar />
+      <Navbar visible={visible} />
       <Layout>
         <Welcome />
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />

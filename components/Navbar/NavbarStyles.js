@@ -6,6 +6,7 @@ export const NavContainer = styled.section`
   padding: 0 3rem;
   display: grid;
   position: fixed;
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
   z-index: 1;
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
@@ -63,7 +64,7 @@ export const IconDiv = styled.div`
   background-color: transparent;
   border-radius: 20px;
   transform: scale(1);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 
   &:hover {
     background-color: #212d45;

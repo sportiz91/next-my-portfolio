@@ -56,19 +56,31 @@ const Footer = ({ windowHeight, windowScroll }) => {
             Building things for the web.
           </SectionMiniParagraph>
           <NavDivThree>
-            <AnchorNav href="https://google.com">
+            <AnchorNav
+              href="https://github.com/sportiz91"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconDiv>
                 <AiFillGithub size="3rem" />
               </IconDiv>
             </AnchorNav>
 
-            <AnchorNav href="https://google.com">
+            <AnchorNav
+              href="https://www.linkedin.com/in/santiago-pablo-ortiz-12151266/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconDiv>
                 <AiFillLinkedin size="3rem" />
               </IconDiv>
             </AnchorNav>
 
-            <AnchorNav href="https://google.com">
+            <AnchorNav
+              href="https://www.instagram.com/santimarkets/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconDiv>
                 <AiFillInstagram size="3rem" />
               </IconDiv>
