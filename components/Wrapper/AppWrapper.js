@@ -12,6 +12,7 @@ import Welcome from "../Welcome/Welcome";
 import Projects from "../Projects/Projects";
 import Technologies from "../Technologies/Technologies";
 import About from "../About/About";
+import Footer from "../Footer/Footer";
 
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -62,6 +63,7 @@ const AppWrapper = () => {
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
         <Technologies windowHeight={windowHeight} windowScroll={windowScroll} />
         <About windowHeight={windowHeight} windowScroll={windowScroll} />
+        <Footer windowHeight={windowHeight} windowScroll={windowScroll} />
       </Layout>
     </AppDivWrapper>
   );

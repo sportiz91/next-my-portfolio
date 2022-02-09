@@ -1,14 +1,7 @@
-import Footer from "../components/Footer/Footer";
-
 import { BodyLayout } from "./LayoutStyles";
 
 const Layout = ({ children }) => {
-  return (
-    <BodyLayout>
-      {children}
-      <Footer />
-    </BodyLayout>
-  );
+  return <BodyLayout>{children}</BodyLayout>;
 };
 
 export default Layout;

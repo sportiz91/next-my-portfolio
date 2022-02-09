@@ -6,14 +6,15 @@ export const PageSection = styled.section`
   transition-delay: 0.4s;
   padding: 0 5rem;
   max-width: 1120px;
-  margin-bottom: 25rem;
+  margin-bottom: ${(props) =>
+    props.about ? "10rem" : props.footer ? "0" : "25rem"};
 `;
 
 export const SectionMiniParagraph = styled.p`
   color: ${(props) =>
     props.project ? props.theme.colors.button3 : props.theme.colors.paragraph};
   margin-bottom: ${(props) =>
-    props.project ? "0.6rem" : props.other ? "0rem" : "2rem"};
+    props.project ? "0.6rem" : props.other || props.nomargin ? "0rem" : "2rem"};
   font-weight: ${(props) => (props.project ? "700" : "")};
   font-size: ${(props) => (props.other ? "1.2rem" : "")};
   opacity: ${(props) => (props.hidden ? "0" : "1")};
@@ -21,13 +22,16 @@ export const SectionMiniParagraph = styled.p`
 `;
 
 export const MiddleText = styled.span`
-  font-size: ${({ mobile }) => (mobile ? "4rem" : "2rem")};
+  font-size: ${({ mobile, footer }) =>
+    mobile ? "4rem" : footer ? "1.65rem" : "2rem"};
   color: ${(props) => props.theme.colors.links};
-  margin-bottom: 5px; /* adjustment to center */
+  margin-bottom: ${(props) =>
+    props.footer ? "0" : "5px"}; /* adjustment to center */
   margin-left: ${(props) => (props.first ? "65px" : "0")};
   transition: color 0.5s ease;
   position: relative;
   cursor: ${(props) => (props.timeline ? "pointer" : "")};
+  bottom: ${(props) => (props.adj ? "2.5px" : "")};
 
   & + .icon {
     color: rgba(255 255 255 / 0.75);
