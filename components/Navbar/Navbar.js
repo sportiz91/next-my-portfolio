@@ -21,9 +21,9 @@ import { MiddleText } from "../../globalcomponents";
 
 import Link from "next/link";
 
-const Navbar = ({ visible }) => {
+const Navbar = ({ scrollDirection }) => {
   return (
-    <NavContainer visible={visible}>
+    <NavContainer scrollDirection={scrollDirection}>
       <NavDivOne>
         <Link href="/">
           <a style={{ display: "flex", alignItems: "center", color: "white" }}>

@@ -14,12 +14,13 @@ import Technologies from "../Technologies/Technologies";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 
+import useScrollDirection from "../../hooks/useScrollDirection";
+
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
-  const [windowHeight, setWindowHeight] = useState(0);
-  const [windowScroll, setWindowScroll] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const [lastScroll, setLastScroll] = useState(0);
+  // const [windowHeight, setWindowHeight] = useState(0);
+  // const [windowScroll, setWindowScroll] = useState(0);
+  const scrollDirection = useScrollDirection("");
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(1650);
 
@@ -38,23 +39,32 @@ const AppWrapper = () => {
     }
   };
 
-  const handleScroll = (e) => {
-    const windowHeight = window.innerHeight;
-    const windowScroll = window.scrollY;
+  // const handleScroll = () => {
+  //   const windowHeight = window.innerHeight;
+  //   const windowScroll = window.scrollY;
 
-    windowScroll <= lastScroll ? setVisible(true) : setVisible(false);
+  //   // console.log(windowScroll);
+  //   // console.log(lastScroll);
 
-    setLastScroll(windowScroll);
+  //   // if (windowScroll <= lastScroll) {
+  //   //   setVisible(true);
+  //   // } else {
+  //   //   setVisible(false);
+  //   // }
 
-    setWindowHeight(windowHeight);
-    setWindowScroll(windowScroll);
-  };
+  //   // setLastScroll(windowScroll);
+  //   // console.log(lastScroll);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => handleScroll());
-    return window.removeEventListener("scroll", () => handleScroll());
-  }, []);
+  //   setWindowHeight(windowHeight);
+  //   setWindowScroll(windowScroll);
+  // };
 
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => handleScroll());
+  //   return window.removeEventListener("scroll", () => handleScroll());
+  // }, []);
+
+  //Remember -> add the props to Layout if I opt for the above option.
   return (
     <AppDivWrapper>
       <HiddenNavbar state={mobileNavbar}>
@@ -63,13 +73,13 @@ const AppWrapper = () => {
       <BurgerDiv onClick={handleClick} state={mobileNavbar}>
         <BurgerSpan state={mobileNavbar} />
       </BurgerDiv>
-      <Navbar visible={visible} />
+      <Navbar scrollDirection={scrollDirection} />
       <Layout>
         <Welcome />
-        <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
-        <Technologies windowHeight={windowHeight} windowScroll={windowScroll} />
-        <About windowHeight={windowHeight} windowScroll={windowScroll} />
-        <Footer windowHeight={windowHeight} windowScroll={windowScroll} />
+        <Projects />
+        <Technologies />
+        <About />
+        <Footer />
       </Layout>
     </AppDivWrapper>
   );
