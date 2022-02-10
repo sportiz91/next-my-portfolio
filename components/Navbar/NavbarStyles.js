@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.section`
-  height: 100px;
+  height: ${(props) => (props.roof ? "105px" : "80px")};
   width: 100%;
   padding: 0 3rem;
   display: grid;
@@ -13,9 +13,14 @@ export const NavContainer = styled.section`
   grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
   align-items: center;
   /* border-bottom: 1px solid rgba(208 187 87 / 0.3); */
-  border-bottom: 1px solid ${(props) => props.theme.colors.button3};
+  /* border-bottom: 1px solid ${(props) => props.theme.colors.button3}; */
   /* background-color: rgba(6 9 16 / 0.3); */
-  background-color: rgba(0 0 0 / 0.9);
+  /* background-color: rgba(0 0 0 / 0.9); */
+  background-color: ${(props) =>
+    props.roof ? props.theme.background.bg1 : props.theme.background.nav};
+  backdrop-filter: ${(props) => (props.roof ? "" : "blur(10px)")};
+  box-shadow: ${(props) =>
+    props.roof ? "" : "0 10px 30px -10px rgb(0 0 0 / 0.75)"};
   transition: 0.2s ease;
 
   @media ${(props) => props.theme.breakpoints.break864} {

@@ -14,7 +14,8 @@ export const theme = {
     description: "rgba(26 39 64 / 0.9)",
   },
   background: {
-    bg1: "#0F1624",
+    bg1: "rgba(15 22 36 / 1)",
+    nav: "rgba(15 22 36 / 0.85)",
   },
   breakpoints: {
     break864: "(max-width: 864px)",

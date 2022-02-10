@@ -20,6 +20,7 @@ const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowScroll, setWindowScroll] = useState(0);
+  const [roof, setRoof] = useState(true);
   const scrollDirection = useScrollDirection("");
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(1650);
@@ -43,6 +44,10 @@ const AppWrapper = () => {
     const windowHeight = window.innerHeight;
     const windowScroll = window.scrollY;
 
+    console.log(windowScroll);
+
+    windowScroll > 0 ? setRoof(false) : setRoof(true);
+
     setWindowHeight(windowHeight);
     setWindowScroll(windowScroll);
   };
@@ -52,7 +57,6 @@ const AppWrapper = () => {
     return window.removeEventListener("scroll", () => handleScroll());
   }, []);
 
-  //Remember -> add the props to Layout if I opt for the above option.
   return (
     <AppDivWrapper>
       <HiddenNavbar state={mobileNavbar}>
@@ -61,7 +65,7 @@ const AppWrapper = () => {
       <BurgerDiv onClick={handleClick} state={mobileNavbar}>
         <BurgerSpan state={mobileNavbar} />
       </BurgerDiv>
-      <Navbar scrollDirection={scrollDirection} />
+      <Navbar scrollDirection={scrollDirection} roof={roof} />
       <Layout>
         <Welcome />
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />

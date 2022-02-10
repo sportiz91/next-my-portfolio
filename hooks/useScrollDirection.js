@@ -26,7 +26,7 @@ const useScrollDirection = (initialDirection) => {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [initialDirection]);
+  }, []);
 
   return scrollDir;
 };
