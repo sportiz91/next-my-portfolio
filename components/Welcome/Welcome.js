@@ -29,11 +29,11 @@ const Welcome = () => {
   return (
     <WelcomeSection showSection={showSection}>
       <DivWelcomeContent>
-        <SectionMiniParagraph>Hi, my name is</SectionMiniParagraph>
+        <SectionMiniParagraph project margin>
+          Hi, my name is
+        </SectionMiniParagraph>
         <SectionTitle name>Santiago Ortiz.</SectionTitle>
-        <SectionTitle sub>
-          Welcome to my <SpanUnderline>Portfolio.</SpanUnderline>
-        </SectionTitle>
+        <SectionTitle welcome>Welcome to my Portfolio.</SectionTitle>
         <SectionParagraph>
           Full-Stack Developer, BA in Economics, Master in Finance. I'm
           self-taught and I love making things on the web, focusing mainly on
@@ -44,9 +44,7 @@ const Welcome = () => {
           <SectionButton href="#about">About me</SectionButton>
         </WelcomeButtonsDiv>
       </DivWelcomeContent>
-      <DivWelcomeSVG>
-        <BackgroundAnimation />
-      </DivWelcomeSVG>
+      <DivWelcomeSVG>{/* <BackgroundAnimation /> */}</DivWelcomeSVG>
     </WelcomeSection>
   );
 };

@@ -12,10 +12,16 @@ export const PageSection = styled.section`
 
 export const SectionMiniParagraph = styled.p`
   color: ${(props) =>
-    props.project ? props.theme.colors.button3 : props.theme.colors.paragraph};
+    props.project ? props.theme.colors.button6 : props.theme.colors.paragraph};
   margin-bottom: ${(props) =>
-    props.project ? "0.6rem" : props.other || props.nomargin ? "0rem" : "2rem"};
-  font-weight: ${(props) => (props.project ? "700" : "")};
+    props.project
+      ? "0.6rem"
+      : props.other || props.nomargin
+      ? "0rem"
+      : props.margin
+      ? "4rem"
+      : "2rem"};
+  font-weight: ${(props) => (props.blacky ? "700" : "")};
   font-size: ${(props) => (props.other ? "1.2rem" : "")};
   opacity: ${(props) => (props.hidden ? "0" : "1")};
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
@@ -24,7 +30,7 @@ export const SectionMiniParagraph = styled.p`
 export const MiddleText = styled.span`
   font-size: ${({ mobile, footer }) =>
     mobile ? "4rem" : footer ? "1.65rem" : "2rem"};
-  color: ${(props) => props.theme.colors.links};
+  color: ${(props) => props.theme.colors.primary};
   margin-bottom: ${(props) =>
     props.footer ? "0" : "5px"}; /* adjustment to center */
   margin-left: ${(props) => (props.first ? "65px" : "0")};
@@ -72,7 +78,8 @@ export const SectionTitleAndLine = styled.div`
 export const SectionLine = styled.span`
   width: 100%;
   height: 1px;
-  background: ${(props) => props.theme.colors.button2};
+  /* background: ${(props) => props.theme.colors.button2}; */
+  background: rgba(255 255 255 / 0.5);
   opacity: 0.5;
   margin-top: 15px;
 `;
@@ -82,10 +89,10 @@ export const SectionParagraphColor = styled.span`
 `;
 
 export const SectionTitle = styled.h1`
-  font-size: ${(props) => (props.sub ? "5rem" : "7rem")};
+  font-size: ${(props) => (props.sub || props.welcome ? "5rem" : "7rem")};
   width: ${(props) => (props.notmain ? "auto" : "150%")};
   /* background: linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%); */
-  background: ${(props) =>
+  /* background: ${(props) =>
     props.projects
       ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 70%)"
       : props.other
@@ -94,7 +101,9 @@ export const SectionTitle = styled.h1`
       ? "linear-gradient(135deg, white, rgba(255 255 255 / 0.66) 30%)"
       : "linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%)"};
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: ${(props) =>
+    props.welcome ? props.theme.colors.paragraph : props.theme.colors.links};
   margin-bottom: ${(props) =>
     props.nomargin
       ? "0rem"
@@ -106,12 +115,12 @@ export const SectionTitle = styled.h1`
 `;
 
 export const SectionParagraph = styled.p`
-  font-size: 2.4rem;
+  font-size: 2rem;
   width: 125%;
   color: ${(props) => props.theme.colors.paragraph};
-  line-height: 1.75;
+  line-height: 1.6;
   font-weight: 100;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 `;
 
 export const SectionSeparator = styled.hr`

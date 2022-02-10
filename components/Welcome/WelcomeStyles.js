@@ -12,7 +12,7 @@ export const WelcomeSection = styled.section`
 
 export const DivWelcomeContent = styled.div`
   display: flex;
-  padding-top: 6rem;
+  padding-top: 5rem;
   flex-direction: column;
 `;
 

@@ -26,7 +26,13 @@ const Navbar = ({ scrollDirection, roof }) => {
     <NavContainer scrollDirection={scrollDirection} roof={roof}>
       <NavDivOne>
         <Link href="/">
-          <a style={{ display: "flex", alignItems: "center", color: "white" }}>
+          <a
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+            }}
+          >
             <DiCssdeck size="4rem" />
             <PortfolioText>Portfolio</PortfolioText>
           </a>

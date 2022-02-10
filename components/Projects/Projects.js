@@ -79,7 +79,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
               </ProjectImgDiv>
               <ProjectInfoDiv>
                 <ProjectTitleDiv>
-                  <SectionMiniParagraph project>
+                  <SectionMiniParagraph project blacky>
                     Featured Project
                   </SectionMiniParagraph>
                   <ProjectInfoName>{item.title}</ProjectInfoName>
