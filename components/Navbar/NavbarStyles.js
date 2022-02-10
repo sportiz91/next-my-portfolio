@@ -6,8 +6,8 @@ export const NavContainer = styled.section`
   padding: 0 3rem;
   display: grid;
   position: fixed;
-  visibility: ${(props) =>
-    props.scrollDirection === "down" ? "hidden" : "visible"};
+  transform: ${(props) =>
+    props.scrollDirection === "down" ? "translateY(-101px)" : "translateY(0)"};
   z-index: 1;
   grid-template-columns: repeat(10, 1fr);
   grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
@@ -16,6 +16,7 @@ export const NavContainer = styled.section`
   border-bottom: 1px solid ${(props) => props.theme.colors.button3};
   /* background-color: rgba(6 9 16 / 0.3); */
   background-color: rgba(0 0 0 / 0.9);
+  transition: 0.2s ease;
 
   @media ${(props) => props.theme.breakpoints.break864} {
     grid-template-columns: 1fr repeat(8, 1fr) minmax(131.09px, 1fr);

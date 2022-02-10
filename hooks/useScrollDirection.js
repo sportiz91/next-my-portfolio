@@ -8,19 +8,15 @@ const useScrollDirection = (initialDirection) => {
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
-    console.log(lastScrollY);
+    // console.log(lastScrollY);
 
     const updateScrollDir = () => {
       const scrollY = window.pageYOffset;
-      console.log(`scrollY: ${scrollY}`);
-
-      if (Math.abs(scrollY - lastScrollY) < 0) {
-        return;
-      }
+      // console.log(`scrollY: ${scrollY}`);
 
       setScrollDir(scrollY > lastScrollY ? SCROLL_DOWN : SCROLL_UP);
       lastScrollY = scrollY > 0 ? scrollY : 0;
-      console.log(`lastScrollY: ${lastScrollY}`);
+      // console.log(`lastScrollY: ${lastScrollY}`);
     };
 
     const onScroll = () => {

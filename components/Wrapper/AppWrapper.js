@@ -18,8 +18,8 @@ import useScrollDirection from "../../hooks/useScrollDirection";
 
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
-  // const [windowHeight, setWindowHeight] = useState(0);
-  // const [windowScroll, setWindowScroll] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+  const [windowScroll, setWindowScroll] = useState(0);
   const scrollDirection = useScrollDirection("");
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(1650);
@@ -39,30 +39,18 @@ const AppWrapper = () => {
     }
   };
 
-  // const handleScroll = () => {
-  //   const windowHeight = window.innerHeight;
-  //   const windowScroll = window.scrollY;
+  const handleScroll = () => {
+    const windowHeight = window.innerHeight;
+    const windowScroll = window.scrollY;
 
-  //   // console.log(windowScroll);
-  //   // console.log(lastScroll);
+    setWindowHeight(windowHeight);
+    setWindowScroll(windowScroll);
+  };
 
-  //   // if (windowScroll <= lastScroll) {
-  //   //   setVisible(true);
-  //   // } else {
-  //   //   setVisible(false);
-  //   // }
-
-  //   // setLastScroll(windowScroll);
-  //   // console.log(lastScroll);
-
-  //   setWindowHeight(windowHeight);
-  //   setWindowScroll(windowScroll);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => handleScroll());
-  //   return window.removeEventListener("scroll", () => handleScroll());
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", () => handleScroll());
+    return window.removeEventListener("scroll", () => handleScroll());
+  }, []);
 
   //Remember -> add the props to Layout if I opt for the above option.
   return (
@@ -76,10 +64,10 @@ const AppWrapper = () => {
       <Navbar scrollDirection={scrollDirection} />
       <Layout>
         <Welcome />
-        <Projects />
-        <Technologies />
-        <About />
-        <Footer />
+        <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
+        <Technologies windowHeight={windowHeight} windowScroll={windowScroll} />
+        <About windowHeight={windowHeight} windowScroll={windowScroll} />
+        <Footer windowHeight={windowHeight} windowScroll={windowScroll} />
       </Layout>
     </AppDivWrapper>
   );
