@@ -131,8 +131,8 @@ export const SectionLine = styled.span`
   width: 100%;
   height: 1px;
   /* background: ${(props) => props.theme.colors.button2}; */
-  background: rgba(255 255 255 / 0.5);
-  opacity: 0.5;
+  background: ${(props) => props.theme.colors.links};
+  opacity: 0.2;
   margin-top: 15px;
 `;
 
@@ -148,6 +148,8 @@ export const SectionTitle = styled.h1`
       ? props.theme.colors.button3
       : props.primary
       ? props.theme.colors.primary
+      : props.links
+      ? props.theme.colors.links
       : props.theme.colors.paragraph};
   margin-bottom: ${(props) =>
     props.nomargin
