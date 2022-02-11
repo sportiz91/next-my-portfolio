@@ -1,27 +1,30 @@
-import { AppDivWrapper } from "./AppWrapperStyles";
-
-import Layout from "../../layout/Layout";
-import Navbar from "../../components/Navbar/Navbar";
-import { HiddenNavbar } from "../Navbar/NavbarStyles";
-import { BurgerDiv, BurgerSpan } from "../Navbar/NavbarStyles";
 import { useState, useEffect } from "react";
-import HiddenNavbarItems from "../Navbar/HiddenNavbarItems";
+
+import useScrollDirection from "../../hooks/useScrollDirection";
 import useClick from "../../hooks/useClick";
 import useDisabled from "../../hooks/useDisabled";
+
+import { AppDivWrapper } from "./AppWrapperStyles";
+
+import { HiddenNavbar, BurgerDiv, BurgerSpan } from "../Navbar/NavbarStyles";
+import HiddenNavbarItems from "../Navbar/HiddenNavbarItems";
+import Navbar from "../Navbar/Navbar";
+import Socials from "../Socials/Socials";
+import Contact from "../Contact/Contact";
+import Layout from "../../layout/Layout";
+
 import Welcome from "../Welcome/Welcome";
 import Projects from "../Projects/Projects";
 import Technologies from "../Technologies/Technologies";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 
-import useScrollDirection from "../../hooks/useScrollDirection";
-
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowScroll, setWindowScroll] = useState(0);
   const [roof, setRoof] = useState(true);
-  const scrollDirection = useScrollDirection("");
+  const scrollDirection = useScrollDirection();
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(1650);
 
@@ -66,6 +69,8 @@ const AppWrapper = () => {
         <BurgerSpan state={mobileNavbar} />
       </BurgerDiv>
       <Navbar scrollDirection={scrollDirection} roof={roof} />
+      <Socials />
+      <Contact />
       <Layout>
         <Welcome />
         <Projects windowHeight={windowHeight} windowScroll={windowScroll} />

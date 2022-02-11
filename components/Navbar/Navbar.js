@@ -1,24 +1,17 @@
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillInstagram,
-  AiFillCaretRight,
-} from "react-icons/ai";
+import { AiFillCaretRight } from "react-icons/ai";
 
 import { DiCssdeck } from "react-icons/di";
 
 import {
   NavContainer,
   NavDivOne,
+  AnchorLogo,
   PortfolioText,
   NavDivTwo,
   NavNumber,
-  NavDivThree,
-  AnchorNav,
-  IconDiv,
 } from "./NavbarStyles";
 
-import { MiddleText, AnchorRightNav } from "../../globalcomponents";
+import { MiddleText, AnchorNavMenuOrShow } from "../../globalcomponents";
 
 import Link from "next/link";
 
@@ -27,48 +20,46 @@ const Navbar = ({ scrollDirection, roof }) => {
     <NavContainer scrollDirection={scrollDirection} roof={roof}>
       <NavDivOne>
         <Link href="/">
-          <a
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              position: "relative",
-              top: "2.5px",
-            }}
-          >
+          <AnchorLogo>
             <DiCssdeck size="4rem" />
             <PortfolioText>Portfolio</PortfolioText>
-          </a>
+          </AnchorLogo>
         </Link>
       </NavDivOne>
 
       <NavDivTwo>
         <Link href="#projects">
-          <AnchorRightNav>
+          <AnchorNavMenuOrShow>
             <NavNumber>01.</NavNumber>
             <MiddleText nav>Projects</MiddleText>
             <AiFillCaretRight className="icon" />
-          </AnchorRightNav>
+          </AnchorNavMenuOrShow>
         </Link>
 
         <Link href="#technologies">
-          <AnchorRightNav>
+          <AnchorNavMenuOrShow>
             <NavNumber>02.</NavNumber>
             <MiddleText nav>Technologies</MiddleText>
             <AiFillCaretRight className="icon" />
-          </AnchorRightNav>
+          </AnchorNavMenuOrShow>
         </Link>
 
         <Link href="#about">
-          <AnchorRightNav>
+          <AnchorNavMenuOrShow>
             <NavNumber>03.</NavNumber>
             <MiddleText nav>About</MiddleText>
             <AiFillCaretRight className="icon" />
-          </AnchorRightNav>
+          </AnchorNavMenuOrShow>
         </Link>
       </NavDivTwo>
+    </NavContainer>
+  );
+};
 
-      {/* <NavDivThree>
+export default Navbar;
+
+{
+  /* <NavDivThree>
         <AnchorNav
           href="https://github.com/sportiz91"
           target="_blank"
@@ -98,9 +89,5 @@ const Navbar = ({ scrollDirection, roof }) => {
             <AiFillInstagram size="3rem" />
           </IconDiv>
         </AnchorNav>
-      </NavDivThree> */}
-    </NavContainer>
-  );
-};
-
-export default Navbar;
+      </NavDivThree> */
+}

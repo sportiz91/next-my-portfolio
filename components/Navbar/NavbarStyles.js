@@ -9,14 +9,14 @@ export const NavContainer = styled.section`
   justify-content: space-between;
   position: fixed;
   transform: ${(props) =>
-    props.scrollDirection === "down" ? "translateY(-101px)" : "translateY(0)"};
+    props.scrollDirection === "down" ? "translateY(-80px)" : "translateY(0)"};
   z-index: 1;
   background-color: ${(props) =>
     props.roof ? props.theme.background.bg1 : props.theme.background.nav};
   backdrop-filter: ${(props) => (props.roof ? "" : "blur(10px)")};
   box-shadow: ${(props) =>
     props.roof ? "" : "0 10px 30px -10px rgb(0 0 0 / 0.75)"};
-  transition: 0.2s ease;
+  transition: 0.4s ease;
 
   @media ${(props) => props.theme.breakpoints.break864} {
     grid-template-columns: 1fr repeat(8, 1fr) minmax(131.09px, 1fr);
@@ -24,20 +24,30 @@ export const NavContainer = styled.section`
   }
 `;
 
-export const PortfolioText = styled.span`
-  font-size: 2rem;
-  margin-left: 8px;
+export const NavDivOne = styled.div``;
+
+export const AnchorLogo = styled.a`
+  display: flex;
+  align-items: center;
+  color: ${(props) => props.theme.colors.links};
+  position: relative;
+  top: 2.5px;
+  cursor: pointer;
 
   &:hover {
-    border-bottom: 1px solid ${(props) => props.theme.colors.button3};
+    & span {
+      border-bottom: 1px solid ${(props) => props.theme.colors.button3};
+    }
   }
 `;
 
-export const NavDivOne = styled.div``;
+export const PortfolioText = styled.span`
+  font-size: 2rem;
+  margin-left: 8px;
+`;
 
 export const NavDivTwo = styled.div`
   display: flex;
-  justify-content: center;
 
   @media ${(props) => props.theme.breakpoints.break864} {
     display: ${(props) => (props.mobileBoolean ? "inline" : "none")};
@@ -62,25 +72,6 @@ export const NavDivThree = styled.div`
     top: 78%;
     left: 2.55%;
   }
-`;
-
-export const IconDiv = styled.div`
-  padding: 6px 6px 1px;
-  background-color: transparent;
-  border-radius: 20px;
-  transform: scale(1);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-
-  &:hover {
-    background-color: #212d45;
-    color: ${(props) => props.theme.colors.button3};
-    transform: scale(1.05);
-  }
-`;
-
-export const AnchorNav = styled.a`
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 3rem;
 `;
 
 export const BurgerDiv = styled.div`

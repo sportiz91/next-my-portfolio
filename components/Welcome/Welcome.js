@@ -1,16 +1,13 @@
 import {
   WelcomeSection,
-  DivWelcomeContent,
+  WelcomeParagraph,
   WelcomeButtonsDiv,
-  DivWelcomeSVG,
 } from "./WelcomeStyles";
 
 import {
   SectionTitle,
-  SectionParagraph,
   SectionMiniParagraph,
   SectionParagraphColor,
-  PageSection,
 } from "../../globalcomponents";
 
 import { SectionButton } from "../../globalcomponents/Buttons";
@@ -27,26 +24,23 @@ const Welcome = () => {
   }, []);
 
   return (
-    <PageSection showSection={showSection}>
-      <DivWelcomeContent>
-        <SectionMiniParagraph project margin>
-          Hi, my name is
-        </SectionMiniParagraph>
-        <SectionTitle name>Santiago Ortiz.</SectionTitle>
-        <SectionTitle welcome>Welcome to my Portfolio Website.</SectionTitle>
-        <SectionParagraph>
-          Full-Stack Developer, BA in Economics, Master in Finance. I'm
-          self-taught and I love making things on the web, focusing mainly on{" "}
-          <SectionParagraphColor>JavaScript</SectionParagraphColor> and the{" "}
-          <SectionParagraphColor>MERN Stack.</SectionParagraphColor>
-        </SectionParagraph>
-        <WelcomeButtonsDiv>
-          <SectionButton href="#projects">See Projects</SectionButton>
-          <SectionButton href="#about">About me</SectionButton>
-        </WelcomeButtonsDiv>
-      </DivWelcomeContent>
-      <DivWelcomeSVG>{/* <BackgroundAnimation /> */}</DivWelcomeSVG>
-    </PageSection>
+    <WelcomeSection showSection={showSection}>
+      <SectionMiniParagraph blue>Hi, my name is</SectionMiniParagraph>
+      <SectionTitle welcome primary>
+        Santiago Ortiz.
+      </SectionTitle>
+      <SectionTitle sub>Welcome to my Portfolio Website.</SectionTitle>
+      <WelcomeParagraph>
+        Full-Stack Developer, BA in Economics, Master in Finance. I'm
+        self-taught and I love making things on the web, focusing mainly on{" "}
+        <SectionParagraphColor>JavaScript</SectionParagraphColor> and the{" "}
+        <SectionParagraphColor>MERN Stack.</SectionParagraphColor>
+      </WelcomeParagraph>
+      <WelcomeButtonsDiv>
+        <SectionButton href="#projects">See Projects</SectionButton>
+        <SectionButton href="#about">About me</SectionButton>
+      </WelcomeButtonsDiv>
+    </WelcomeSection>
   );
 };
 

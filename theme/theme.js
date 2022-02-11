@@ -5,7 +5,7 @@ export const theme = {
   colors: {
     primary: "rgba(255 255 255)",
     paragraph: "rgba(255 255 255 / 0.5)",
-    links: "rgba(255 255 255 / 1)",
+    links: "rgba(255 255 255 / 0.75)",
     button1: "rgba(148 93 214 / 1)",
     button2: "rgba(244 103 55 / 1)",
     button2o: "rgba(244 103 55 / 0.3)",

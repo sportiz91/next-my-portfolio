@@ -4,6 +4,8 @@ import {
   PageSection,
   MiddleText,
   SectionMiniParagraph,
+  AnchorSocials,
+  DivSocialsIcon,
 } from "../../globalcomponents";
 
 import {
@@ -12,7 +14,7 @@ import {
   FooterSectionDiv,
 } from "./FooterStyles";
 
-import { NavDivThree, AnchorNav, IconDiv } from "../Navbar/NavbarStyles";
+import { NavDivThree } from "../Navbar/NavbarStyles";
 
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
@@ -56,35 +58,35 @@ const Footer = ({ windowHeight, windowScroll }) => {
             Building things for the web.
           </SectionMiniParagraph>
           <NavDivThree>
-            <AnchorNav
+            <AnchorSocials
               href="https://github.com/sportiz91"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconDiv>
+              <DivSocialsIcon>
                 <AiFillGithub size="3rem" />
-              </IconDiv>
-            </AnchorNav>
+              </DivSocialsIcon>
+            </AnchorSocials>
 
-            <AnchorNav
+            <AnchorSocials
               href="https://www.linkedin.com/in/santiago-pablo-ortiz-12151266/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconDiv>
+              <DivSocialsIcon>
                 <AiFillLinkedin size="3rem" />
-              </IconDiv>
-            </AnchorNav>
+              </DivSocialsIcon>
+            </AnchorSocials>
 
-            <AnchorNav
+            <AnchorSocials
               href="https://www.instagram.com/santimarkets/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconDiv>
+              <DivSocialsIcon>
                 <AiFillInstagram size="3rem" />
-              </IconDiv>
-            </AnchorNav>
+              </DivSocialsIcon>
+            </AnchorSocials>
           </NavDivThree>
         </FooterOrBannerDiv>
       </FooterSectionDiv>
