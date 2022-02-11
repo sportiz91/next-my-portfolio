@@ -12,12 +12,13 @@ import {
   NavDivOne,
   PortfolioText,
   NavDivTwo,
+  NavNumber,
   NavDivThree,
   AnchorNav,
   IconDiv,
 } from "./NavbarStyles";
 
-import { MiddleText } from "../../globalcomponents";
+import { MiddleText, AnchorRightNav } from "../../globalcomponents";
 
 import Link from "next/link";
 
@@ -41,28 +42,31 @@ const Navbar = ({ scrollDirection, roof }) => {
 
       <NavDivTwo>
         <Link href="#projects">
-          <a>
-            <MiddleText first>Projects</MiddleText>
+          <AnchorRightNav>
+            <NavNumber>01.</NavNumber>
+            <MiddleText nav>Projects</MiddleText>
             <AiFillCaretRight className="icon" />
-          </a>
+          </AnchorRightNav>
         </Link>
 
         <Link href="#technologies">
-          <a>
-            <MiddleText>Technologies</MiddleText>
+          <AnchorRightNav>
+            <NavNumber>02.</NavNumber>
+            <MiddleText nav>Technologies</MiddleText>
             <AiFillCaretRight className="icon" />
-          </a>
+          </AnchorRightNav>
         </Link>
 
         <Link href="#about">
-          <a>
-            <MiddleText>About</MiddleText>
+          <AnchorRightNav>
+            <NavNumber>03.</NavNumber>
+            <MiddleText nav>About</MiddleText>
             <AiFillCaretRight className="icon" />
-          </a>
+          </AnchorRightNav>
         </Link>
       </NavDivTwo>
 
-      <NavDivThree>
+      {/* <NavDivThree>
         <AnchorNav
           href="https://github.com/sportiz91"
           target="_blank"
@@ -92,7 +96,7 @@ const Navbar = ({ scrollDirection, roof }) => {
             <AiFillInstagram size="3rem" />
           </IconDiv>
         </AnchorNav>
-      </NavDivThree>
+      </NavDivThree> */}
     </NavContainer>
   );
 };

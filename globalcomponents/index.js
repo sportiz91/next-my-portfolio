@@ -27,43 +27,54 @@ export const SectionMiniParagraph = styled.p`
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
 `;
 
-export const MiddleText = styled.span`
-  font-size: ${({ mobile, footer }) =>
-    mobile ? "4rem" : footer ? "1.65rem" : "2rem"};
-  color: ${(props) => props.theme.colors.primary};
-  margin-bottom: ${(props) =>
-    props.footer ? "0" : "5px"}; /* adjustment to center */
-  margin-left: ${(props) => (props.first ? "65px" : "0")};
-  transition: color 0.5s ease;
+export const AnchorRightNav = styled.a`
   position: relative;
-  cursor: ${(props) => (props.timeline ? "pointer" : "")};
-  bottom: ${(props) => (props.adj ? "2.5px" : "")};
+  cursor: pointer;
 
-  & + .icon {
+  & .icon {
     color: rgba(255 255 255 / 0.75);
-    font-size: 2rem;
-    margin-right: 45px;
+    font-size: 1.75rem;
+    margin-right: 25px;
     position: relative;
     top: 4px;
     transition: color 0.5s ease;
     visibility: hidden;
   }
 
-  & + .icon.mobile {
+  & .icon.mobile {
     font-size: 3rem;
     margin: 0;
   }
 
   &:hover {
-    color: ${(props) => props.theme.colors.button3};
-    font-weight: 500;
     left: 6px;
 
-    & + .icon {
+    & span {
+      color: ${(props) => props.theme.colors.button3};
+    }
+
+    & .icon {
       color: ${(props) => props.theme.colors.button3};
       left: 6px;
       visibility: visible;
     }
+  }
+`;
+
+export const MiddleText = styled.span`
+  font-size: ${({ mobile, footer }) =>
+    mobile ? "4rem" : footer ? "1.65rem" : "1.8rem"};
+  color: ${(props) => props.theme.colors.primary};
+  margin-bottom: ${(props) =>
+    props.footer ? "0" : "5px"}; /* adjustment to center */
+  transition: color 0.5s ease;
+  position: relative;
+  cursor: ${(props) => (props.timeline ? "pointer" : "")};
+  bottom: ${(props) => (props.adj ? "2.5px" : "")};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.button3};
+    left: ${(props) => (props.nav ? "" : "6px")};
   }
 `;
 
@@ -89,8 +100,9 @@ export const SectionParagraphColor = styled.span`
 `;
 
 export const SectionTitle = styled.h1`
-  font-size: ${(props) => (props.sub || props.welcome ? "5rem" : "7rem")};
-  width: ${(props) => (props.notmain ? "auto" : "150%")};
+  font-size: ${(props) =>
+    props.sub ? "5rem" : props.welcome ? "5rem" : "7rem"};
+  /* width: ${(props) => (props.notmain ? "auto" : "150%")}; */
   /* background: linear-gradient(135deg, white 20%, rgba(255 255 255 / 0.66) 60%); */
   /* background: ${(props) =>
     props.projects
@@ -116,7 +128,7 @@ export const SectionTitle = styled.h1`
 
 export const SectionParagraph = styled.p`
   font-size: 2rem;
-  width: 125%;
+  max-width: 600px;
   color: ${(props) => props.theme.colors.paragraph};
   line-height: 1.6;
   font-weight: 100;

@@ -8,13 +8,13 @@ import {
 import {
   SectionTitle,
   SectionParagraph,
-  SpanUnderline,
   SectionMiniParagraph,
+  SectionParagraphColor,
+  PageSection,
 } from "../../globalcomponents";
 
 import { SectionButton } from "../../globalcomponents/Buttons";
 
-import BackgroundAnimation from "./BackgroundAnimation";
 import { useEffect, useState } from "react";
 
 const Welcome = () => {
@@ -27,17 +27,18 @@ const Welcome = () => {
   }, []);
 
   return (
-    <WelcomeSection showSection={showSection}>
+    <PageSection showSection={showSection}>
       <DivWelcomeContent>
         <SectionMiniParagraph project margin>
           Hi, my name is
         </SectionMiniParagraph>
         <SectionTitle name>Santiago Ortiz.</SectionTitle>
-        <SectionTitle welcome>Welcome to my Portfolio.</SectionTitle>
+        <SectionTitle welcome>Welcome to my Portfolio Website.</SectionTitle>
         <SectionParagraph>
           Full-Stack Developer, BA in Economics, Master in Finance. I'm
-          self-taught and I love making things on the web, focusing mainly on
-          JavaScript and the MERN Stack.
+          self-taught and I love making things on the web, focusing mainly on{" "}
+          <SectionParagraphColor>JavaScript</SectionParagraphColor> and the{" "}
+          <SectionParagraphColor>MERN Stack.</SectionParagraphColor>
         </SectionParagraph>
         <WelcomeButtonsDiv>
           <SectionButton href="#projects">See Projects</SectionButton>
@@ -45,7 +46,7 @@ const Welcome = () => {
         </WelcomeButtonsDiv>
       </DivWelcomeContent>
       <DivWelcomeSVG>{/* <BackgroundAnimation /> */}</DivWelcomeSVG>
-    </WelcomeSection>
+    </PageSection>
   );
 };
 

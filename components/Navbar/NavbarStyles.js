@@ -4,18 +4,13 @@ export const NavContainer = styled.section`
   height: ${(props) => (props.roof ? "105px" : "80px")};
   width: 100%;
   padding: 0 3rem;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   transform: ${(props) =>
     props.scrollDirection === "down" ? "translateY(-101px)" : "translateY(0)"};
   z-index: 1;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-areas: "logo menu menu menu menu menu menu menu menu socials";
-  align-items: center;
-  /* border-bottom: 1px solid rgba(208 187 87 / 0.3); */
-  /* border-bottom: 1px solid ${(props) => props.theme.colors.button3}; */
-  /* background-color: rgba(6 9 16 / 0.3); */
-  /* background-color: rgba(0 0 0 / 0.9); */
   background-color: ${(props) =>
     props.roof ? props.theme.background.bg1 : props.theme.background.nav};
   backdrop-filter: ${(props) => (props.roof ? "" : "blur(10px)")};
@@ -38,12 +33,9 @@ export const PortfolioText = styled.span`
   }
 `;
 
-export const NavDivOne = styled.div`
-  grid-area: logo;
-`;
+export const NavDivOne = styled.div``;
 
 export const NavDivTwo = styled.div`
-  grid-area: menu;
   display: flex;
   justify-content: center;
 
@@ -52,8 +44,14 @@ export const NavDivTwo = styled.div`
   }
 `;
 
+export const NavNumber = styled.p`
+  font-size: 1.7rem;
+  color: ${(props) => props.theme.colors.button3};
+  display: inline;
+  margin-right: 1.1rem;
+`;
+
 export const NavDivThree = styled.div`
-  grid-area: socials;
   display: flex;
   justify-content: center;
   justify-self: end;

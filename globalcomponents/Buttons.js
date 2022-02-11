@@ -15,7 +15,6 @@ export const SectionButton = styled.a`
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${(props) => props.theme.colors.button3};
-    border: 2px solid transparent;
+    background: rgba(29 222 255 / 0.2);
   }
 `;
