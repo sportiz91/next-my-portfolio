@@ -55,7 +55,7 @@ export const AnchorRightNav = styled.a`
 
     & .icon {
       color: ${(props) => props.theme.colors.button3};
-      left: 6px;
+      left: 2px;
       visibility: visible;
     }
   }

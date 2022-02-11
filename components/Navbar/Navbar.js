@@ -32,6 +32,8 @@ const Navbar = ({ scrollDirection, roof }) => {
               display: "flex",
               alignItems: "center",
               color: "white",
+              position: "relative",
+              top: "2.5px",
             }}
           >
             <DiCssdeck size="4rem" />
