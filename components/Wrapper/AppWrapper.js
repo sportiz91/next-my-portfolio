@@ -47,7 +47,7 @@ const AppWrapper = () => {
     const windowHeight = window.innerHeight;
     const windowScroll = window.scrollY;
 
-    console.log(windowScroll);
+    // console.log(windowScroll);
 
     windowScroll > 0 ? setRoof(false) : setRoof(true);
 

@@ -16,9 +16,10 @@ export const ProjectDiv = styled.div`
     padding-top: 3rem;
   }
 
-  &:nth-child(2n) {
+  /* &:nth-child(2n) {
     & div:nth-child(1) {
       grid-area: 1 / 6 / 2 / 13;
+      width: 100%;
     }
 
     & div:nth-child(2) {
@@ -26,9 +27,22 @@ export const ProjectDiv = styled.div`
 
       & .info {
         width: 100%;
+        text-align: left;
+      }
+
+      & .project-title-div {
+        text-align: left;
+      }
+
+      & .tags {
+        justify-content: start;
+      }
+
+      & .socials {
+        justify-content: start;
       }
     }
-  }
+  } */
 
   &:last-child {
     padding-bottom: 12rem;
@@ -37,12 +51,12 @@ export const ProjectDiv = styled.div`
 
 export const ProjectImgDiv = styled.div`
   grid-area: 1 / 1 / 2 / 8;
-  height: 410px;
-  width: 100%;
+  height: 375px;
+  width: 550px;
   position: relative;
-  border-radius: 25px;
-  opacity: 0.5;
-  box-shadow: 0 0 50px 5px rgba(0 0 0 / 0.5);
+  border-radius: 2px;
+  opacity: 0.7;
+  box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.75);
   transition: 0.5s ease;
 
   &:hover {
@@ -53,7 +67,7 @@ export const ProjectImgDiv = styled.div`
   & .project-img {
     height: 100%;
     width: 100%;
-    border-radius: 25px;
+    border-radius: 2px;
   }
 `;
 
@@ -61,11 +75,12 @@ export const ProjectImgAnchor = styled.a`
   height: 100%;
   width: 100%;
   position: absolute;
-  border-radius: 25px;
+  border-radius: 2px;
 
   &:hover div {
     &:before {
-      background: ${(props) => props.theme.colors.button2};
+      background: ${(props) => props.theme.colors.button3};
+      opacity: 0.2;
     }
   }
 `;
@@ -73,16 +88,16 @@ export const ProjectImgAnchor = styled.a`
 export const ProjectImgOverlay = styled.div`
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 2px;
 
   &:before {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
-    background: ${(props) => props.theme.colors.paragraph};
-    opacity: 0.3;
-    border-radius: 25px;
+    background: ${(props) => props.theme.colors.button3};
+    opacity: 0.2;
+    border-radius: 2px;
     transition: 0.5s ease;
   }
 `;
@@ -103,12 +118,12 @@ export const ProjectTitleDiv = styled.div``;
 
 export const ProjectInfoName = styled.h2`
   color: ${(props) =>
-    props.other ? props.theme.colors.button3 : props.theme.colors.primary};
+    props.other ? props.theme.colors.button3 : props.theme.colors.links};
   font-size: ${(props) => (props.other ? "2rem" : "")};
 `;
 
 export const ProjectInfoDescription = styled.div`
-  width: ${(props) => (props.other ? "100%" : "111%")};
+  width: 100%;
   padding: ${(props) => (props.nopadding ? "0" : "2rem")};
   color: ${(props) => props.theme.colors.paragraph};
   background: ${(props) =>
@@ -119,6 +134,7 @@ export const ProjectInfoDescription = styled.div`
 `;
 
 export const ProjectInfoTags = styled.div`
+  width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -126,6 +142,7 @@ export const ProjectInfoTags = styled.div`
 `;
 
 export const ProjectSocialsDiv = styled.div`
+  width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -133,8 +150,7 @@ export const ProjectSocialsDiv = styled.div`
 `;
 
 export const ProjectSocialsAnchor = styled.a`
-  font-size: 2rem;
-  color: ${(props) => props.theme.colors.paragraph};
+  color: ${(props) => props.theme.colors.links};
   transition: 0.5s ease;
 
   &:hover {

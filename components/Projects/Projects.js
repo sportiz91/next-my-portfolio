@@ -79,8 +79,8 @@ const Projects = ({ windowHeight, windowScroll }) => {
                 </ProjectImgAnchor>
               </ProjectImgDiv>
               <ProjectInfoDiv>
-                <ProjectTitleDiv>
-                  <SectionMiniParagraph project blacky>
+                <ProjectTitleDiv className="project-title-div">
+                  <SectionMiniParagraph project blue>
                     Featured Project
                   </SectionMiniParagraph>
                   <ProjectInfoName>{item.title}</ProjectInfoName>
@@ -89,18 +89,18 @@ const Projects = ({ windowHeight, windowScroll }) => {
                 <ProjectInfoDescription className="info">
                   {item.description}
                 </ProjectInfoDescription>
-                <ProjectInfoTags>
+                <ProjectInfoTags className="tags">
                   {item.tags.map((tech, index) => {
                     return <SectionMiniParagraph>{tech}</SectionMiniParagraph>;
                   })}
                 </ProjectInfoTags>
-                <ProjectSocialsDiv>
+                <ProjectSocialsDiv className="socials">
                   <ProjectSocialsAnchor
                     href={item.links[0]}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <AiFillGithub size={"3rem"} />
+                    <AiFillGithub size={"2.5rem"} />
                   </ProjectSocialsAnchor>
 
                   <ProjectSocialsAnchor
@@ -108,7 +108,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FiExternalLink size={"3rem"} />
+                    <FiExternalLink size={"2.5rem"} />
                   </ProjectSocialsAnchor>
                 </ProjectSocialsDiv>
               </ProjectInfoDiv>
