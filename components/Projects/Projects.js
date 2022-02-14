@@ -7,6 +7,7 @@ import {
   SectionLine,
   SectionMiniParagraph,
   SectionDivSeparator,
+  ProjectInfoOrTechName,
   SectionSeparator,
 } from "../../globalcomponents";
 
@@ -15,7 +16,6 @@ import {
   ProjectsWrapper,
   ProjectImgDiv,
   ProjectInfoDiv,
-  ProjectInfoName,
   ProjectInfoDescription,
   ProjectInfoTags,
   ProjectSocialsDiv,
@@ -28,7 +28,6 @@ import {
 import OtherProjects from "./OtherProjects";
 
 import { AiFillGithub } from "react-icons/ai";
-import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { FiExternalLink } from "react-icons/fi";
 
 import data from "../../utils/data";
@@ -86,7 +85,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
                   <SectionMiniParagraph project blue>
                     Featured Project
                   </SectionMiniParagraph>
-                  <ProjectInfoName>{item.title}</ProjectInfoName>
+                  <ProjectInfoOrTechName>{item.title}</ProjectInfoOrTechName>
                 </ProjectTitleDiv>
 
                 <ProjectInfoDescription className="info">

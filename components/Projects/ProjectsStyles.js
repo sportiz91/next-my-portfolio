@@ -84,12 +84,6 @@ export const ProjectInfoDiv = styled.div`
 
 export const ProjectTitleDiv = styled.div``;
 
-export const ProjectInfoName = styled.h2`
-  color: ${(props) =>
-    props.other ? props.theme.colors.button3 : props.theme.colors.links};
-  font-size: ${(props) => (props.other ? "2rem" : "")};
-`;
-
 export const ProjectInfoDescription = styled.div`
   width: 100%;
   padding: ${(props) => (props.nopadding ? "0" : "2rem")};

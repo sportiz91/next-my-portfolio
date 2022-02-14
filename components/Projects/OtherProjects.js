@@ -3,6 +3,7 @@ import {
   SectionMiniParagraph,
   AnchorNavMenuOrShow,
   MiddleText,
+  ProjectInfoOrTechName,
 } from "../../globalcomponents";
 
 import {
@@ -12,11 +13,7 @@ import {
   ProjectLinksSourceDiv,
 } from "./OtherProjectsStyles";
 
-import {
-  ProjectInfoDescription,
-  ProjectInfoName,
-  ProjectInfoTags,
-} from "./ProjectsStyles";
+import { ProjectInfoDescription, ProjectInfoTags } from "./ProjectsStyles";
 
 import {
   AiFillCaretRight,
@@ -66,7 +63,9 @@ const OtherProjects = () => {
                   </a>
                 </ProjectLinksSourceDiv>
               </ProjectLinksDiv>
-              <ProjectInfoName other>{item.title}</ProjectInfoName>
+              <ProjectInfoOrTechName other blue>
+                {item.title}
+              </ProjectInfoOrTechName>
               <ProjectInfoDescription nobackground nopadding other>
                 {item.description}
               </ProjectInfoDescription>

@@ -10,6 +10,15 @@ export const PageSection = styled.section`
     props.about ? "10rem" : props.footer ? "0" : "25rem"};
 `;
 
+export const SectionParagraph = styled.p`
+  font-size: 2rem;
+  max-width: 600px;
+  color: ${(props) => props.theme.colors.paragraph};
+  line-height: 1.6;
+  font-weight: 100;
+  margin-bottom: 5rem;
+`;
+
 export const SectionMiniParagraph = styled.p`
   color: ${(props) =>
     props.blue ? props.theme.colors.button3 : props.theme.colors.paragraph};
@@ -75,6 +84,18 @@ export const MiddleText = styled.span`
     color: ${(props) => props.theme.colors.button3};
     left: ${(props) => (props.nav ? "" : "6px")};
   }
+`;
+
+export const ProjectInfoOrTechName = styled.p`
+  font-size: ${(props) =>
+    props.other ? "2rem" : props.tech ? "1.5rem" : "2.3rem"};
+  color: ${(props) =>
+    props.paragraph
+      ? props.theme.colors.paragraph
+      : props.blue
+      ? props.theme.colors.button3
+      : props.theme.colors.links};
+  font-weight: ${(props) => (props.tech ? "400" : "700")};
 `;
 
 export const DivSocialsContainer = styled.div`

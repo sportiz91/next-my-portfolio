@@ -1,12 +1,9 @@
-import {
-  WelcomeSection,
-  WelcomeParagraph,
-  WelcomeButtonsDiv,
-} from "./WelcomeStyles";
+import { WelcomeSection, WelcomeButtonsDiv } from "./WelcomeStyles";
 
 import {
   SectionTitle,
   SectionMiniParagraph,
+  SectionParagraph,
   SectionParagraphColor,
 } from "../../globalcomponents";
 
@@ -30,12 +27,12 @@ const Welcome = () => {
         Santiago Ortiz.
       </SectionTitle>
       <SectionTitle sub>Welcome to my Portfolio Website.</SectionTitle>
-      <WelcomeParagraph>
+      <SectionParagraph>
         Full-Stack Developer, BA in Economics, Master in Finance. I'm
         self-taught and I love making things on the web, focusing mainly on{" "}
         <SectionParagraphColor>JavaScript</SectionParagraphColor> and the{" "}
         <SectionParagraphColor>MERN Stack.</SectionParagraphColor>
-      </WelcomeParagraph>
+      </SectionParagraph>
       <WelcomeButtonsDiv>
         <SectionButton href="#projects">See Projects</SectionButton>
         <SectionButton href="#about">About me</SectionButton>

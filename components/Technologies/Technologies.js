@@ -5,23 +5,43 @@ import {
   SectionTitleAndLine,
   SectionTitle,
   SectionLine,
+  SectionParagraph,
+  SectionParagraphColor,
+  ProjectInfoOrTechName,
 } from "../../globalcomponents";
 
+import { SectionButton } from "../../globalcomponents/Buttons";
+
+// import {
+//   TechButton,
+//   TechButtonsDiv,
+//   TechDetailBrandDiv,
+//   TechDetailDiv,
+//   TechInfoDiv,
+//   TechParagraph,
+//   TechMiniParagraph,
+// } from "./TechnologiesStyles";
+
 import {
-  TechButton,
-  TechButtonsDiv,
-  TechDetailBrandDiv,
-  TechDetailDiv,
   TechInfoDiv,
-  TechParagraph,
-  TechMiniParagraph,
+  TechInfoIntroDiv,
+  TechNameAndButtonDiv,
+  TechInfoTechnologiesDiv,
+  TechNameAndArrowWrapper,
 } from "./TechnologiesStyles";
 
+import { DiReact } from "react-icons/di";
+import { FaDatabase } from "react-icons/fa";
+import { GoTools } from "react-icons/go";
+
 import data from "../../utils/data";
+import { AiFillCaretRight } from "react-icons/ai";
 
 const Technologies = ({ windowHeight, windowScroll }) => {
   const [showSection, setShowSection] = useState(false);
-  const [front, setFront] = useState("front");
+  const [front, setFront] = useState(false);
+  const [back, setBack] = useState(false);
+  const [devops, setDevops] = useState(false);
   const projectsRef = useRef();
 
   useEffect(() => {
@@ -42,59 +62,92 @@ const Technologies = ({ windowHeight, windowScroll }) => {
   return (
     <PageSection ref={projectsRef} showSection={showSection} id="technologies">
       <SectionTitleAndLine>
-        <SectionTitle projects notmain nomargin>
+        <SectionTitle sub nomargin links>
           Technologies
         </SectionTitle>
         <SectionLine tech />
       </SectionTitleAndLine>
 
-      <TechInfoDiv>
-        <TechButtonsDiv>
-          <TechButton onClick={() => setFront("front")} state={front}>
-            <TechParagraph>Front-End</TechParagraph>
-          </TechButton>
-          <TechButton onClick={() => setFront("back")} state={front}>
-            <TechParagraph>Back-End</TechParagraph>
-          </TechButton>
-          <TechButton onClick={() => setFront("devops")} state={front}>
-            <TechParagraph>DevOps & Tools</TechParagraph>
-          </TechButton>
-        </TechButtonsDiv>
+      <SectionParagraph>
+        This are the <SectionParagraphColor>technologies</SectionParagraphColor>{" "}
+        I’ve been working with recently:
+      </SectionParagraph>
 
-        <TechDetailDiv>
-          {front === "front"
-            ? data.tech[0].front.map((item, index) => {
+      <TechInfoDiv>
+        <TechInfoIntroDiv>
+          <DiReact size={"4rem"} className="icon" />
+          <TechNameAndButtonDiv className="first">
+            <ProjectInfoOrTechName>Front-End</ProjectInfoOrTechName>
+            <SectionButton tech onClick={() => setFront(!front)}>
+              Show
+            </SectionButton>
+          </TechNameAndButtonDiv>
+
+          {front ? (
+            <TechInfoTechnologiesDiv>
+              {data.tech[0].front.map((item, index) => {
                 return (
-                  <TechDetailBrandDiv>
-                    <img src={item.img} alt="logo-img" className="size" />
-                    <TechMiniParagraph className="show">
+                  <TechNameAndArrowWrapper>
+                    <AiFillCaretRight className="icon" />
+                    <ProjectInfoOrTechName key={index} tech paragraph>
                       {item.name}
-                    </TechMiniParagraph>
-                  </TechDetailBrandDiv>
-                );
-              })
-            : front === "back"
-            ? data.tech[1].back.map((item, index) => {
-                return (
-                  <TechDetailBrandDiv>
-                    <img src={item.img} alt="logo-img" className="size" />
-                    <TechMiniParagraph className="show">
-                      {item.name}
-                    </TechMiniParagraph>
-                  </TechDetailBrandDiv>
-                );
-              })
-            : data.tech[2].devops.map((item, index) => {
-                return (
-                  <TechDetailBrandDiv>
-                    <img src={item.img} alt="logo-img" className="size" />
-                    <TechMiniParagraph className="show">
-                      {item.name}
-                    </TechMiniParagraph>
-                  </TechDetailBrandDiv>
+                    </ProjectInfoOrTechName>
+                  </TechNameAndArrowWrapper>
                 );
               })}
-        </TechDetailDiv>
+            </TechInfoTechnologiesDiv>
+          ) : null}
+        </TechInfoIntroDiv>
+
+        <TechInfoIntroDiv>
+          <FaDatabase size={"3rem"} className="icon" />
+          <TechNameAndButtonDiv>
+            <ProjectInfoOrTechName>Back-End</ProjectInfoOrTechName>
+            <SectionButton tech onClick={() => setBack(!back)}>
+              Show
+            </SectionButton>
+          </TechNameAndButtonDiv>
+
+          {back ? (
+            <TechInfoTechnologiesDiv>
+              {data.tech[1].back.map((item, index) => {
+                return (
+                  <TechNameAndArrowWrapper>
+                    <AiFillCaretRight className="icon" />
+                    <ProjectInfoOrTechName key={index} tech paragraph>
+                      {item.name}
+                    </ProjectInfoOrTechName>
+                  </TechNameAndArrowWrapper>
+                );
+              })}
+            </TechInfoTechnologiesDiv>
+          ) : null}
+        </TechInfoIntroDiv>
+
+        <TechInfoIntroDiv>
+          <GoTools size={"3rem"} className="icon" />
+          <TechNameAndButtonDiv>
+            <ProjectInfoOrTechName>DevOps & Tools</ProjectInfoOrTechName>
+            <SectionButton tech onClick={() => setDevops(!devops)}>
+              Show
+            </SectionButton>
+          </TechNameAndButtonDiv>
+
+          {devops ? (
+            <TechInfoTechnologiesDiv>
+              {data.tech[2].devops.map((item, index) => {
+                return (
+                  <TechNameAndArrowWrapper>
+                    <AiFillCaretRight className="icon" />
+                    <ProjectInfoOrTechName key={index} tech paragraph>
+                      {item.name}
+                    </ProjectInfoOrTechName>
+                  </TechNameAndArrowWrapper>
+                );
+              })}
+            </TechInfoTechnologiesDiv>
+          ) : null}
+        </TechInfoIntroDiv>
       </TechInfoDiv>
     </PageSection>
   );
