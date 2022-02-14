@@ -79,7 +79,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
           <TechNameAndButtonDiv className="first">
             <ProjectInfoOrTechName>Front-End</ProjectInfoOrTechName>
             <SectionButton tech onClick={() => setFront(!front)}>
-              Show
+              {front ? "Hide" : "Show"}
             </SectionButton>
           </TechNameAndButtonDiv>
 
@@ -104,7 +104,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
           <TechNameAndButtonDiv>
             <ProjectInfoOrTechName>Back-End</ProjectInfoOrTechName>
             <SectionButton tech onClick={() => setBack(!back)}>
-              Show
+              {back ? "Hide" : "Show"}
             </SectionButton>
           </TechNameAndButtonDiv>
 
@@ -129,7 +129,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
           <TechNameAndButtonDiv>
             <ProjectInfoOrTechName>DevOps & Tools</ProjectInfoOrTechName>
             <SectionButton tech onClick={() => setDevops(!devops)}>
-              Show
+              {devops ? "Hide" : "Show"}
             </SectionButton>
           </TechNameAndButtonDiv>
 

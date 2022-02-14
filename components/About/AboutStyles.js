@@ -1,16 +1,15 @@
 import styled from "styled-components";
 
 export const AboutDivWrapper = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "left me"
-    "right right";
-  column-gap: 10rem;
-  margin-bottom: 12rem;
-  margin-top: 6rem;
+  margin: 6rem 0 12rem;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
 `;
+
+export const AboutParagraphWrapper = styled.div``;
 
 export const AboutMiniParagraph = styled.p`
   color: ${(props) => props.theme.colors.paragraph};
@@ -18,27 +17,9 @@ export const AboutMiniParagraph = styled.p`
   padding-top: 1.5rem;
 `;
 
-export const AboutLeftDiv = styled.div`
-  grid-area: left;
-
-  p {
-    &:nth-child(1) {
-      padding-top: 0;
-    }
-  }
-`;
-
-export const AboutRightDiv = styled.div`
-  grid-area: right;
-
-  p {
-    width: 96%;
-  }
-`;
-
 export const AboutImgDiv = styled.div`
-  height: 400px;
-  width: 400px;
+  height: 275px;
+  width: 275px;
   border-radius: 5px;
   grid-area: me;
 `;
@@ -70,6 +51,8 @@ export const AboutImgOverlay = styled.div`
     height: 100%;
     width: 100%;
     position: absolute;
+    background: ${(props) => props.theme.colors.button3};
+    opacity: 0.3;
   }
 `;
 
