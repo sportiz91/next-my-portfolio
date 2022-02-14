@@ -15,38 +15,6 @@ export const ProjectDiv = styled.div`
   &:nth-child(1) {
     padding-top: 3rem;
   }
-
-  /* &:nth-child(2n) {
-    & div:nth-child(1) {
-      grid-area: 1 / 6 / 2 / 13;
-      width: 100%;
-    }
-
-    & div:nth-child(2) {
-      grid-area: 1 / 1 / 2 / 5;
-
-      & .info {
-        width: 100%;
-        text-align: left;
-      }
-
-      & .project-title-div {
-        text-align: left;
-      }
-
-      & .tags {
-        justify-content: start;
-      }
-
-      & .socials {
-        justify-content: start;
-      }
-    }
-  } */
-
-  &:last-child {
-    padding-bottom: 12rem;
-  }
 `;
 
 export const ProjectImgDiv = styled.div`

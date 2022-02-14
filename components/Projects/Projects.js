@@ -6,6 +6,8 @@ import {
   SectionTitleAndLine,
   SectionLine,
   SectionMiniParagraph,
+  SectionDivSeparator,
+  SectionSeparator,
 } from "../../globalcomponents";
 
 import {
@@ -26,6 +28,7 @@ import {
 import OtherProjects from "./OtherProjects";
 
 import { AiFillGithub } from "react-icons/ai";
+import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { FiExternalLink } from "react-icons/fi";
 
 import data from "../../utils/data";
@@ -116,6 +119,10 @@ const Projects = ({ windowHeight, windowScroll }) => {
           );
         })}
       </ProjectsWrapper>
+
+      <SectionDivSeparator>
+        <SectionSeparator />
+      </SectionDivSeparator>
 
       <OtherProjects />
     </PageSection>

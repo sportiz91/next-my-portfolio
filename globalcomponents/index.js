@@ -56,6 +56,7 @@ export const AnchorNavMenuOrShow = styled.a`
     & .icon {
       color: ${(props) => props.theme.colors.button3};
       left: 2px;
+      left: ${(props) => (props.show ? "7px" : "2px")};
       visibility: visible;
     }
   }
@@ -142,7 +143,7 @@ export const SectionParagraphColor = styled.span`
 
 export const SectionTitle = styled.h1`
   font-size: ${(props) =>
-    props.welcome ? "7rem" : props.sub ? "5rem" : "4rem"};
+    props.welcome ? "7rem" : props.sub ? "5rem" : "3.5rem"};
   color: ${(props) =>
     props.blue
       ? props.theme.colors.button3
@@ -161,12 +162,19 @@ export const SectionTitle = styled.h1`
       : "4rem"};
 `;
 
+export const SectionDivSeparator = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 export const SectionSeparator = styled.hr`
-  height: 5px;
-  width: 100px;
+  height: 1px;
+  width: 200px;
   border: 0;
-  background: ${(props) => props.theme.colors.button1};
-  margin: 4rem 0;
+  background: ${(props) => props.theme.colors.links};
+  opacity: 0.2;
+  margin: 7rem 0 10rem;
 `;
 
 export const SpanUnderline = styled.span`

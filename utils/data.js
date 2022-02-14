@@ -25,7 +25,7 @@ export default {
     {
       title: "Hackernews Reader",
       description:
-        "This App gets the latest news from the Hackernews API. Now you can stay up to date with the latest tech news!",
+        "Get the latest news from Hackernews API. Stay up to date with the latest tech news!",
       github: "https://github.com/sportiz91/hackernews-newsreader",
       source: "https://hackernews-newsreader.vercel.app/",
       tags: ["React", "API", "React Testing", "JEST"],

@@ -1,6 +1,7 @@
 import {
   SectionTitle,
   SectionMiniParagraph,
+  AnchorNavMenuOrShow,
   MiddleText,
 } from "../../globalcomponents";
 
@@ -30,16 +31,16 @@ import data from "../../utils/data";
 const OtherProjects = () => {
   return (
     <>
-      <SectionTitle sub notmain other>
-        Other Projects
-      </SectionTitle>
+      <SectionTitle links>Other Projects</SectionTitle>
       <a
         href="https://github.com/sportiz91"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <MiddleText>View the archive</MiddleText>
-        <AiFillCaretRight className="icon" />
+        <AnchorNavMenuOrShow show>
+          <MiddleText>View the archive</MiddleText>
+          <AiFillCaretRight className="icon" />
+        </AnchorNavMenuOrShow>
       </a>
 
       <OtherProjectsDiv>
