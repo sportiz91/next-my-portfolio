@@ -44,8 +44,8 @@ export const TimeLinedDetailedYear = styled.h2`
   font-size: 2.5rem;
   background: linear-gradient(
     135deg,
-    white 20px,
-    rgba(255 255 255 / 0.66) 30px
+    ${(props) => props.theme.colors.links} 20px,
+    ${(props) => props.theme.colors.paragraph} 30px
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

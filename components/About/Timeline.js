@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-import { SectionTitle, MiddleText } from "../../globalcomponents";
+import {
+  SectionTitle,
+  MiddleText,
+  AnchorNavMenuOrShow,
+} from "../../globalcomponents";
 import { AiFillCaretRight } from "react-icons/ai";
 
 import TimelineDetailed from "./TimelineDetailed";
@@ -10,14 +14,14 @@ const Timeline = () => {
 
   return (
     <>
-      <SectionTitle sub timeline notmain other>
-        Timeline
-      </SectionTitle>
+      <SectionTitle links>Timeline</SectionTitle>
 
-      <MiddleText timeline onClick={() => setTimeline(!timeline)}>
-        <span>{timeline ? "Hide " : "View "}</span> timeline
-      </MiddleText>
-      <AiFillCaretRight className="icon" />
+      <AnchorNavMenuOrShow show>
+        <MiddleText timeline onClick={() => setTimeline(!timeline)}>
+          <span>{timeline ? "Hide " : "View "}</span> timeline
+        </MiddleText>
+        <AiFillCaretRight className="icon" />
+      </AnchorNavMenuOrShow>
 
       {timeline ? <TimelineDetailed /> : ""}
     </>

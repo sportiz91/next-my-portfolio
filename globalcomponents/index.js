@@ -191,11 +191,12 @@ export const SectionDivSeparator = styled.div`
 
 export const SectionSeparator = styled.hr`
   height: 1px;
-  width: 200px;
+  width: 350px;
   border: 0;
   background: ${(props) => props.theme.colors.links};
   opacity: 0.2;
   margin: 7rem 0 10rem;
+  margin: ${(props) => (props.about ? "2rem 0 10rem" : "7rem 0 10rem")};
 `;
 
 export const SpanUnderline = styled.span`

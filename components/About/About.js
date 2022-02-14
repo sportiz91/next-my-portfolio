@@ -6,6 +6,8 @@ import {
   SectionTitle,
   SectionLine,
   SectionParagraphColor,
+  SectionDivSeparator,
+  SectionSeparator,
 } from "../../globalcomponents";
 
 import { SectionButton } from "../../globalcomponents/Buttons";
@@ -150,6 +152,10 @@ const About = ({ windowHeight, windowScroll }) => {
           </AboutImgOverlay>
         </AboutImgDiv>
       </AboutDivWrapper>
+
+      <SectionDivSeparator>
+        <SectionSeparator about />
+      </SectionDivSeparator>
 
       <Timeline />
     </PageSection>
