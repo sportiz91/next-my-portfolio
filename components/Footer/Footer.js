@@ -41,10 +41,6 @@ const Footer = ({ windowHeight, windowScroll }) => {
     <PageSection ref={projectsRef} showSection={showSection} footer>
       <FooterSectionDiv>
         <FooterOrBannerDiv>
-          <FooterMobileOrMailDiv mobile>
-            <SectionMiniParagraph nomargin>CALL</SectionMiniParagraph>
-            <MiddleText footer>+54 9 11 5335 7383</MiddleText>
-          </FooterMobileOrMailDiv>
           <FooterMobileOrMailDiv>
             <SectionMiniParagraph nomargin>EMAIL</SectionMiniParagraph>
             <MiddleText footer adj>
@@ -64,7 +60,7 @@ const Footer = ({ windowHeight, windowScroll }) => {
               rel="noopener noreferrer"
             >
               <DivSocialsIcon>
-                <AiFillGithub size="3rem" />
+                <AiFillGithub size="2.9rem" />
               </DivSocialsIcon>
             </AnchorSocials>
 
@@ -74,7 +70,7 @@ const Footer = ({ windowHeight, windowScroll }) => {
               rel="noopener noreferrer"
             >
               <DivSocialsIcon>
-                <AiFillLinkedin size="3rem" />
+                <AiFillLinkedin size="2.9rem" />
               </DivSocialsIcon>
             </AnchorSocials>
 
@@ -84,7 +80,7 @@ const Footer = ({ windowHeight, windowScroll }) => {
               rel="noopener noreferrer"
             >
               <DivSocialsIcon>
-                <AiFillInstagram size="3rem" />
+                <AiFillInstagram size="2.9rem" />
               </DivSocialsIcon>
             </AnchorSocials>
           </NavDivThree>

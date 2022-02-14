@@ -16,7 +16,6 @@ export const FooterOrBannerDiv = styled.div`
 `;
 
 export const FooterMobileOrMailDiv = styled.div`
-  flex-basis: ${(props) => (props.mobile ? "25%" : "75%")};
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -38,6 +38,7 @@ export const TimeLineDetailedDiv = styled.div`
   border-radius: 5px;
   scroll-snap-align: start;
   opacity: ${(props) => (props.active ? "1" : "0.5")};
+  cursor: pointer;
 `;
 
 export const TimeLinedDetailedYear = styled.h2`
