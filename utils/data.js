@@ -1,4 +1,9 @@
 export default {
+  menu: [
+    { name: "Projects", id: "#projects", number: "01." },
+    { name: "Technologies", id: "#technologies", number: "02." },
+    { name: "About", id: "#about", number: "03." },
+  ],
   projects: [
     {
       title: "Developer Connector",

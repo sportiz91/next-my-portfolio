@@ -3,7 +3,6 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { DiCssdeck } from "react-icons/di";
 
 import {
-  NavContainer,
   NavDivOne,
   AnchorLogo,
   PortfolioText,
@@ -15,9 +14,9 @@ import { MiddleText, AnchorNavMenuOrShow } from "../../globalcomponents";
 
 import Link from "next/link";
 
-const Navbar = ({ scrollDirection, roof }) => {
+const Navbar = () => {
   return (
-    <NavContainer scrollDirection={scrollDirection} roof={roof}>
+    <>
       <NavDivOne>
         <Link href="/">
           <AnchorLogo>
@@ -52,7 +51,7 @@ const Navbar = ({ scrollDirection, roof }) => {
           </AnchorNavMenuOrShow>
         </Link>
       </NavDivTwo>
-    </NavContainer>
+    </>
   );
 };
 

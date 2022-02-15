@@ -1,40 +1,26 @@
-import { NavDivHidden, DivWrapper } from "./NavbarStyles";
-import { MiddleText } from "../../globalcomponents";
+import { MiddleText, AnchorNavMenuOrShow } from "../../globalcomponents";
+
+import { NavNumber, NavNumberDiv, NavNumberWrapperDiv } from "./NavbarStyles";
 
 import { AiFillCaretRight } from "react-icons/ai";
 
 import Link from "next/link";
 
-const HiddenNavbarItems = ({ state }) => {
+const HiddenNavbarItems = ({ name, id, number, closeNav }) => {
   return (
-    <NavDivHidden>
-      <DivWrapper state={state}>
-        <Link href="#projects">
-          <a>
-            <MiddleText mobile>Projects</MiddleText>
-            <AiFillCaretRight className="icon mobile" />
-          </a>
-        </Link>
-      </DivWrapper>
-
-      <DivWrapper state={state} middle>
-        <Link href="#technologies">
-          <a>
-            <MiddleText mobile>Technologies</MiddleText>
-            <AiFillCaretRight className="icon mobile" />
-          </a>
-        </Link>
-      </DivWrapper>
-
-      <DivWrapper state={state}>
-        <Link href="#about">
-          <a>
-            <MiddleText mobile>About</MiddleText>
-            <AiFillCaretRight className="icon mobile" />
-          </a>
-        </Link>
-      </DivWrapper>
-    </NavDivHidden>
+    <Link href={id}>
+      <AnchorNavMenuOrShow mobile onClick={() => closeNav()}>
+        <NavNumberWrapperDiv>
+          <NavNumberDiv>
+            <NavNumber mobile>{number}</NavNumber>
+            <MiddleText nav mobile>
+              {name}
+            </MiddleText>
+          </NavNumberDiv>
+          <AiFillCaretRight className="icon mobile" size={"2.5rem"} />
+        </NavNumberWrapperDiv>
+      </AnchorNavMenuOrShow>
+    </Link>
   );
 };
 

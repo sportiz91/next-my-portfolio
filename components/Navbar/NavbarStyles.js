@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.section`
-  height: ${(props) => (props.roof ? "105px" : "80px")};
+  height: ${(props) =>
+    props.initialLoad ? (props.state ? "105px" : "105px") : "80px"};
   width: 100%;
   padding: 0 3rem;
   display: flex;
@@ -9,7 +10,11 @@ export const NavContainer = styled.section`
   justify-content: space-between;
   position: fixed;
   transform: ${(props) =>
-    props.scrollDirection === "down" ? "translateY(-80px)" : "translateY(0)"};
+    props.scrollDirection === "down" && props.state
+      ? "translateY(0)"
+      : props.scrollDirection === "down" && !props.state
+      ? "translateY(-80px)"
+      : "translateY(0)"};
   z-index: 1;
   background-color: ${(props) =>
     props.roof ? props.theme.background.bg1 : props.theme.background.nav};
@@ -17,11 +22,6 @@ export const NavContainer = styled.section`
   box-shadow: ${(props) =>
     props.roof ? "" : "0 10px 30px -10px rgb(0 0 0 / 0.75)"};
   transition: 0.4s ease;
-
-  @media ${(props) => props.theme.breakpoints.break864} {
-    grid-template-columns: 1fr repeat(8, 1fr) minmax(131.09px, 1fr);
-    grid-template-areas: "logo socials socials socials socials socials socials socials socials burger";
-  }
 `;
 
 export const NavDivOne = styled.div``;
@@ -54,11 +54,24 @@ export const NavDivTwo = styled.div`
   }
 `;
 
+export const NavNumberWrapperDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+`;
+
+export const NavNumberDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const NavNumber = styled.p`
-  font-size: 1.7rem;
+  font-size: ${(props) => (props.mobile ? "2.5rem" : "1.7rem")};
   color: ${(props) => props.theme.colors.button3};
-  display: inline;
-  margin-right: 1.1rem;
+  display: ${(props) => (props.mobile ? "block" : "inline")};
+  margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
 `;
 
 export const NavDivThree = styled.div`
@@ -68,17 +81,14 @@ export const NavDivThree = styled.div`
 `;
 
 export const BurgerDiv = styled.div`
-  grid-area: burger;
   height: 28px;
   width: 28px;
-  top: 3.6rem;
-  right: 30px;
-  cursor: pointer;
-  position: fixed;
+  position: relative;
   display: none;
-  z-index: 2;
-  transition: transform 1.2s;
+  cursor: pointer;
+  z-index: 3;
   transform: ${(props) => (props.state ? "rotate(1080deg)" : "")};
+  transition: transform 0.5s;
 
   &:before {
     content: "";
@@ -87,11 +97,8 @@ export const BurgerDiv = styled.div`
     width: 100%;
     top: 3px;
     left: 0;
-    /* background-color: white; */
-    /* 6b3030 */
-    background-color: ${(props) =>
-      props.state ? "rgba(255 255 255 / 0.75)" : "white"};
-    transition: transform 1.2s, background-color 1.2s;
+    background-color: ${(props) => props.theme.colors.links};
+    transition: transform 0.5s;
     transform: ${(props) =>
       props.state ? "rotate(-45deg) translate(-5px, 8px)" : ""};
   }
@@ -103,11 +110,8 @@ export const BurgerDiv = styled.div`
     width: ${(props) => (props.state ? "100%" : "80%")};
     bottom: 4px;
     left: 0;
-    /* background-color: white; */
-    /* 6b3030 */
-    background-color: ${(props) =>
-      props.state ? "rgba(255 255 255 / 0.75)" : "white"};
-    transition: transform 1.2s, background-color 1.2s;
+    background-color: ${(props) => props.theme.colors.links};
+    transition: transform 0.5s;
     transform: ${(props) =>
       props.state ? "rotate(45deg) translate(-5px, -7px)" : ""};
   }
@@ -115,7 +119,6 @@ export const BurgerDiv = styled.div`
 
   @media ${(props) => props.theme.breakpoints.break864} {
     display: inline;
-    justify-self: end;
   }
 `;
 
@@ -124,33 +127,30 @@ export const BurgerSpan = styled.span`
   top: 12px;
   height: 3px;
   width: 100%;
-  /* background-color: white; */
-  /* 6b3030 */
-  background-color: ${(props) =>
-    props.state ? "rgba(255 255 255 / 0.75)" : "white"};
+  background-color: ${(props) => props.theme.colors.links};
   z-index: 2;
   display: ${(props) => (props.state ? "none" : "inline")};
 `;
 
 export const HiddenNavbar = styled.section`
-  position: absolute;
-  min-height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-color: rgba(0 0 0 / 0.98);
-  top: ${(props) => (props.state ? "0%" : "-100%")};
-  transition: top 1.2s linear;
-`;
-
-export const NavDivHidden = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 7rem;
-  padding-top: 31vh;
+  display: none;
   position: fixed;
+  top: 0;
+  right: ${(props) => (props.state ? "0" : "-100vh")};
+  height: 100vh;
+  width: 50vw;
+  padding-top: 27vh;
+  z-index: 2;
+  background-color: rgba(26 39 64 / 1);
+  box-shadow: 0 0 25px 0 rgb(0 0 0 / 0.25);
+  transition: right 0.5s;
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7rem;
+  }
 `;
 
 export const DivWrapper = styled.div`

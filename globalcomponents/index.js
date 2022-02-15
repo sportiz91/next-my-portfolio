@@ -39,6 +39,7 @@ export const SectionMiniParagraph = styled.p`
 export const AnchorNavMenuOrShow = styled.a`
   position: relative;
   cursor: pointer;
+  margin-left: ${(props) => (props.mobile ? "17px" : "")}; /* scroll width */
 
   & .icon {
     color: rgba(255 255 255 / 0.75);
@@ -73,7 +74,7 @@ export const AnchorNavMenuOrShow = styled.a`
 
 export const MiddleText = styled.span`
   font-size: ${({ mobile, footer }) =>
-    mobile ? "4rem" : footer ? "1.65rem" : "1.8rem"};
+    mobile ? "3rem" : footer ? "1.65rem" : "1.8rem"};
   color: ${(props) => props.theme.colors.links};
   position: relative;
   bottom: ${(props) => (props.adj ? "2.5px" : "")};
