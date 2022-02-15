@@ -5,7 +5,10 @@ import { ContactText } from "./ContactStyles";
 const Contact = () => {
   return (
     <DivSocialsContainer contact>
-      <ContactText>sportiz91@gmail.com</ContactText>
+      <a href="mailto:sportiz9109@gmail.com">
+        <ContactText>sportiz9109@gmail.com</ContactText>
+      </a>
+
       <LineSocials />
     </DivSocialsContainer>
   );

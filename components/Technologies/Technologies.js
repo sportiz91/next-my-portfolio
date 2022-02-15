@@ -69,8 +69,9 @@ const Technologies = ({ windowHeight, windowScroll }) => {
       </SectionTitleAndLine>
 
       <SectionParagraph>
-        This are the <SectionParagraphColor>technologies</SectionParagraphColor>{" "}
-        I’ve been working with recently:
+        These are the{" "}
+        <SectionParagraphColor>technologies</SectionParagraphColor> I’ve been
+        working with recently:
       </SectionParagraph>
 
       <TechInfoDiv>

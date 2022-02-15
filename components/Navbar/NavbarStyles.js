@@ -65,13 +65,6 @@ export const NavDivThree = styled.div`
   display: flex;
   justify-content: center;
   justify-self: end;
-
-  @media ${(props) => props.theme.breakpoints.break864} {
-    position: fixed;
-    flex-direction: column;
-    top: 78%;
-    left: 2.55%;
-  }
 `;
 
 export const BurgerDiv = styled.div`

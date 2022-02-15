@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TechInfoDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 10rem;
   margin: 7rem 5rem 2rem;

@@ -43,9 +43,11 @@ const Footer = ({ windowHeight, windowScroll }) => {
         <FooterOrBannerDiv>
           <FooterMobileOrMailDiv>
             <SectionMiniParagraph nomargin>EMAIL</SectionMiniParagraph>
-            <MiddleText footer adj>
-              sportiz9109@gmail.com
-            </MiddleText>
+            <a href="mailto:sportiz9109@gmail.com">
+              <MiddleText footer adj>
+                sportiz9109@gmail.com
+              </MiddleText>
+            </a>
           </FooterMobileOrMailDiv>
         </FooterOrBannerDiv>
 

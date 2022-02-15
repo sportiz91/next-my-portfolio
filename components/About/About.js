@@ -110,15 +110,15 @@ const About = ({ windowHeight, windowScroll }) => {
                 when I created my first site for Inverfree. Since then, I've
                 been{" "}
                 <SectionParagraphColor>
-                  learning Full-Stack everyday, somedays up to 5-6 hours.
+                  learning Full-Stack everyday (5-6 hours a day).
                 </SectionParagraphColor>{" "}
                 I'm mostly centered on{" "}
                 <SectionParagraphColor>MERN Stack,</SectionParagraphColor> but
                 planning to learn more technologies because I love learning and
-                trying new tech stuff. That love for Full-Stack and programming
-                led me to a{" "}
+                trying new tech stuff. My passion for Full-Stack, Programming
+                and Computer Science led me to a{" "}
                 <SectionParagraphColor>career change</SectionParagraphColor> and
-                breaking into web development and computer science.
+                breaking into web development.
               </AboutMiniParagraph>
               <AboutMiniParagraph>
                 I also must mention that{" "}

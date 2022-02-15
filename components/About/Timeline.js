@@ -10,7 +10,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import TimelineDetailed from "./TimelineDetailed";
 
 const Timeline = () => {
-  const [timeline, setTimeline] = useState(false);
+  const [timeline, setTimeline] = useState(true);
 
   return (
     <>
