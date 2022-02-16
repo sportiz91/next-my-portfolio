@@ -17,7 +17,7 @@ const HiddenNavbarItems = ({ name, id, number, closeNav }) => {
               {name}
             </MiddleText>
           </NavNumberDiv>
-          <AiFillCaretRight className="icon mobile" size={"2.5rem"} />
+          <AiFillCaretRight className="icon mobile" />
         </NavNumberWrapperDiv>
       </AnchorNavMenuOrShow>
     </Link>

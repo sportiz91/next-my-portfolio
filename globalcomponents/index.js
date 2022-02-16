@@ -18,9 +18,15 @@ export const SectionParagraph = styled.p`
   font-weight: 100;
   margin-bottom: 5rem;
 
+  @media ${(props) => props.theme.breakpoints.break1081} {
+    font-size: 1.8rem;
+    max-width: 650px;
+  }
+
   @media ${(props) => props.theme.breakpoints.break864} {
-    font-size: 1.5rem;
-    max-width: 580px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-width: 550px;
   }
 `;
 
@@ -57,7 +63,7 @@ export const AnchorNavMenuOrShow = styled.a`
   }
 
   & .icon.mobile {
-    font-size: 3rem;
+    font-size: 2.3rem;
     margin: 0;
   }
 
@@ -73,6 +79,12 @@ export const AnchorNavMenuOrShow = styled.a`
       left: 2px;
       left: ${(props) => (props.show ? "7px" : "2px")};
       visibility: visible;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    .icon.mobile {
+      font-size: 1.8rem;
     }
   }
 
@@ -93,6 +105,12 @@ export const MiddleText = styled.span`
   &:hover {
     color: ${(props) => props.theme.colors.button3};
     left: ${(props) => (props.nav ? "" : "6px")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: ${({ mobile, footer }) =>
+      mobile ? "2.4rem" : footer ? "1.65rem" : "1.6rem"};
+  }
   }
 
   @media ${(props) => props.theme.breakpoints.break650} {
@@ -124,7 +142,12 @@ export const DivSocialsContainer = styled.div`
   left: ${(props) => (props.socials ? "40px" : null)};
   right: ${(props) => (props.contact ? "40px" : null)};
 
-  @media ${(props) => props.theme.breakpoints.break864} {
+  @media ${(props) => props.theme.breakpoints.break1330} {
+    left: ${(props) => (props.socials ? "35px" : null)};
+    right: ${(props) => (props.contact ? "35px" : null)};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break768} {
     display: ${(props) => (props.vertical ? "" : "none")};
   }
 `;
@@ -217,9 +240,35 @@ export const SectionTitle = styled.h1`
       ? "1rem"
       : "4rem"};
 
+  @media ${(props) => props.theme.breakpoints.break1081} {
+    font-size: ${(props) =>
+      props.welcome ? "7rem" : props.sub ? "4.5rem" : "3.5rem"};
+  }
+
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) =>
       props.welcome ? "6.5rem" : props.sub ? "4.5rem" : "3rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break800} {
+    font-size: ${(props) =>
+      props.welcome ? "6.5rem" : props.sub ? "4.2rem" : "3rem"};
+  }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break768} {
+    font-size: ${(props) =>
+      props.welcome ? "5.8rem" : props.sub ? "3.6rem" : "2.7rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    font-size: ${(props) =>
+      props.welcome ? "4.7rem" : props.sub ? "3.1rem" : "2.2rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) =>
+      props.welcome ? "4.2rem" : props.sub ? "2.9rem" : "2rem"};
   }
 `;
 

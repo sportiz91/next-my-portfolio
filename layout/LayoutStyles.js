@@ -5,7 +5,15 @@ export const BodyLayout = styled.div`
   padding: 20rem 10rem 5rem;
   margin: 0 auto;
 
-  @media ${(props) => props.theme.breakpoints.break864} {
-    padding: 20rem 5rem 5rem;
+  @media ${(props) => props.theme.breakpoints.break768} {
+    padding: 20rem 6rem 5rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    padding: 20rem 4.5rem 5rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    padding: 20rem 2.5rem 5rem;
   }
 `;
