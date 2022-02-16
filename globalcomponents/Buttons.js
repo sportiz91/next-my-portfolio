@@ -17,4 +17,10 @@ export const SectionButton = styled.a`
   &:hover {
     background: rgba(29 222 255 / 0.2);
   }
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: ${(props) => (props.tech ? "1.5rem" : "1.5rem")};
+    padding: ${(props) => (props.tech ? "1rem 3rem" : "1.5rem")};
+    width: ${(props) => (props.tech ? "150px" : "150px")};
+  }
 `;

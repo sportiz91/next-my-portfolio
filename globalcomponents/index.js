@@ -17,6 +17,11 @@ export const SectionParagraph = styled.p`
   line-height: 1.6;
   font-weight: 100;
   margin-bottom: 5rem;
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: 1.5rem;
+    max-width: 580px;
+  }
 `;
 
 export const SectionMiniParagraph = styled.p`
@@ -211,6 +216,11 @@ export const SectionTitle = styled.h1`
       : props.other
       ? "1rem"
       : "4rem"};
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: ${(props) =>
+      props.welcome ? "6.5rem" : props.sub ? "4.5rem" : "3rem"};
+  }
 `;
 
 export const SectionDivSeparator = styled.div`
