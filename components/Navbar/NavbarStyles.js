@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 export const NavContainer = styled.section`
   height: ${(props) =>
-    props.initialLoad ? (props.state ? "105px" : "105px") : "80px"};
+    props.initialLoad
+      ? props.state
+        ? "105px"
+        : "105px"
+      : props.roof
+      ? "105px"
+      : "80px"};
   width: 100%;
   padding: 0 3rem;
   display: flex;
@@ -72,12 +78,10 @@ export const NavNumber = styled.p`
   color: ${(props) => props.theme.colors.button3};
   display: ${(props) => (props.mobile ? "block" : "inline")};
   margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
-`;
 
-export const NavDivThree = styled.div`
-  display: flex;
-  justify-content: center;
-  justify-self: end;
+  @media ${(props) => props.theme.breakpoints.break650} {
+    font-size: 1.7rem;
+  }
 `;
 
 export const BurgerDiv = styled.div`
@@ -120,6 +124,10 @@ export const BurgerDiv = styled.div`
   @media ${(props) => props.theme.breakpoints.break864} {
     display: inline;
   }
+
+  @media ${(props) => props.theme.breakpoints.break400} {
+    margin-top: 7px;
+  }
 `;
 
 export const BurgerSpan = styled.span`
@@ -139,7 +147,8 @@ export const HiddenNavbar = styled.section`
   right: ${(props) => (props.state ? "0" : "-100vh")};
   height: 100vh;
   width: 50vw;
-  padding-top: 27vh;
+  min-width: 180px;
+  padding-top: 20vh;
   z-index: 2;
   background-color: rgba(26 39 64 / 1);
   box-shadow: 0 0 25px 0 rgb(0 0 0 / 0.25);

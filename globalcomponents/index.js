@@ -70,6 +70,10 @@ export const AnchorNavMenuOrShow = styled.a`
       visibility: visible;
     }
   }
+
+  @media ${(props) => props.theme.breakpoints.break460} {
+    margin-left: 30px;
+  }
 `;
 
 export const MiddleText = styled.span`
@@ -84,6 +88,11 @@ export const MiddleText = styled.span`
   &:hover {
     color: ${(props) => props.theme.colors.button3};
     left: ${(props) => (props.nav ? "" : "6px")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    font-size: ${({ mobile, footer }) =>
+      mobile ? "2rem" : footer ? "1.65rem" : "1.8rem"};
   }
 `;
 
@@ -109,6 +118,16 @@ export const DivSocialsContainer = styled.div`
   bottom: 0;
   left: ${(props) => (props.socials ? "40px" : null)};
   right: ${(props) => (props.contact ? "40px" : null)};
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    display: ${(props) => (props.vertical ? "" : "none")};
+  }
+`;
+
+export const DivSocialsHorizontal = styled.div`
+  display: flex;
+  justify-content: center;
+  justify-self: end;
 `;
 
 export const LineSocials = styled.span`
@@ -135,10 +154,20 @@ export const DivSocialsIcon = styled.div`
   transform: scale(1);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 
+  & .icon {
+    font-size: 2.9rem;
+  }
+
   &:hover {
     background-color: #212d45;
     color: ${(props) => props.theme.colors.button3};
     transform: scale(1.05);
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    & .icon {
+      font-size: 2.5rem;
+    }
   }
 `;
 

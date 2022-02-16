@@ -14,6 +14,8 @@ import {
 } from "../Navbar/NavbarStyles";
 
 import HiddenNavbarItems from "../Navbar/HiddenNavbarItems";
+import HorizontalSocials from "../Socials/HorizontalSocials";
+import HorizontalContact from "../Contact/HorizontalContact";
 import Navbar from "../Navbar/Navbar";
 import Socials from "../Socials/Socials";
 import Contact from "../Contact/Contact";
@@ -72,9 +74,19 @@ const AppWrapper = () => {
     setWindowScroll(windowScroll);
   };
 
+  const handleResize = () => {
+    const windowWidth = window.innerWidth;
+    windowWidth > 864 ? setMobileNavbar(false) : null;
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", () => handleScroll());
     return window.removeEventListener("scroll", () => handleScroll());
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => handleResize());
+    return window.removeEventListener("resize", () => handleResize);
   }, []);
 
   return (
@@ -84,7 +96,6 @@ const AppWrapper = () => {
         roof={roof}
         state={mobileNavbar}
         initialLoad={initialLoad}
-        setMobileNavbar={setMobileNavbar}
       >
         <Navbar />
 
@@ -105,6 +116,8 @@ const AppWrapper = () => {
               />
             );
           })}
+          <HorizontalSocials />
+          <HorizontalContact />
         </HiddenNavbar>
       </NavContainer>
 
