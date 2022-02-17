@@ -28,6 +28,20 @@ export const SectionParagraph = styled.p`
     line-height: 1.5;
     max-width: 550px;
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: 1.4rem;
+    max-width: 400px;
+    margin-bottom: 3rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.3rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: 1.1rem;
+  }
 `;
 
 export const SectionMiniParagraph = styled.p`
@@ -45,6 +59,14 @@ export const SectionMiniParagraph = styled.p`
   font-size: ${(props) => (props.other ? "1.2rem" : "")};
   opacity: ${(props) => (props.hidden ? "0" : "1")};
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) => (props.other ? "1.2rem" : "1.3rem")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${(props) => (props.other ? "1.2rem" : "1.2rem")};
+  }
 `;
 
 export const AnchorNavMenuOrShow = styled.a`
@@ -116,6 +138,11 @@ export const MiddleText = styled.span`
   @media ${(props) => props.theme.breakpoints.break650} {
     font-size: ${({ mobile, footer }) =>
       mobile ? "2rem" : footer ? "1.65rem" : "1.8rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${({ mobile, footer }) =>
+      mobile ? "1.65rem" : footer ? "1.65rem" : "1.8rem"};
   }
 `;
 
@@ -269,6 +296,25 @@ export const SectionTitle = styled.h1`
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${(props) =>
       props.welcome ? "4.2rem" : props.sub ? "2.9rem" : "2rem"};
+
+      margin-bottom: ${(props) =>
+        props.nomargin
+          ? "0rem"
+          : props.welcome
+          ? "1.5rem"
+          : props.other
+          ? "1rem"
+          : "3rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) =>
+      props.welcome ? "3.5rem" : props.sub ? "2.2rem" : "1.6rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${(props) =>
+      props.welcome ? "3.1rem" : props.sub ? "1.9rem" : "1.3rem"};
   }
 `;
 

@@ -33,10 +33,6 @@ export const NavContainer = styled.section`
     padding: 0 2rem;
   }
 
-  @media ${(props) => props.theme.breakpoints.break650} {
-    padding: 0 2rem;
-  }
-
   @media ${(props) => props.theme.breakpoints.break504} {
     padding: 0 2rem 0 1rem;
   }
@@ -62,6 +58,19 @@ export const AnchorLogo = styled.a`
 export const PortfolioText = styled.span`
   font-size: 2rem;
   margin-left: 8px;
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: 1.75rem;
+    margin-left: 4px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.65rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const NavDivTwo = styled.div`
@@ -94,6 +103,7 @@ export const NavNumber = styled.p`
   color: ${(props) => props.theme.colors.button3};
   display: ${(props) => (props.mobile ? "block" : "inline")};
   margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
+  margin-bottom: ${(props) => (props.mobile ? "0.7rem" : "")};
 
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) => (props.mobile ? "2.2rem" : "1.5rem")};
@@ -101,6 +111,10 @@ export const NavNumber = styled.p`
 
   @media ${(props) => props.theme.breakpoints.break650} {
     font-size: 1.7rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.4rem;
   }
 `;
 
@@ -143,10 +157,6 @@ export const BurgerDiv = styled.div`
 
   @media ${(props) => props.theme.breakpoints.break768} {
     display: inline;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break400} {
-    margin-top: 7px;
   }
 `;
 

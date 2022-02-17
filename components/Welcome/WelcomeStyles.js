@@ -22,4 +22,8 @@ export const WelcomeSection = styled.section`
 export const WelcomeButtonsDiv = styled.div`
   display: flex;
   gap: 1.5rem;
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    gap: 1rem;
+  }
 `;

@@ -14,6 +14,6 @@ export const BodyLayout = styled.div`
   }
 
   @media ${(props) => props.theme.breakpoints.break504} {
-    padding: 20rem 2.5rem 5rem;
+    padding: 20rem 3rem 5rem;
   }
 `;

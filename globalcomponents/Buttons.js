@@ -23,4 +23,22 @@ export const SectionButton = styled.a`
     padding: ${(props) => (props.tech ? "1rem 3rem" : "1.5rem")};
     width: ${(props) => (props.tech ? "150px" : "150px")};
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) => (props.tech ? "1.5rem" : "1.3rem")};
+    padding: ${(props) => (props.tech ? "1rem 3rem" : "1.3rem")};
+    width: ${(props) => (props.tech ? "150px" : "130px")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) => (props.tech ? "1.5rem" : "1.15rem")};
+    padding: ${(props) => (props.tech ? "1rem 3rem" : "1rem")};
+    width: ${(props) => (props.tech ? "150px" : "110px")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${(props) => (props.tech ? "1.5rem" : "1.05rem")};
+    padding: ${(props) => (props.tech ? "1rem 3rem" : "0.9rem")};
+    width: ${(props) => (props.tech ? "150px" : "100px")};
+  }
 `;

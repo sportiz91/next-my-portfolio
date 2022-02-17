@@ -29,7 +29,9 @@ export const theme = {
     break650: "(max-width: 650px)",
     break504: "(max-width: 504px)",
     break460: "(max-width: 460px)",
+    break422: "(max-width: 422px)",
     break400: "(max-width: 400px)",
+    break339: "(max-width: 339px)",
   },
 };
 
