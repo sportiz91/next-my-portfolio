@@ -5,6 +5,11 @@ export const ProjectsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const ProjectDiv = styled.div`
@@ -15,7 +20,20 @@ export const ProjectDiv = styled.div`
   &:nth-child(1) {
     padding-top: 3rem;
   }
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    grid-template-areas:
+      "img"
+      "detail";
+    grid-template-columns: 1fr;
+
+    &:nth-child(1) {
+      padding-top: 7rem;
+    }
+  }
 `;
+
+export const ProjectWrapper = styled.div``;
 
 export const ProjectImgDiv = styled.div`
   grid-area: 1 / 1 / 2 / 8;
@@ -36,6 +54,12 @@ export const ProjectImgDiv = styled.div`
     height: 100%;
     width: 100%;
     border-radius: 2px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    grid-area: img;
+    height: 275px;
+    width: 100%;
   }
 `;
 
@@ -80,6 +104,16 @@ export const ProjectInfoDiv = styled.div`
   gap: 2rem;
   position: relative;
   margin-top: 2rem;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    grid-area: detail;
+    align-items: start;
+    text-align: start;
+    padding: 2rem;
+    background: ${(props) =>
+      props.nobackground ? "" : props.theme.colors.description};
+    margin-top: 0;
+  }
 `;
 
 export const ProjectTitleDiv = styled.div``;
@@ -93,6 +127,12 @@ export const ProjectInfoDescription = styled.div`
   border-radius: 5px;
   margin: ${(props) => (props.other ? "1.5rem 0 3rem" : "3rem 0 0")};
   line-height: 1.5;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const ProjectInfoTags = styled.div`
@@ -101,6 +141,10 @@ export const ProjectInfoTags = styled.div`
   justify-content: end;
   align-items: center;
   gap: 2rem;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    justify-content: start;
+  }
 `;
 
 export const ProjectSocialsDiv = styled.div`
@@ -109,6 +153,10 @@ export const ProjectSocialsDiv = styled.div`
   justify-content: end;
   align-items: center;
   gap: 2rem;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    justify-content: start;
+  }
 `;
 
 export const ProjectSocialsAnchor = styled.a`
