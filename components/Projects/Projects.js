@@ -93,7 +93,9 @@ const Projects = ({ windowHeight, windowScroll }) => {
                 </ProjectInfoDescription>
                 <ProjectInfoTags className="tags">
                   {item.tags.map((tech, index) => {
-                    return <SectionMiniParagraph>{tech}</SectionMiniParagraph>;
+                    return (
+                      <SectionMiniParagraph tag>{tech}</SectionMiniParagraph>
+                    );
                   })}
                 </ProjectInfoTags>
                 <ProjectSocialsDiv className="socials">

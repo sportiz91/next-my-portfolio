@@ -56,16 +56,18 @@ export const SectionMiniParagraph = styled.p`
       ? "2rem"
       : "2rem"};
   font-weight: ${(props) => (props.blacky ? "700" : "")};
-  font-size: ${(props) => (props.other ? "1.2rem" : "")};
+  font-size: ${(props) => (props.other ? "1.2rem" : props.tag ? "1.4rem" : "")};
   opacity: ${(props) => (props.hidden ? "0" : "1")};
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
 
   @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: ${(props) => (props.other ? "1.2rem" : "1.3rem")};
+    font-size: ${(props) =>
+      props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.3rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
-    font-size: ${(props) => (props.other ? "1.2rem" : "1.2rem")};
+    font-size: ${(props) =>
+      props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.2rem"};
   }
 `;
 

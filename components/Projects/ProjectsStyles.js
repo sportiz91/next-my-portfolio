@@ -19,8 +19,8 @@ export const ProjectDiv = styled.div`
 
 export const ProjectImgDiv = styled.div`
   grid-area: 1 / 1 / 2 / 8;
-  height: 375px;
-  width: 550px;
+  height: 350px;
+  width: 500px;
   position: relative;
   border-radius: 2px;
   opacity: 0.7;
