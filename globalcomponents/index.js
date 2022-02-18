@@ -329,7 +329,7 @@ export const SectionTitle = styled.h1`
         ? "4.5rem"
         : props.title
         ? "4.5rem"
-        : "3rem"};
+        : "3.5rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break800} {
@@ -340,7 +340,7 @@ export const SectionTitle = styled.h1`
         ? "4.2rem"
         : props.title
         ? "4.5rem"
-        : "3rem"};
+        : "3.5rem"};
   }
   }
 
@@ -352,7 +352,7 @@ export const SectionTitle = styled.h1`
         ? "3.6rem"
         : props.title
         ? "4.2rem"
-        : "2.7rem"};
+        : "3.2rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break650} {
@@ -363,7 +363,7 @@ export const SectionTitle = styled.h1`
         ? "3.1rem"
         : props.title
         ? "3.7rem"
-        : "2.2rem"};
+        : "2.7rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break504} {
@@ -374,7 +374,7 @@ export const SectionTitle = styled.h1`
         ? "2.9rem"
         : props.title
         ? "3.3rem"
-        : "2rem"};
+        : "2.5rem"};
 
       margin-bottom: ${(props) =>
         props.nomargin
@@ -394,7 +394,7 @@ export const SectionTitle = styled.h1`
         ? "2.2rem"
         : props.title
         ? "2.7rem"
-        : "1.6rem"};
+        : "2.1rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
@@ -405,7 +405,7 @@ export const SectionTitle = styled.h1`
         ? "1.9rem"
         : props.title
         ? "2.4rem"
-        : "1.3rem"};
+        : "1.9rem"};
   }
 `;
 
@@ -417,7 +417,8 @@ export const SectionDivSeparator = styled.div`
 
 export const SectionSeparator = styled.hr`
   height: 1px;
-  width: 350px;
+  width: 40%;
+  max-width: 350px;
   border: 0;
   background: ${(props) => props.theme.colors.links};
   opacity: 0.2;
