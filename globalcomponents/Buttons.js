@@ -13,6 +13,9 @@ export const SectionButton = styled.a`
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: ${(props) => (props.featured ? "none" : "")};
+  margin-top: ${(props) =>
+    props.featured ? (props.desc ? "1rem" : "9rem") : ""};
 
   &:hover {
     background: rgba(29 222 255 / 0.2);
@@ -24,21 +27,36 @@ export const SectionButton = styled.a`
     width: ${(props) => (props.tech ? "150px" : "150px")};
   }
 
+  @media ${(props) => props.theme.breakpoints.break768} {
+    display: ${(props) => (props.featured ? "inline" : "")};
+    font-size: ${(props) => (props.tech ? "1.5rem" : "1.3rem")};
+    padding: ${(props) =>
+      props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1.3rem"};
+    width: ${(props) =>
+      props.tech ? "150px" : props.featured ? "150px" : "130px"};
+  }
+
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${(props) => (props.tech ? "1.5rem" : "1.3rem")};
-    padding: ${(props) => (props.tech ? "1rem 3rem" : "1.3rem")};
-    width: ${(props) => (props.tech ? "150px" : "130px")};
+    padding: ${(props) =>
+      props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1.3rem"};
+    width: ${(props) =>
+      props.tech ? "150px" : props.featured ? "150px" : "130px"};
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${(props) => (props.tech ? "1.5rem" : "1.15rem")};
-    padding: ${(props) => (props.tech ? "1rem 3rem" : "1rem")};
-    width: ${(props) => (props.tech ? "150px" : "110px")};
+    padding: ${(props) =>
+      props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1rem"};
+    width: ${(props) =>
+      props.tech ? "150px" : props.featured ? "150px" : "110px"};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
     font-size: ${(props) => (props.tech ? "1.5rem" : "1.05rem")};
-    padding: ${(props) => (props.tech ? "1rem 3rem" : "0.9rem")};
-    width: ${(props) => (props.tech ? "150px" : "100px")};
+    padding: ${(props) =>
+      props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "0.9rem"};
+    width: ${(props) =>
+      props.tech ? "150px" : props.featured ? "150px" : "100px"};
   }
 `;

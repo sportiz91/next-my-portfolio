@@ -8,6 +8,14 @@ export const PageSection = styled.section`
   max-width: 1120px;
   margin-bottom: ${(props) =>
     props.about ? "10rem" : props.footer ? "0" : "25rem"};
+
+  @media ${(props) => props.theme.breakpoints.break1146} {
+    padding: 0 2.5rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break768} {
+    padding: 0;
+  }
 `;
 
 export const SectionParagraph = styled.p`
@@ -158,6 +166,11 @@ export const ProjectInfoOrTechName = styled.p`
       ? props.theme.colors.button3
       : props.theme.colors.links};
   font-weight: ${(props) => (props.tech ? "400" : "700")};
+
+  @media ${(props) => props.theme.breakpoints.break768} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.5rem" : "2rem"};
+  }
 `;
 
 export const DivSocialsContainer = styled.div`
@@ -234,6 +247,14 @@ export const SectionTitleAndLine = styled.div`
   align-items: center;
   gap: 6rem;
   margin-bottom: 4rem;
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    gap: 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    gap: 1rem;
+  }
 `;
 
 export const SectionLine = styled.span`
@@ -242,7 +263,11 @@ export const SectionLine = styled.span`
   /* background: ${(props) => props.theme.colors.button2}; */
   background: ${(props) => props.theme.colors.links};
   opacity: 0.2;
-  margin-top: 15px;
+  margin-top: 9px;
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    margin-top: 5px;
+  }
 `;
 
 export const SectionParagraphColor = styled.span`
@@ -251,7 +276,13 @@ export const SectionParagraphColor = styled.span`
 
 export const SectionTitle = styled.h1`
   font-size: ${(props) =>
-    props.welcome ? "7rem" : props.sub ? "5rem" : "3.5rem"};
+    props.welcome
+      ? "7rem"
+      : props.sub
+      ? "5rem"
+      : props.title
+      ? "5rem"
+      : "3.5rem"};
   color: ${(props) =>
     props.blue
       ? props.theme.colors.button3
@@ -271,33 +302,69 @@ export const SectionTitle = styled.h1`
 
   @media ${(props) => props.theme.breakpoints.break1081} {
     font-size: ${(props) =>
-      props.welcome ? "7rem" : props.sub ? "4.5rem" : "3.5rem"};
+      props.welcome
+        ? "7rem"
+        : props.sub
+        ? "4.5rem"
+        : props.title
+        ? "4.5rem"
+        : "3.5rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) =>
-      props.welcome ? "6.5rem" : props.sub ? "4.5rem" : "3rem"};
+      props.welcome
+        ? "6.5rem"
+        : props.sub
+        ? "4.5rem"
+        : props.title
+        ? "4.5rem"
+        : "3rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break800} {
     font-size: ${(props) =>
-      props.welcome ? "6.5rem" : props.sub ? "4.2rem" : "3rem"};
+      props.welcome
+        ? "6.5rem"
+        : props.sub
+        ? "4.2rem"
+        : props.title
+        ? "4.5rem"
+        : "3rem"};
   }
   }
 
   @media ${(props) => props.theme.breakpoints.break768} {
     font-size: ${(props) =>
-      props.welcome ? "5.8rem" : props.sub ? "3.6rem" : "2.7rem"};
+      props.welcome
+        ? "5.8rem"
+        : props.sub
+        ? "3.6rem"
+        : props.title
+        ? "4.2rem"
+        : "2.7rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break650} {
     font-size: ${(props) =>
-      props.welcome ? "4.7rem" : props.sub ? "3.1rem" : "2.2rem"};
+      props.welcome
+        ? "4.7rem"
+        : props.sub
+        ? "3.1rem"
+        : props.title
+        ? "3.7rem"
+        : "2.2rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${(props) =>
-      props.welcome ? "4.2rem" : props.sub ? "2.9rem" : "2rem"};
+      props.welcome
+        ? "4.2rem"
+        : props.sub
+        ? "2.9rem"
+        : props.title
+        ? "3.3rem"
+        : "2rem"};
 
       margin-bottom: ${(props) =>
         props.nomargin
@@ -311,12 +378,24 @@ export const SectionTitle = styled.h1`
 
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${(props) =>
-      props.welcome ? "3.5rem" : props.sub ? "2.2rem" : "1.6rem"};
+      props.welcome
+        ? "3.5rem"
+        : props.sub
+        ? "2.2rem"
+        : props.title
+        ? "2.7rem"
+        : "1.6rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
     font-size: ${(props) =>
-      props.welcome ? "3.1rem" : props.sub ? "1.9rem" : "1.3rem"};
+      props.welcome
+        ? "3.1rem"
+        : props.sub
+        ? "1.9rem"
+        : props.title
+        ? "2.4rem"
+        : "1.3rem"};
   }
 `;
 

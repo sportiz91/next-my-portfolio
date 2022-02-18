@@ -11,6 +11,8 @@ import {
   SectionSeparator,
 } from "../../globalcomponents";
 
+import { SectionButton } from "../../globalcomponents/Buttons";
+
 import {
   ProjectDiv,
   ProjectsWrapper,
@@ -31,6 +33,8 @@ import { AiFillGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
 
 import data from "../../utils/data";
+
+import ProjectCard from "./ProjectCard";
 
 const Projects = ({ windowHeight, windowScroll }) => {
   const [showSection, setShowSection] = useState(false);
@@ -54,7 +58,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
   return (
     <PageSection ref={projectsRef} showSection={showSection} id="projects">
       <SectionTitleAndLine>
-        <SectionTitle sub nomargin links>
+        <SectionTitle title nomargin links>
           Projects
         </SectionTitle>
 
@@ -63,61 +67,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
 
       <ProjectsWrapper>
         {data.projects.map((item, index) => {
-          return (
-            <ProjectDiv key={index}>
-              <ProjectImgDiv>
-                <ProjectImgAnchor
-                  href={item.links[1]}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <ProjectImgOverlay>
-                    <img
-                      src={item.img}
-                      alt="project-picture"
-                      className="project-img"
-                    />
-                  </ProjectImgOverlay>
-                </ProjectImgAnchor>
-              </ProjectImgDiv>
-              <ProjectInfoDiv>
-                <ProjectTitleDiv className="project-title-div">
-                  <SectionMiniParagraph project blue>
-                    Featured Project
-                  </SectionMiniParagraph>
-                  <ProjectInfoOrTechName>{item.title}</ProjectInfoOrTechName>
-                </ProjectTitleDiv>
-
-                <ProjectInfoDescription className="info">
-                  {item.description}
-                </ProjectInfoDescription>
-                <ProjectInfoTags className="tags">
-                  {item.tags.map((tech, index) => {
-                    return (
-                      <SectionMiniParagraph tag>{tech}</SectionMiniParagraph>
-                    );
-                  })}
-                </ProjectInfoTags>
-                <ProjectSocialsDiv className="socials">
-                  <ProjectSocialsAnchor
-                    href={item.links[0]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <AiFillGithub size={"2.5rem"} />
-                  </ProjectSocialsAnchor>
-
-                  <ProjectSocialsAnchor
-                    href={item.links[1]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FiExternalLink size={"2.5rem"} />
-                  </ProjectSocialsAnchor>
-                </ProjectSocialsDiv>
-              </ProjectInfoDiv>
-            </ProjectDiv>
-          );
+          return <ProjectCard key={index} item={item} />;
         })}
       </ProjectsWrapper>
 

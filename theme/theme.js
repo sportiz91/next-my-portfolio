@@ -22,6 +22,7 @@ export const theme = {
   breakpoints: {
     break1330: "(max-width: 1330px)",
     break1280: "(max-width: 1280px)",
+    break1196: "(max-width: 1196px)",
     break1081: "(max-width: 1081px)",
     break864: "(max-width: 864px)",
     break800: "(max-width: 800px)",
