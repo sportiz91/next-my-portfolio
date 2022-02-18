@@ -171,6 +171,16 @@ export const ProjectInfoOrTechName = styled.p`
     font-size: ${(props) =>
       props.other ? "2rem" : props.tech ? "1.5rem" : "2rem"};
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.5rem" : "1.85rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.5rem" : "1.5rem"};
+  }
 `;
 
 export const DivSocialsContainer = styled.div`

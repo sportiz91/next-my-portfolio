@@ -18,6 +18,15 @@ export const ProjectsWrapper = styled.div`
 
   @media ${(props) => props.theme.breakpoints.break768} {
     grid-template-columns: repeat(auto-fit, 350px);
+    gap: 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    grid-template-columns: repeat(auto-fit, 300px);
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    grid-template-columns: repeat(auto-fit, 220px);
   }
 `;
 
@@ -100,6 +109,14 @@ export const ProjectImgDiv = styled.div`
   @media ${(props) => props.theme.breakpoints.break768} {
     height: 225px;
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    height: 200px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    height: 150px;
+  }
 `;
 
 export const ProjectImgAnchor = styled.a`
@@ -180,6 +197,14 @@ export const ProjectInfoDescription = styled.div`
     padding: 0;
     margin: ${(props) => (props.other ? "1.5rem 0 3rem" : "1rem 0")};
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: 1.4rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const ProjectInfoTags = styled.div`
@@ -192,6 +217,18 @@ export const ProjectInfoTags = styled.div`
 
   @media ${(props) => props.theme.breakpoints.break1280} {
     justify-content: start;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    & p {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    & p {
+      font-size: 1.2rem;
+    }
   }
 `;
 

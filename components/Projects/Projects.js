@@ -5,38 +5,19 @@ import {
   SectionTitle,
   SectionTitleAndLine,
   SectionLine,
-  SectionMiniParagraph,
   SectionDivSeparator,
-  ProjectInfoOrTechName,
   SectionSeparator,
 } from "../../globalcomponents";
 
-import { SectionButton } from "../../globalcomponents/Buttons";
-
-import {
-  ProjectDiv,
-  ProjectsWrapper,
-  ProjectImgDiv,
-  ProjectInfoDiv,
-  ProjectInfoDescription,
-  ProjectInfoTags,
-  ProjectSocialsDiv,
-  ProjectImgAnchor,
-  ProjectImgOverlay,
-  ProjectTitleDiv,
-  ProjectSocialsAnchor,
-} from "./ProjectsStyles";
+import { ProjectsWrapper } from "./ProjectsStyles";
 
 import OtherProjects from "./OtherProjects";
-
-import { AiFillGithub } from "react-icons/ai";
-import { FiExternalLink } from "react-icons/fi";
 
 import data from "../../utils/data";
 
 import ProjectCard from "./ProjectCard";
 
-const Projects = ({ windowHeight, windowScroll }) => {
+const Projects = ({ windowHeight, windowScroll, isMobile }) => {
   const [showSection, setShowSection] = useState(false);
   const projectsRef = useRef();
 
@@ -67,7 +48,7 @@ const Projects = ({ windowHeight, windowScroll }) => {
 
       <ProjectsWrapper>
         {data.projects.map((item, index) => {
-          return <ProjectCard key={index} item={item} />;
+          return <ProjectCard key={index} item={item} isMobile={isMobile} />;
         })}
       </ProjectsWrapper>
 

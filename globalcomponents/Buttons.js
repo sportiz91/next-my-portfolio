@@ -49,7 +49,9 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "150px" : "110px"};
+      props.tech ? "150px" : props.featured ? "125px" : "110px"};
+    margin-top: ${(props) =>
+      props.featured ? (props.desc ? "1rem" : "5rem") : ""};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
@@ -57,6 +59,6 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "0.9rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "150px" : "100px"};
+      props.tech ? "150px" : props.featured ? "125px" : "100px"};
   }
 `;

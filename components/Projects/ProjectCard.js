@@ -5,27 +5,19 @@ import {
   ProjectInfoOrTechName,
 } from "../../globalcomponents";
 
-import { SectionButton } from "../../globalcomponents/Buttons";
-
 import {
   ProjectDiv,
   ProjectImgDiv,
   ProjectInfoDiv,
-  ProjectInfoDescription,
-  ProjectInfoTags,
-  ProjectSocialsDiv,
   ProjectImgAnchor,
   ProjectImgOverlay,
   ProjectTitleDiv,
-  ProjectSocialsAnchor,
 } from "./ProjectsStyles";
 
-import { AiFillGithub } from "react-icons/ai";
-import { FiExternalLink } from "react-icons/fi";
+import ProjectDesktopCardInside from "./ProjectDesktopCardInside";
+import ProjectMobileCardInside from "./ProjectMobileCardInside";
 
-const ProjectCard = ({ item }) => {
-  const [showDescription, setShowDescription] = useState(false);
-
+const ProjectCard = ({ item, isMobile }) => {
   return (
     <ProjectDiv>
       <ProjectImgDiv>
@@ -46,7 +38,14 @@ const ProjectCard = ({ item }) => {
           </SectionMiniParagraph>
           <ProjectInfoOrTechName>{item.title}</ProjectInfoOrTechName>
         </ProjectTitleDiv>
-        <SectionButton
+
+        {isMobile ? (
+          <ProjectMobileCardInside item={item} />
+        ) : (
+          <ProjectDesktopCardInside item={item} />
+        )}
+
+        {/* <SectionButton
           featured
           onClick={() => setShowDescription(!showDescription)}
           desc={showDescription}
@@ -82,7 +81,7 @@ const ProjectCard = ({ item }) => {
               </ProjectSocialsAnchor>
             </ProjectSocialsDiv>
           </>
-        ) : null}
+        ) : null} */}
       </ProjectInfoDiv>
     </ProjectDiv>
   );

@@ -31,6 +31,7 @@ import data from "../../utils/data";
 
 const AppWrapper = () => {
   const [mobileNavbar, setMobileNavbar] = useState(false);
+  const [isMobile, setIsMobile] = useState("");
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowScroll, setWindowScroll] = useState(0);
   const [initialLoad, setInitialLoad] = useState(true);
@@ -76,18 +77,29 @@ const AppWrapper = () => {
 
   const handleResize = () => {
     const windowWidth = window.innerWidth;
-    windowWidth > 864 ? setMobileNavbar(false) : null;
+    windowWidth > 768 ? setMobileNavbar(false) : null;
+    windowWidth > 768 ? setIsMobile(false) : setIsMobile(true);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", () => handleScroll());
-    return window.removeEventListener("scroll", () => handleScroll());
+    window.addEventListener("resize", () => handleResize());
+
+    const windowWidth = window.innerWidth;
+    windowWidth > 768 ? setIsMobile(false) : setIsMobile(true);
+
+    return () => {
+      window.removeEventListener("resize", () => handleResize);
+      window.removeEventListener("scroll", () => handleScroll());
+    };
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => handleResize());
-    return window.removeEventListener("resize", () => handleResize);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => handleResize());
+  //   return window.removeEventListener("resize", () => handleResize);
+  // }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <AppDivWrapper state={mobileNavbar}>
@@ -127,7 +139,11 @@ const AppWrapper = () => {
 
         <Layout>
           <Welcome />
-          <Projects windowHeight={windowHeight} windowScroll={windowScroll} />
+          <Projects
+            windowHeight={windowHeight}
+            windowScroll={windowScroll}
+            isMobile={isMobile}
+          />
           <Technologies
             windowHeight={windowHeight}
             windowScroll={windowScroll}
