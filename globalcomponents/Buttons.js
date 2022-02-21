@@ -24,7 +24,7 @@ export const SectionButton = styled.a`
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) => (props.tech ? "1.5rem" : "1.5rem")};
     padding: ${(props) => (props.tech ? "1rem 3rem" : "1.5rem")};
-    width: ${(props) => (props.tech ? "150px" : "150px")};
+    width: ${(props) => (props.tech ? "115px" : "150px")};
   }
 
   @media ${(props) => props.theme.breakpoints.break768} {
@@ -33,7 +33,7 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1.3rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "150px" : "130px"};
+      props.tech ? "115px" : props.featured ? "150px" : "130px"};
   }
 
   @media ${(props) => props.theme.breakpoints.break504} {
@@ -41,7 +41,7 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1.3rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "150px" : "130px"};
+      props.tech ? "115px" : props.featured ? "150px" : "130px"};
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
@@ -49,7 +49,7 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "1rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "125px" : "110px"};
+      props.tech ? "115px" : props.featured ? "125px" : "110px"};
     margin-top: ${(props) =>
       props.featured ? (props.desc ? "1rem" : "5rem") : ""};
   }
@@ -59,6 +59,6 @@ export const SectionButton = styled.a`
     padding: ${(props) =>
       props.tech ? "1rem 3rem" : props.featured ? "0.5rem" : "0.9rem"};
     width: ${(props) =>
-      props.tech ? "150px" : props.featured ? "125px" : "100px"};
+      props.tech ? "115px" : props.featured ? "125px" : "100px"};
   }
 `;

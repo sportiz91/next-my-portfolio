@@ -32,6 +32,7 @@ export const theme = {
     break700: "(max-width: 700px)",
     break650: "(max-width: 650px)",
     break621: "(max-width: 621px)",
+    break585: "(max-width: 585px)",
     break570: "(max-width: 570px)",
     break504: "(max-width: 504px)",
     break460: "(max-width: 460px)",

@@ -25,6 +25,7 @@ import { SectionButton } from "../../globalcomponents/Buttons";
 import {
   TechInfoDiv,
   TechInfoIntroDiv,
+  TechLogoAndNameWrapper,
   TechNameAndButtonDiv,
   TechInfoTechnologiesDiv,
   TechNameAndArrowWrapper,
@@ -76,13 +77,15 @@ const Technologies = ({ windowHeight, windowScroll }) => {
 
       <TechInfoDiv>
         <TechInfoIntroDiv>
-          <DiReact size={"4rem"} className="icon" />
-          <TechNameAndButtonDiv className="first">
-            <ProjectInfoOrTechName>Front-End</ProjectInfoOrTechName>
-            <SectionButton tech onClick={() => setFront(!front)}>
-              {front ? "Hide" : "Show"}
-            </SectionButton>
-          </TechNameAndButtonDiv>
+          <TechLogoAndNameWrapper>
+            <DiReact size={"4rem"} className="icon" />
+            <TechNameAndButtonDiv className="first">
+              <ProjectInfoOrTechName>Front-End</ProjectInfoOrTechName>
+              <SectionButton tech onClick={() => setFront(!front)}>
+                {front ? "Hide" : "Show"}
+              </SectionButton>
+            </TechNameAndButtonDiv>
+          </TechLogoAndNameWrapper>
 
           {front ? (
             <TechInfoTechnologiesDiv>
@@ -101,13 +104,15 @@ const Technologies = ({ windowHeight, windowScroll }) => {
         </TechInfoIntroDiv>
 
         <TechInfoIntroDiv>
-          <FaDatabase size={"3rem"} className="icon" />
-          <TechNameAndButtonDiv>
-            <ProjectInfoOrTechName>Back-End</ProjectInfoOrTechName>
-            <SectionButton tech onClick={() => setBack(!back)}>
-              {back ? "Hide" : "Show"}
-            </SectionButton>
-          </TechNameAndButtonDiv>
+          <TechLogoAndNameWrapper>
+            <FaDatabase size={"3rem"} className="icon" />
+            <TechNameAndButtonDiv>
+              <ProjectInfoOrTechName>Back-End</ProjectInfoOrTechName>
+              <SectionButton tech onClick={() => setBack(!back)}>
+                {back ? "Hide" : "Show"}
+              </SectionButton>
+            </TechNameAndButtonDiv>
+          </TechLogoAndNameWrapper>
 
           {back ? (
             <TechInfoTechnologiesDiv>
@@ -126,13 +131,15 @@ const Technologies = ({ windowHeight, windowScroll }) => {
         </TechInfoIntroDiv>
 
         <TechInfoIntroDiv>
-          <GoTools size={"3rem"} className="icon" />
-          <TechNameAndButtonDiv>
-            <ProjectInfoOrTechName>DevOps & Tools</ProjectInfoOrTechName>
-            <SectionButton tech onClick={() => setDevops(!devops)}>
-              {devops ? "Hide" : "Show"}
-            </SectionButton>
-          </TechNameAndButtonDiv>
+          <TechLogoAndNameWrapper>
+            <GoTools size={"3rem"} className="icon" />
+            <TechNameAndButtonDiv>
+              <ProjectInfoOrTechName>DevOps & Tools</ProjectInfoOrTechName>
+              <SectionButton tech onClick={() => setDevops(!devops)}>
+                {devops ? "Hide" : "Show"}
+              </SectionButton>
+            </TechNameAndButtonDiv>
+          </TechLogoAndNameWrapper>
 
           {devops ? (
             <TechInfoTechnologiesDiv>

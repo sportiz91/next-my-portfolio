@@ -192,14 +192,19 @@ export const ProjectInfoOrTechName = styled.p`
       props.other ? "2rem" : props.tech ? "1.5rem" : "2rem"};
   }
 
+  @media ${(props) => props.theme.breakpoints.break585} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.3rem" : "2rem"};
+  }
+
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${(props) =>
-      props.other ? "1.85rem" : props.tech ? "1.5rem" : "1.85rem"};
+      props.other ? "1.85rem" : props.tech ? "1.3rem" : "1.85rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${(props) =>
-      props.other ? "1.6rem" : props.tech ? "1.5rem" : "1.5rem"};
+      props.other ? "1.6rem" : props.tech ? "1.2rem" : "1.5rem"};
   }
 `;
 
