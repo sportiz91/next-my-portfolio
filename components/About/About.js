@@ -57,7 +57,7 @@ const About = ({ windowHeight, windowScroll }) => {
           <AboutMiniParagraph>
             Hello! My name is{" "}
             <SectionParagraphColor>Santiago Pablo Ortiz</SectionParagraphColor>{" "}
-            and I enjoy creating things that live on the internet. I'm a
+            and I enjoy creating things that live on the internet. I&apos;m a
             self-taught{" "}
             <SectionParagraphColor>
               MERN Full Stack Developer.
@@ -97,8 +97,9 @@ const About = ({ windowHeight, windowScroll }) => {
                 </SectionParagraphColor>{" "}
                 which was mostly centered in{" "}
                 <SectionParagraphColor>Visual Basic</SectionParagraphColor> and
-                core programming principles. Then, during my Master's time, I
-                took some <SectionParagraphColor>Python</SectionParagraphColor>{" "}
+                core programming principles. Then, during my Master&apos;s time,
+                I took some{" "}
+                <SectionParagraphColor>Python</SectionParagraphColor>{" "}
                 programming optional seminars, because it was the booming
                 language at that time.{" "}
               </AboutMiniParagraph>
@@ -107,12 +108,12 @@ const About = ({ windowHeight, windowScroll }) => {
                 <SectionParagraphColor>
                   Full-Stack journey started in 2020
                 </SectionParagraphColor>{" "}
-                when I created my first site for Inverfree. Since then, I've
-                been{" "}
+                when I created my first site for Inverfree. Since then,
+                I&apos;ve been{" "}
                 <SectionParagraphColor>
                   learning Full-Stack everyday (5-6 hours a day).
                 </SectionParagraphColor>{" "}
-                I'm mostly centered on{" "}
+                I&apos;m mostly centered on{" "}
                 <SectionParagraphColor>MERN Stack,</SectionParagraphColor> but
                 planning to learn more technologies because I love learning and
                 trying new tech stuff. My passion for Full-Stack, Programming
@@ -125,13 +126,13 @@ const About = ({ windowHeight, windowScroll }) => {
                 <SectionParagraphColor>
                   I love Crypto so much.
                 </SectionParagraphColor>{" "}
-                I'm really full into{" "}
+                I&apos;m really full into{" "}
                 <SectionParagraphColor>
-                  Blockchain tech, Defi, NFT's
+                  Blockchain tech, Defi, NFT&apos;s
                 </SectionParagraphColor>{" "}
-                and all the nerd stuff. I'm not only interested in this industry
-                as an investor standpoint, but as a developer's too. As a side
-                hobby, I'm learning{" "}
+                and all the nerd stuff. I&apos;m not only interested in this
+                industry as an investor standpoint, but as a developer&apos;s
+                too. As a side hobby, I&apos;m learning{" "}
                 <SectionParagraphColor>
                   Solidity programming
                 </SectionParagraphColor>{" "}

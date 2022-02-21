@@ -28,7 +28,7 @@ const Welcome = () => {
       </SectionTitle>
       <SectionTitle sub>Welcome to my Portfolio Website.</SectionTitle>
       <SectionParagraph>
-        Full-Stack Developer, BA in Economics, Master in Finance. I'm
+        Full-Stack Developer, BA in Economics, Master in Finance. I&apos;m
         self-taught and I love making things on the web, focusing mainly on{" "}
         <SectionParagraphColor>JavaScript</SectionParagraphColor> and the{" "}
         <SectionParagraphColor>MERN Stack.</SectionParagraphColor>
