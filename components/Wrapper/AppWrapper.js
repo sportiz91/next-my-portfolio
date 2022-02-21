@@ -92,7 +92,7 @@ const AppWrapper = () => {
       window.removeEventListener("resize", handleScroll);
       window.removeEventListener("scroll", handleResize);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <AppDivWrapper state={mobileNavbar}>
