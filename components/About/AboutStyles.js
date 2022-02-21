@@ -14,6 +14,10 @@ export const AboutDivWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.break422} {
     padding: 0 1.5rem;
   }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    margin: 6rem 0 2rem;
+  }
 `;
 
 export const AboutParagraphWrapper = styled.div``;
