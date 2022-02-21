@@ -82,17 +82,17 @@ const AppWrapper = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => handleScroll());
-    window.addEventListener("resize", () => handleResize());
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     const windowWidth = window.innerWidth;
     windowWidth > 768 ? setIsMobile(false) : setIsMobile(true);
 
     return () => {
-      window.removeEventListener("resize", () => handleResize);
-      window.removeEventListener("scroll", () => handleScroll());
+      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("scroll", handleResize);
     };
-  }, [handleScroll, handleResize]);
+  }, []);
 
   return (
     <AppDivWrapper state={mobileNavbar}>
