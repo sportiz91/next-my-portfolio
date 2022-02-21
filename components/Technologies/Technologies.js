@@ -66,7 +66,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
         <SectionTitle title nomargin links>
           Technologies
         </SectionTitle>
-        <SectionLine tech />
+        <SectionLine />
       </SectionTitleAndLine>
 
       <SectionParagraph tech>

@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 export const AboutDivWrapper = styled.div`
   margin: 6rem 0 12rem;
-  padding: 0 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    padding: 0 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    padding: 0 1.5rem;
+  }
 `;
 
 export const AboutParagraphWrapper = styled.div``;
@@ -15,6 +22,18 @@ export const AboutMiniParagraph = styled.p`
   color: ${(props) => props.theme.colors.paragraph};
   line-height: 1.5;
   padding-top: 1.5rem;
+
+  & :nth-child(1) {
+    padding: 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.45rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break400} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const AboutImgDiv = styled.div`
@@ -22,6 +41,16 @@ export const AboutImgDiv = styled.div`
   width: 275px;
   border-radius: 5px;
   grid-area: me;
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    height: 225px;
+    width: 225px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    height: 150px;
+    width: 150px;
+  }
 `;
 
 export const AboutImgOverlay = styled.div`

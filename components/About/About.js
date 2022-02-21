@@ -46,10 +46,10 @@ const About = ({ windowHeight, windowScroll }) => {
   return (
     <PageSection ref={projectsRef} showSection={showSection} about id="about">
       <SectionTitleAndLine>
-        <SectionTitle sub nomargin links>
+        <SectionTitle title nomargin links>
           About
         </SectionTitle>
-        <SectionLine about />
+        <SectionLine />
       </SectionTitleAndLine>
 
       <AboutDivWrapper>
@@ -141,7 +141,7 @@ const About = ({ windowHeight, windowScroll }) => {
           ) : null}
         </AboutParagraphWrapper>
 
-        <SectionButton tech onClick={() => setShowMore(!showMore)}>
+        <SectionButton about onClick={() => setShowMore(!showMore)}>
           Show {showMore ? "less" : "more"}
         </SectionButton>
 
