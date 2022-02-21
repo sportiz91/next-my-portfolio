@@ -42,9 +42,19 @@ export const AboutImgDiv = styled.div`
   border-radius: 5px;
   grid-area: me;
 
+  @media ${(props) => props.theme.breakpoints.break864} {
+    height: 250px;
+    width: 250px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    height: 175px;
+    width: 175px;
+  }
+
   @media ${(props) => props.theme.breakpoints.break504} {
-    height: 225px;
-    width: 225px;
+    height: 200px;
+    width: 200px;
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
