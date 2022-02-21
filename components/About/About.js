@@ -41,7 +41,7 @@ const About = ({ windowHeight, windowScroll }) => {
         setShowSection(true);
       }
     }
-  }, [windowScroll]);
+  }, [windowScroll, showSection, windowHeight]);
 
   return (
     <PageSection ref={projectsRef} showSection={showSection} about id="about">

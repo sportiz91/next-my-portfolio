@@ -58,7 +58,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
         setShowSection(true);
       }
     }
-  }, [windowScroll]);
+  }, [windowScroll, showSection, windowHeight]);
 
   return (
     <PageSection ref={projectsRef} showSection={showSection} id="technologies">
@@ -91,7 +91,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
             <TechInfoTechnologiesDiv>
               {data.tech[0].front.map((item, index) => {
                 return (
-                  <TechNameAndArrowWrapper>
+                  <TechNameAndArrowWrapper key={index}>
                     <AiFillCaretRight className="icon" />
                     <ProjectInfoOrTechName key={index} tech paragraph>
                       {item.name}

@@ -34,7 +34,7 @@ const Projects = ({ windowHeight, windowScroll, isMobile }) => {
         setShowSection(true);
       }
     }
-  }, [windowScroll]);
+  }, [windowScroll, showSection, windowHeight]);
 
   return (
     <PageSection ref={projectsRef} showSection={showSection} id="projects">

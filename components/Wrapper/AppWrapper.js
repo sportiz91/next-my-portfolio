@@ -57,7 +57,7 @@ const AppWrapper = () => {
 
   const closeNav = useCallback(() => {
     setMobileNavbar(false);
-  }, [mobileNavbar]);
+  }, []);
 
   const handleScroll = () => {
     if (!initialLoad) {
@@ -92,14 +92,7 @@ const AppWrapper = () => {
       window.removeEventListener("resize", () => handleResize);
       window.removeEventListener("scroll", () => handleScroll());
     };
-  }, []);
-
-  // // useEffect(() => {
-  // //   window.addEventListener("resize", () => handleResize());
-  // //   return window.removeEventListener("resize", () => handleResize);
-  // // }, []);
-
-  // useEffect(() => {}, []);
+  }, [handleScroll, handleResize]);
 
   return (
     <AppDivWrapper state={mobileNavbar}>

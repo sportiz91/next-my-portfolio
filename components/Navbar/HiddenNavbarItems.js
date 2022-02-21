@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const HiddenNavbarItems = ({ name, id, number, closeNav }) => {
   return (
-    <Link href={id}>
+    <Link href={id} passHref>
       <AnchorNavMenuOrShow mobile onClick={() => closeNav()}>
         <NavNumberWrapperDiv>
           <NavNumberDiv>

@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       <NavDivOne>
-        <Link href="/">
+        <Link href="/" passHref>
           <AnchorLogo>
             <DiCssdeck size="4rem" />
             <PortfolioText>Portfolio</PortfolioText>
@@ -27,7 +27,7 @@ const Navbar = () => {
       </NavDivOne>
 
       <NavDivTwo>
-        <Link href="#projects">
+        <Link href="#projects" passHref>
           <AnchorNavMenuOrShow>
             <NavNumber>01.</NavNumber>
             <MiddleText nav>Projects</MiddleText>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </AnchorNavMenuOrShow>
         </Link>
 
-        <Link href="#technologies">
+        <Link href="#technologies" passHref>
           <AnchorNavMenuOrShow>
             <NavNumber>02.</NavNumber>
             <MiddleText nav>Technologies</MiddleText>
@@ -43,7 +43,7 @@ const Navbar = () => {
           </AnchorNavMenuOrShow>
         </Link>
 
-        <Link href="#about">
+        <Link href="#about" passHref>
           <AnchorNavMenuOrShow>
             <NavNumber>03.</NavNumber>
             <MiddleText nav>About</MiddleText>
