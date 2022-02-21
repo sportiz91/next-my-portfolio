@@ -59,7 +59,7 @@ const AppWrapper = () => {
     setMobileNavbar(false);
   }, []);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (!initialLoad) {
       return;
     } else {
@@ -73,7 +73,7 @@ const AppWrapper = () => {
 
     setWindowHeight(windowHeight);
     setWindowScroll(windowScroll);
-  };
+  }, []);
 
   const handleResize = () => {
     const windowWidth = window.innerWidth;
