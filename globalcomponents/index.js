@@ -166,7 +166,7 @@ export const MiddleText = styled.span`
 
   &:hover {
     color: ${(props) => props.theme.colors.button3};
-    left: 6px;
+    left: ${(props) => (props.footer ? "6px" : "")};
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
