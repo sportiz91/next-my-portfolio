@@ -73,7 +73,7 @@ const AppWrapper = () => {
 
     setWindowHeight(windowHeight);
     setWindowScroll(windowScroll);
-  }, []);
+  }, [initialLoad]);
 
   const handleResize = () => {
     const windowWidth = window.innerWidth;
