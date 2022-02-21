@@ -94,12 +94,12 @@ const AppWrapper = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", () => handleResize());
-  //   return window.removeEventListener("resize", () => handleResize);
-  // }, []);
+  // // useEffect(() => {
+  // //   window.addEventListener("resize", () => handleResize());
+  // //   return window.removeEventListener("resize", () => handleResize);
+  // // }, []);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   return (
     <AppDivWrapper state={mobileNavbar}>

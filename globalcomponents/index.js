@@ -68,9 +68,28 @@ export const SectionMiniParagraph = styled.p`
   opacity: ${(props) => (props.hidden ? "0" : "1")};
   transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
 
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) =>
+      props.other
+        ? "1.2rem"
+        : props.tag
+        ? "1.4rem"
+        : props.footer
+        ? "1.4rem"
+        : "1.3rem"};
+  }
+
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${(props) =>
-      props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.3rem"};
+      props.other
+        ? "1.2rem"
+        : props.tag
+        ? "1.4rem"
+        : props.footer
+        ? "1.2rem"
+        : "1.3rem"};
+
+    text-align: ${(props) => (props.footer ? "center" : "")};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
@@ -147,6 +166,7 @@ export const MiddleText = styled.span`
 
   &:hover {
     color: ${(props) => props.theme.colors.button3};
+    left: 6px;
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
@@ -162,17 +182,17 @@ export const MiddleText = styled.span`
 
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${({ mobile, footer, view }) =>
-      mobile ? "2rem" : footer ? "1.65rem" : view ? "1.7rem" : "1.8rem"}
+      mobile ? "2rem" : footer ? "1.4rem" : view ? "1.7rem" : "1.8rem"}
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${({ mobile, footer, view }) =>
-      mobile ? "1.65rem" : footer ? "1.65rem" : view ? "1.5rem" : "1.8rem"};
+      mobile ? "1.65rem" : footer ? "1.4rem" : view ? "1.5rem" : "1.8rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
     font-size: ${({ mobile, footer, view }) =>
-      mobile ? "1.65rem" : footer ? "1.65rem" : view ? "1.4rem" : "1.8rem"};
+      mobile ? "1.65rem" : footer ? "1.4rem" : view ? "1.4rem" : "1.8rem"};
   }
 `;
 
