@@ -62,13 +62,13 @@ const Technologies = ({ windowHeight, windowScroll }) => {
   return (
     <PageSection ref={projectsRef} showSection={showSection} id="technologies">
       <SectionTitleAndLine>
-        <SectionTitle sub nomargin links>
+        <SectionTitle title nomargin links>
           Technologies
         </SectionTitle>
         <SectionLine tech />
       </SectionTitleAndLine>
 
-      <SectionParagraph>
+      <SectionParagraph tech>
         These are the{" "}
         <SectionParagraphColor>technologies</SectionParagraphColor> I’ve been
         working with recently:

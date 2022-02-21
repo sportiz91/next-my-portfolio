@@ -104,6 +104,7 @@ export const NavNumber = styled.p`
   display: ${(props) => (props.mobile ? "block" : "inline")};
   margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
   margin-bottom: ${(props) => (props.mobile ? "0.7rem" : "")};
+  font-weight: 500;
 
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) => (props.mobile ? "2.2rem" : "1.5rem")};

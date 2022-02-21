@@ -32,23 +32,23 @@ export const SectionParagraph = styled.p`
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
-    font-size: 1.6rem;
+    font-size: ${(props) => (props.tech ? "1.7rem" : "1.6rem")};
     line-height: 1.5;
     max-width: 550px;
   }
 
   @media ${(props) => props.theme.breakpoints.break504} {
-    font-size: 1.4rem;
+    font-size: ${(props) => (props.tech ? "1.6rem" : "1.4rem")};
     max-width: 400px;
     margin-bottom: 3rem;
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: 1.3rem;
+    font-size: ${(props) => (props.tech ? "1.45rem" : "1.3rem")};
   }
 
   @media ${(props) => props.theme.breakpoints.break339} {
-    font-size: 1.1rem;
+    font-size: ${(props) => (props.tech ? "1.3rem" : "1.1rem")};
   }
 `;
 

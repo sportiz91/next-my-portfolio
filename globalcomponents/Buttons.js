@@ -9,7 +9,7 @@ export const SectionButton = styled.a`
   color: ${(props) => props.theme.colors.button3};
   text-align: center;
   padding: ${(props) => (props.tech ? "1rem 3rem" : "2rem")};
-  width: ${(props) => (props.tech ? "150px" : "200px")};
+  width: ${(props) => (props.tech ? "115px" : "200px")};
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;

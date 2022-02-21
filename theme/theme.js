@@ -24,6 +24,7 @@ export const theme = {
     break1280: "(max-width: 1280px)",
     break1196: "(max-width: 1196px)",
     break1081: "(max-width: 1081px)",
+    break997: "(max-width: 997px)",
     break931: "(max-width: 931px)",
     break864: "(max-width: 864px)",
     break800: "(max-width: 800px)",
