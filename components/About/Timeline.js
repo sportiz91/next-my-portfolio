@@ -17,7 +17,7 @@ const Timeline = () => {
       <SectionTitle links>Timeline</SectionTitle>
 
       <AnchorNavMenuOrShow show>
-        <MiddleText timeline onClick={() => setTimeline(!timeline)}>
+        <MiddleText view onClick={() => setTimeline(!timeline)}>
           <span>{timeline ? "Hide " : "View "}</span> timeline
         </MiddleText>
         <AiFillCaretRight className="icon" />

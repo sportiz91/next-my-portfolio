@@ -11,6 +11,7 @@ import {
   TimeLinedDetailedYear,
   TimeLineDetailedDescription,
   TimeLineDetailedWrappingNode,
+  TimeLineWrapper,
   TimeLineDetailedDiv,
   TimelineDetailedWrapperDiv,
   TimeLineDiv,
@@ -85,7 +86,7 @@ const TimelineDetailed = () => {
   }, [targetSlide]);
 
   return (
-    <>
+    <TimeLineWrapper>
       <TimeLineDiv>
         <TimelineDetailedWrapperDiv ref={wrapperRef} onScroll={handleScroll}>
           {data.timeline.map((item, index) => {
@@ -114,7 +115,7 @@ const TimelineDetailed = () => {
       </TimeLineDiv>
 
       <TimeLineCirclesDiv>
-        <AiFillCaretLeft size={"2rem"} className="icon" onClick={handleLeft} />
+        <AiFillCaretLeft className="icon" onClick={handleLeft} />
         {data.timeline.map((item, index) => {
           return (
             <TimeLineCircleWrapper
@@ -125,13 +126,9 @@ const TimelineDetailed = () => {
             </TimeLineCircleWrapper>
           );
         })}
-        <AiFillCaretRight
-          size={"2rem"}
-          className="icon"
-          onClick={handleRight}
-        />
+        <AiFillCaretRight className="icon" onClick={handleRight} />
       </TimeLineCirclesDiv>
-    </>
+    </TimeLineWrapper>
   );
 };
 
