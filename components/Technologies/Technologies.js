@@ -118,7 +118,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
             <TechInfoTechnologiesDiv>
               {data.tech[1].back.map((item, index) => {
                 return (
-                  <TechNameAndArrowWrapper>
+                  <TechNameAndArrowWrapper key={index}>
                     <AiFillCaretRight className="icon" />
                     <ProjectInfoOrTechName key={index} tech paragraph>
                       {item.name}
@@ -145,7 +145,7 @@ const Technologies = ({ windowHeight, windowScroll }) => {
             <TechInfoTechnologiesDiv>
               {data.tech[2].devops.map((item, index) => {
                 return (
-                  <TechNameAndArrowWrapper>
+                  <TechNameAndArrowWrapper key={index}>
                     <AiFillCaretRight className="icon" />
                     <ProjectInfoOrTechName key={index} tech paragraph>
                       {item.name}
