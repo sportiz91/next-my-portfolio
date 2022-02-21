@@ -4,7 +4,36 @@ export const OtherProjectsDiv = styled.div`
   margin-top: 5rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
-  gap: 3rem;
+  gap: 1.5rem;
+
+  @media ${(props) => props.theme.breakpoints.break1280} {
+    margin: 5rem 2rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break931} {
+    margin: 5rem 8rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    margin: 5rem 5rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break768} {
+    margin: 5rem 8rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break621} {
+    margin: 5rem 5rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break570} {
+    margin: 5rem 3rem 0;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 5rem 1.5rem 0;
+  }
 `;
 
 export const ProjectDiv = styled.div`
@@ -22,6 +51,10 @@ export const ProjectDiv = styled.div`
   &:hover {
     transform: translateY(-5px);
   }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    padding: 2rem;
+  }
 `;
 
 export const ProjectLinksDiv = styled.div`
@@ -32,6 +65,11 @@ export const ProjectLinksDiv = styled.div`
   padding-bottom: 3rem;
 
   & .icon {
+    font-size: 2.5rem;
+  }
+
+  & .icon.folder {
+    font-size: 2.7rem;
     color: ${(props) => props.theme.colors.button3};
   }
 

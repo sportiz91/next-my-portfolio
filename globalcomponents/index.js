@@ -109,7 +109,6 @@ export const AnchorNavMenuOrShow = styled.a`
     & .icon {
       color: ${(props) => props.theme.colors.button3};
       left: 2px;
-      left: ${(props) => (props.show ? "7px" : "2px")};
       visibility: visible;
     }
   }
@@ -120,14 +119,26 @@ export const AnchorNavMenuOrShow = styled.a`
     }
   }
 
+  @media ${(props) => props.theme.breakpoints.break422} {
+    .icon.view {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    .icon.view {
+      font-size: 1.5rem;
+    }
+  }
+
   @media ${(props) => props.theme.breakpoints.break460} {
-    margin-left: 30px;
+    margin-left: ${(props) => (props.show ? "" : "30px")};
   }
 `;
 
 export const MiddleText = styled.span`
-  font-size: ${({ mobile, footer }) =>
-    mobile ? "3rem" : footer ? "1.65rem" : "1.8rem"};
+  font-size: ${({ mobile, footer, view }) =>
+    mobile ? "3rem" : footer ? "1.65rem" : view ? "1.8rem" : "1.8rem"};
   color: ${(props) => props.theme.colors.links};
   position: relative;
   bottom: ${(props) => (props.adj ? "2.5px" : "")};
@@ -136,23 +147,32 @@ export const MiddleText = styled.span`
 
   &:hover {
     color: ${(props) => props.theme.colors.button3};
-    left: ${(props) => (props.nav ? "" : "6px")};
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {
-    font-size: ${({ mobile, footer }) =>
-      mobile ? "2.4rem" : footer ? "1.65rem" : "1.6rem"};
+    font-size: ${({ mobile, footer, view }) =>
+      mobile ? "2.4rem" : footer ? "1.65rem" : view ? "1.8rem" : "1.6rem"};
   }
   }
 
   @media ${(props) => props.theme.breakpoints.break650} {
-    font-size: ${({ mobile, footer }) =>
-      mobile ? "2rem" : footer ? "1.65rem" : "1.8rem"};
+    font-size: ${({ mobile, footer, view }) =>
+      mobile ? "2rem" : footer ? "1.65rem" : view ? "1.8rem" : "1.8rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${({ mobile, footer, view }) =>
+      mobile ? "2rem" : footer ? "1.65rem" : view ? "1.7rem" : "1.8rem"}
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: ${({ mobile, footer }) =>
-      mobile ? "1.65rem" : footer ? "1.65rem" : "1.8rem"};
+    font-size: ${({ mobile, footer, view }) =>
+      mobile ? "1.65rem" : footer ? "1.65rem" : view ? "1.5rem" : "1.8rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${({ mobile, footer, view }) =>
+      mobile ? "1.65rem" : footer ? "1.65rem" : view ? "1.4rem" : "1.8rem"};
   }
 `;
 
@@ -174,12 +194,12 @@ export const ProjectInfoOrTechName = styled.p`
 
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: ${(props) =>
-      props.other ? "2rem" : props.tech ? "1.5rem" : "1.85rem"};
+      props.other ? "1.85rem" : props.tech ? "1.5rem" : "1.85rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: ${(props) =>
-      props.other ? "2rem" : props.tech ? "1.5rem" : "1.5rem"};
+      props.other ? "1.6rem" : props.tech ? "1.5rem" : "1.5rem"};
   }
 `;
 
@@ -424,6 +444,10 @@ export const SectionSeparator = styled.hr`
   opacity: 0.2;
   margin: 7rem 0 10rem;
   margin: ${(props) => (props.about ? "2rem 0 10rem" : "7rem 0 10rem")};
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    margin: 7rem;
+  }
 `;
 
 export const SpanUnderline = styled.span`

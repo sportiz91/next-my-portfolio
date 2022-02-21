@@ -35,8 +35,8 @@ const OtherProjects = () => {
         rel="noopener noreferrer"
       >
         <AnchorNavMenuOrShow show>
-          <MiddleText>View the archive</MiddleText>
-          <AiFillCaretRight className="icon" />
+          <MiddleText view>View the archive</MiddleText>
+          <AiFillCaretRight className="icon view" />
         </AnchorNavMenuOrShow>
       </a>
 
@@ -45,21 +45,21 @@ const OtherProjects = () => {
           return (
             <ProjectDiv key={index}>
               <ProjectLinksDiv>
-                <AiOutlineFolder size={"3.2rem"} className="icon" />
+                <AiOutlineFolder className="icon folder" />
                 <ProjectLinksSourceDiv>
                   <a
                     href={item.github}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <AiFillGithub size={"3rem"} />
+                    <AiFillGithub className="icon" />
                   </a>
                   <a
                     href={item.source}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FiExternalLink size={"3rem"} />
+                    <FiExternalLink className="icon" />
                   </a>
                 </ProjectLinksSourceDiv>
               </ProjectLinksDiv>
@@ -69,7 +69,7 @@ const OtherProjects = () => {
               <ProjectInfoDescription nobackground nopadding other>
                 {item.description}
               </ProjectInfoDescription>
-              <ProjectInfoTags>
+              <ProjectInfoTags other>
                 {item.tags.map((tech, index) => {
                   return (
                     <SectionMiniParagraph key={index} other>

@@ -210,10 +210,11 @@ export const ProjectInfoDescription = styled.div`
 export const ProjectInfoTags = styled.div`
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: ${(props) => (props.other ? "start" : "end")};
   align-items: center;
   column-gap: 2rem;
   flex-wrap: wrap;
+  line-height: ${(props) => (props.other ? "1.8" : "")};
 
   @media ${(props) => props.theme.breakpoints.break1280} {
     justify-content: start;
