@@ -1,3 +1,9 @@
+/*
+  useClick() custom hook.
+  ---
+  Click state variable get's incremented by +1 everytime we make a click.
+  Initial state = 0.
+*/
 import { useState } from "react";
 
 const useClick = () => {

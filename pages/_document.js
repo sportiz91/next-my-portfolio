@@ -1,6 +1,17 @@
+/*
+  This page overrides the default document. This is also used to integrate Styled Components with a Next.js app.
+  "A custom Document can update the <html> and <body> tags used to render a Page. 
+  This file is only rendered on the server, so event handlers like onClick cannot be used in _document." -> see: https://nextjs.org/docs/advanced-features/custom-document
+*/
+
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
+/*
+  Injecting Styled Components.
+  See this repo example: https://github.com/vercel/next.js/tree/main/examples/with-styled-components/pages
+  Coming from Styled Components Docs: https://styled-components.com/docs/advanced#nextjs
+*/
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -28,6 +39,10 @@ export default class MyDocument extends Document {
     }
   }
 
+  /*
+    Rendering custom document.
+    Injecting font in the documment.
+  */
   render() {
     return (
       <Html>

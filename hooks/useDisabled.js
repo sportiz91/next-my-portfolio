@@ -1,3 +1,10 @@
+/*
+  useDisabled() custom hook.
+  ---
+  Change disabled state to true when executing prohibit function.
+  Then, state reverts back to false after timeout ms (function argument).
+*/
+
 import { useState } from "react";
 
 const useDisabled = (timeout) => {
@@ -8,7 +15,7 @@ const useDisabled = (timeout) => {
 
     setTimeout(() => {
       setDisabled(false);
-    }, timeout); //Why 1.65s ? -> Because we have to consider all the transition delays of the elements.
+    }, timeout);
   };
 
   return [disabled, prohibit];

@@ -7,13 +7,21 @@ import {
   AnchorLogo,
   PortfolioText,
   NavDivTwo,
-  NavNumber,
 } from "./NavbarStyles";
 
-import { MiddleText, AnchorNavMenuOrShow } from "../../globalcomponents";
+import {
+  AnchorNavMenuOrShow,
+  MiddleText,
+  NavNumber,
+} from "../../globalcomponents";
 
 import Link from "next/link";
+import data from "../../utils/data";
 
+/*
+  When <Link> from next have a React component (can be styled component too) as child,
+  Then we have to passHref too (to avoid warnings and future deployment problems).
+*/
 const Navbar = () => {
   return (
     <>
@@ -27,66 +35,20 @@ const Navbar = () => {
       </NavDivOne>
 
       <NavDivTwo>
-        <Link href="#projects" passHref>
-          <AnchorNavMenuOrShow>
-            <NavNumber>01.</NavNumber>
-            <MiddleText nav>Projects</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </AnchorNavMenuOrShow>
-        </Link>
-
-        <Link href="#technologies" passHref>
-          <AnchorNavMenuOrShow>
-            <NavNumber>02.</NavNumber>
-            <MiddleText nav>Technologies</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </AnchorNavMenuOrShow>
-        </Link>
-
-        <Link href="#about" passHref>
-          <AnchorNavMenuOrShow>
-            <NavNumber>03.</NavNumber>
-            <MiddleText nav>About</MiddleText>
-            <AiFillCaretRight className="icon" />
-          </AnchorNavMenuOrShow>
-        </Link>
+        {data.menu.map((item, index) => {
+          return (
+            <Link key={index} href={item.id} passHref>
+              <AnchorNavMenuOrShow>
+                <NavNumber>{item.number}</NavNumber>
+                <MiddleText nav>{item.name}</MiddleText>
+                <AiFillCaretRight className="icon" />
+              </AnchorNavMenuOrShow>
+            </Link>
+          );
+        })}
       </NavDivTwo>
     </>
   );
 };
 
 export default Navbar;
-
-{
-  /* <NavDivThree>
-        <AnchorNav
-          href="https://github.com/sportiz91"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconDiv>
-            <AiFillGithub size="3rem" />
-          </IconDiv>
-        </AnchorNav>
-
-        <AnchorNav
-          href="https://www.linkedin.com/in/santiago-pablo-ortiz-12151266/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconDiv>
-            <AiFillLinkedin size="3rem" />
-          </IconDiv>
-        </AnchorNav>
-
-        <AnchorNav
-          href="https://www.instagram.com/santimarkets/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <IconDiv>
-            <AiFillInstagram size="3rem" />
-          </IconDiv>
-        </AnchorNav>
-      </NavDivThree> */
-}

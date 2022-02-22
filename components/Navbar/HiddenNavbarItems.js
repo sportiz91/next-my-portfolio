@@ -1,6 +1,10 @@
-import { MiddleText, AnchorNavMenuOrShow } from "../../globalcomponents";
+import {
+  NavNumber,
+  MiddleText,
+  AnchorNavMenuOrShow,
+} from "../../globalcomponents";
 
-import { NavNumber, NavNumberDiv, NavNumberWrapperDiv } from "./NavbarStyles";
+import { NavNumberDiv, NavNumberWrapperDiv } from "./NavbarStyles";
 
 import { AiFillCaretRight } from "react-icons/ai";
 

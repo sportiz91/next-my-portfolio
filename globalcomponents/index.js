@@ -1,5 +1,88 @@
 import styled from "styled-components";
 
+export const AnchorNavMenuOrShow = styled.a`
+  position: relative;
+  cursor: pointer;
+  margin-left: ${(props) =>
+    props.mobile ? "17px" : ""}; /* Adjustment to center in mobile */
+
+  & .icon {
+    color: rgba(255 255 255 / 0.75);
+    font-size: 1.75rem;
+    margin-right: 25px;
+    position: relative;
+    top: 4px; /* Adjustment to center icon in desktop */
+    visibility: hidden;
+    transition: color 0.5s ease; /* transition only the color. Not the icon visibility nor the left position when hovering */
+  }
+
+  /* Only for mobile icons */
+  & .icon.mobile {
+    font-size: 2.3rem;
+    margin: 0;
+  }
+
+  &:hover {
+    left: 6px;
+
+    /* Targeting the menu name */
+    & span {
+      color: ${(props) => props.theme.colors.button3};
+    }
+
+    & .icon {
+      color: ${(props) => props.theme.colors.button3};
+      left: 2px; /* a bit more of space between menu name and right arrow when hovering on anchor (all the structure) */
+      visibility: visible;
+    }
+  }
+
+  /* font size adjustment for mobile view */
+  @media ${(props) => props.theme.breakpoints.break650} {
+    .icon.mobile {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    .icon.view {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    .icon.view {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.break460} {
+    margin-left: ${(props) => (props.show ? "" : "30px")};
+  }
+`;
+
+export const NavNumber = styled.p`
+  font-size: ${(props) => (props.mobile ? "2.5rem" : "1.7rem")};
+  color: ${(props) => props.theme.colors.button3};
+  display: ${(props) => (props.mobile ? "block" : "inline")};
+  margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
+  margin-bottom: ${(props) => (props.mobile ? "0.7rem" : "")};
+  font-weight: 500;
+
+  /* Font Size Adjustment */
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: ${(props) => (props.mobile ? "2.2rem" : "1.5rem")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break650} {
+    font-size: 1.7rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: 1.4rem;
+  }
+`;
+
 export const PageSection = styled.section`
   opacity: ${(props) => (props.showSection ? "1" : "0")};
   transition: opacity 1.5s;
@@ -95,63 +178,6 @@ export const SectionMiniParagraph = styled.p`
   @media ${(props) => props.theme.breakpoints.break339} {
     font-size: ${(props) =>
       props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.2rem"};
-  }
-`;
-
-export const AnchorNavMenuOrShow = styled.a`
-  position: relative;
-  cursor: pointer;
-  margin-left: ${(props) => (props.mobile ? "17px" : "")}; /* scroll width */
-
-  & .icon {
-    color: rgba(255 255 255 / 0.75);
-    font-size: 1.75rem;
-    margin-right: 25px;
-    position: relative;
-    top: 4px;
-    visibility: hidden;
-    transition: color 0.5s ease;
-  }
-
-  & .icon.mobile {
-    font-size: 2.3rem;
-    margin: 0;
-  }
-
-  &:hover {
-    left: 6px;
-
-    & span {
-      color: ${(props) => props.theme.colors.button3};
-    }
-
-    & .icon {
-      color: ${(props) => props.theme.colors.button3};
-      left: 2px;
-      visibility: visible;
-    }
-  }
-
-  @media ${(props) => props.theme.breakpoints.break650} {
-    .icon.mobile {
-      font-size: 1.8rem;
-    }
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    .icon.view {
-      font-size: 1.6rem;
-    }
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    .icon.view {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media ${(props) => props.theme.breakpoints.break460} {
-    margin-left: ${(props) => (props.show ? "" : "30px")};
   }
 `;
 

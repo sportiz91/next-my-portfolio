@@ -1,3 +1,9 @@
+/*
+  AppWrapper component is the father of all the structure.
+  Inherits Styled Theming object, Global Styles and font (from modified _document.js).
+  Also, we don't have any initial prop inherited in _app.js (pageProps is an empty object).
+*/
+
 import { useState, useEffect, useCallback } from "react";
 
 import useScrollDirection from "../../hooks/useScrollDirection";
@@ -20,7 +26,6 @@ import Navbar from "../Navbar/Navbar";
 import Socials from "../Socials/Socials";
 import Contact from "../Contact/Contact";
 import Layout from "../../layout/Layout";
-
 import Welcome from "../Welcome/Welcome";
 import Projects from "../Projects/Projects";
 import Technologies from "../Technologies/Technologies";
@@ -40,6 +45,14 @@ const AppWrapper = () => {
   const [click, increment] = useClick();
   const [disabled, prohibit] = useDisabled(600);
 
+  // click === 0 means the navbar haven't been opened this session yet.
+  // Because mobileNavbar initial state === false, then mobileNavbar === true (get's opened).
+  // increment by +1 signaling we are no longer in initial opening.
+  // prohibit for 600 ms to click again.
+  // click !== 0 means we have opened the nav before in this session.
+  // if disabled === true, then we can't click the nav again after the 600 ms are completed.
+  // if disabled time has passed, then, we set the mobileNavbar state to the opposite and then prohibit again
+  // for 600ms.
   const handleClick = () => {
     if (click === 0) {
       setMobileNavbar(!mobileNavbar);
@@ -55,10 +68,16 @@ const AppWrapper = () => {
     }
   };
 
+  //This function construction only is defined on page load.
+  //Function to close the navBar.
   const closeNav = useCallback(() => {
     setMobileNavbar(false);
   }, []);
 
+  //handleScroll function construction only changes when initialLoad dependancy changes.
+  //initialLoad only changes when we scroll down the first time, so we have only 2 function constructions for this function.
+  //Chaning initialLoad only the first time we scroll
+  //Changing setRoof to false if we scrolled:
   const handleScroll = useCallback(() => {
     if (!initialLoad) {
       return;
@@ -81,6 +100,11 @@ const AppWrapper = () => {
     windowWidth > 768 ? setIsMobile(false) : setIsMobile(true);
   };
 
+  //this useEffect get's executed when handleScroll function construction changes,
+  //so, only two times get's executed.
+  //This useEffect adds scroll and resize event listeners. Also, on the initial load of the page,
+  //We ask if window inner width is greater that 768. If it is, then we are in desktop view, else, mobile view
+  //(mobile view -> right navbar, desktop view -> top navbar)
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);

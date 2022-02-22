@@ -15,13 +15,19 @@ export const NavContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  /* 
+    First case avoid that navbar disapears when it's open and we scroll down -> it makes an horrible visual effect.
+    If mobile navbar is not open, then, when we scroll down we close it.
+    If we are scrolling up, then navbar is shown.  
+  */
   transform: ${(props) =>
     props.scrollDirection === "down" && props.state
       ? "translateY(0)"
       : props.scrollDirection === "down" && !props.state
       ? "translateY(-80px)"
       : "translateY(0)"};
-  z-index: 1;
+  z-index: 1; /* Navbar needs to be on top of page content */
+  /* background.nav is the same color but with little opacity. That way, we can backdrop-filter after. */
   background-color: ${(props) =>
     props.roof ? props.theme.background.bg1 : props.theme.background.nav};
   backdrop-filter: ${(props) => (props.roof ? "" : "blur(10px)")};
@@ -29,6 +35,7 @@ export const NavContainer = styled.section`
     props.roof ? "" : "0 10px 30px -10px rgb(0 0 0 / 0.75)"};
   transition: 0.4s ease;
 
+  /* Mobile view adjustments */
   @media ${(props) => props.theme.breakpoints.break650} {
     padding: 0 2rem;
   }
@@ -45,7 +52,7 @@ export const AnchorLogo = styled.a`
   align-items: center;
   color: ${(props) => props.theme.colors.links};
   position: relative;
-  top: 2.5px;
+  top: 2.5px; /* adjustment to center with right menu */
   cursor: pointer;
 
   &:hover {
@@ -96,27 +103,6 @@ export const NavNumberDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const NavNumber = styled.p`
-  font-size: ${(props) => (props.mobile ? "2.5rem" : "1.7rem")};
-  color: ${(props) => props.theme.colors.button3};
-  display: ${(props) => (props.mobile ? "block" : "inline")};
-  margin-right: ${(props) => (props.mobile ? "" : "1.1rem")};
-  margin-bottom: ${(props) => (props.mobile ? "0.7rem" : "")};
-  font-weight: 500;
-
-  @media ${(props) => props.theme.breakpoints.break864} {
-    font-size: ${(props) => (props.mobile ? "2.2rem" : "1.5rem")};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break650} {
-    font-size: 1.7rem;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: 1.4rem;
-  }
 `;
 
 export const BurgerDiv = styled.div`
