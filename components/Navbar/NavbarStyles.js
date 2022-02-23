@@ -1,3 +1,7 @@
+/*
+  Navbar related components.
+*/
+
 import styled from "styled-components";
 
 export const NavContainer = styled.section`
@@ -45,7 +49,14 @@ export const NavContainer = styled.section`
   }
 `;
 
-export const NavDivOne = styled.div``;
+//When mobile navbar open, apply blur + opacity to the Nav.
+export const NavDivOne = styled.div`
+  @media ${(props) => props.theme.breakpoints.break864} {
+    filter: ${(props) => (props.state ? "blur(8px)" : "")};
+    opacity: ${(props) => (props.state ? "0.3" : "")};
+    transition: 0.5s;
+  }
+`;
 
 export const AnchorLogo = styled.a`
   display: flex;
@@ -88,23 +99,7 @@ export const NavDivTwo = styled.div`
   }
 `;
 
-export const NavNumberWrapperDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-
-  & .icon {
-    font-size: 10rem;
-  }
-`;
-
-export const NavNumberDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
+/* div before, span, div after = burger button */
 export const BurgerDiv = styled.div`
   height: 28px;
   width: 28px;
@@ -177,6 +172,24 @@ export const HiddenNavbar = styled.section`
     align-items: center;
     gap: 7rem;
   }
+`;
+
+/* Number + Menu Text + Right Arrow for shown navbar in mobile view */
+export const NavNumberWrapperDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+
+  & .icon {
+    font-size: 10rem;
+  }
+`;
+
+export const NavNumberDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const DivWrapper = styled.div`

@@ -1,3 +1,7 @@
+/*
+  About section component.
+*/
+
 import { useState, useEffect, useRef } from "react";
 
 import {
@@ -14,13 +18,14 @@ import { SectionButton } from "../../globalcomponents/Buttons";
 
 import {
   AboutDivWrapper,
+  AboutParagraphWrapper,
   AboutMiniParagraph,
-  AboutImg,
   AboutImgDiv,
   AboutImgOverlay,
+  AboutImg,
   AboutImgOverflow,
-  AboutParagraphWrapper,
 } from "./AboutStyles";
+
 import Timeline from "./Timeline";
 
 const About = ({ windowHeight, windowScroll }) => {
@@ -85,8 +90,6 @@ const About = ({ windowHeight, windowScroll }) => {
             (mostly) and more traditional finance.{" "}
           </AboutMiniParagraph>
 
-          {showMore ? null : <AboutMiniParagraph> [...] </AboutMiniParagraph>}
-
           {showMore ? (
             <>
               <AboutMiniParagraph>
@@ -139,7 +142,9 @@ const About = ({ windowHeight, windowScroll }) => {
                 and doing some Blockchain Development too.
               </AboutMiniParagraph>
             </>
-          ) : null}
+          ) : (
+            <AboutMiniParagraph> [...] </AboutMiniParagraph>
+          )}
         </AboutParagraphWrapper>
 
         <SectionButton about onClick={() => setShowMore(!showMore)}>

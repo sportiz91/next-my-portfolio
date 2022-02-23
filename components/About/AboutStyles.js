@@ -1,3 +1,7 @@
+/*
+  Styled components for Projects Section
+*/
+
 import styled from "styled-components";
 
 export const AboutDivWrapper = styled.div`
@@ -7,6 +11,7 @@ export const AboutDivWrapper = styled.div`
   align-items: center;
   gap: 5rem;
 
+  /* Padding adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break1280} {
     padding: 0 2rem;
   }
@@ -31,6 +36,7 @@ export const AboutMiniParagraph = styled.p`
     padding: 0;
   }
 
+  /* Font Size adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: 1.45rem;
   }
@@ -44,7 +50,6 @@ export const AboutImgDiv = styled.div`
   height: 275px;
   width: 275px;
   border-radius: 5px;
-  grid-area: me;
 
   @media ${(props) => props.theme.breakpoints.break864} {
     height: 250px;

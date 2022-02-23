@@ -1,9 +1,13 @@
+/*
+  Projects section component.
+*/
+
 import { useEffect, useRef, useState } from "react";
 
 import {
   PageSection,
-  SectionTitle,
   SectionTitleAndLine,
+  SectionTitle,
   SectionLine,
   SectionDivSeparator,
   SectionSeparator,
@@ -22,11 +26,14 @@ const Projects = ({ windowHeight, windowScroll, isMobile }) => {
   const projectsRef = useRef();
 
   useEffect(() => {
+    //Calculates initial position of the section assuming you are on the roof.
     const projectsInitialPosition =
       projectsRef.current.getBoundingClientRect().top + windowScroll;
 
+    //Calculates current position
     const currentPosition = windowHeight + windowScroll;
 
+    //When current position surpases initial position, then show the section.
     if (currentPosition >= projectsInitialPosition) {
       if (showSection) {
         return;

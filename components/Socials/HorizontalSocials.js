@@ -1,3 +1,7 @@
+/*
+  Anchor of right navbar in mobile view
+*/
+
 import {
   DivSocialsHorizontal,
   AnchorSocials,

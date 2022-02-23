@@ -1,3 +1,7 @@
+/*
+  Anchor in mobile navbar and right margin when desktop
+*/
+
 import { ContactText } from "./ContactStyles";
 
 const HorizontalContact = () => {

@@ -1,3 +1,7 @@
+/*
+  Right mail component in desktop view.
+*/
+
 import { DivSocialsContainer, LineSocials } from "../../globalcomponents";
 
 import { ContactText } from "./ContactStyles";

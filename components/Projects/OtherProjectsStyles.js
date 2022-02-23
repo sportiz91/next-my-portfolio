@@ -1,3 +1,7 @@
+/*
+  Styled components for Projects Section
+*/
+
 import styled from "styled-components";
 
 export const OtherProjectsDiv = styled.div`
@@ -6,6 +10,7 @@ export const OtherProjectsDiv = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
   gap: 1.5rem;
 
+  /* Scaling margin for mobile view */
   @media ${(props) => props.theme.breakpoints.break1280} {
     margin: 5rem 2rem 0;
   }

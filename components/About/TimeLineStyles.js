@@ -1,17 +1,24 @@
-import styled from "styled-components";
+/*
+  Styled components for Timeline sub-section
+  ---
+  IMPORTANT THING TO NOTE: Whenever I have an overflow (x in this case), the resulting scroll bar if I overflow: auto or overflow: scroll
+  will have the width/height of the current overflow. In here we have a wrapper div of about 1300px, but the max-width was determined at about
+  945px. So, an overflow-x of 1300-945 is made. Maximum scroll width will be of that amount (356). To overcome that, I have to make the last
+  div 100%.
 
-export const TimeLineDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  margin: 4rem 0;
-`;
+*/
+import styled from "styled-components";
 
 export const TimeLineWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.break1280} {
     padding 0 2rem;
   }
+`;
+
+export const TimeLineDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 4rem 0;
 `;
 
 export const TimelineDetailedWrapperDiv = styled.div`
@@ -46,6 +53,7 @@ export const TimeLineDetailedDiv = styled.div`
   opacity: ${(props) => (props.active ? "1" : "0.5")};
   cursor: pointer;
 
+  /* Adjustment of divs for mobile view */
   @media ${(props) => props.theme.breakpoints.break504} {
     height: 100px;
     width: 150px;

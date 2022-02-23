@@ -1,3 +1,7 @@
+/*
+  Global Components used across all the App.
+*/
+
 import styled from "styled-components";
 
 export const AnchorNavMenuOrShow = styled.a`
@@ -69,7 +73,7 @@ export const NavNumber = styled.p`
   margin-bottom: ${(props) => (props.mobile ? "0.7rem" : "")};
   font-weight: 500;
 
-  /* Font Size Adjustment */
+  /* font size adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${(props) => (props.mobile ? "2.2rem" : "1.5rem")};
   }
@@ -83,105 +87,8 @@ export const NavNumber = styled.p`
   }
 `;
 
-export const PageSection = styled.section`
-  opacity: ${(props) => (props.showSection ? "1" : "0")};
-  transition: opacity 1.5s;
-  transition-delay: 0.4s;
-  padding: 0 5rem;
-  max-width: 1120px;
-  margin-bottom: ${(props) =>
-    props.about ? "10rem" : props.footer ? "0" : "25rem"};
-
-  @media ${(props) => props.theme.breakpoints.break1146} {
-    padding: 0 2.5rem;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break768} {
-    padding: 0;
-  }
-`;
-
-export const SectionParagraph = styled.p`
-  font-size: 2rem;
-  max-width: 600px;
-  color: ${(props) => props.theme.colors.paragraph};
-  line-height: 1.6;
-  font-weight: 100;
-  margin-bottom: 5rem;
-
-  @media ${(props) => props.theme.breakpoints.break1081} {
-    font-size: 1.8rem;
-    max-width: 650px;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break864} {
-    font-size: ${(props) => (props.tech ? "1.7rem" : "1.6rem")};
-    line-height: 1.5;
-    max-width: 550px;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break504} {
-    font-size: ${(props) => (props.tech ? "1.6rem" : "1.4rem")};
-    max-width: 400px;
-    margin-bottom: 3rem;
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: ${(props) => (props.tech ? "1.45rem" : "1.3rem")};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break339} {
-    font-size: ${(props) => (props.tech ? "1.3rem" : "1.1rem")};
-  }
-`;
-
-export const SectionMiniParagraph = styled.p`
-  color: ${(props) =>
-    props.blue ? props.theme.colors.button3 : props.theme.colors.paragraph};
-  margin-bottom: ${(props) =>
-    props.project
-      ? "0.6rem"
-      : props.other || props.nomargin
-      ? "0rem"
-      : props.welcome
-      ? "2rem"
-      : "2rem"};
-  font-weight: ${(props) => (props.blacky ? "700" : "")};
-  font-size: ${(props) => (props.other ? "1.2rem" : props.tag ? "1.4rem" : "")};
-  opacity: ${(props) => (props.hidden ? "0" : "1")};
-  transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
-
-  @media ${(props) => props.theme.breakpoints.break504} {
-    font-size: ${(props) =>
-      props.other
-        ? "1.2rem"
-        : props.tag
-        ? "1.4rem"
-        : props.footer
-        ? "1.4rem"
-        : "1.3rem"};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: ${(props) =>
-      props.other
-        ? "1.2rem"
-        : props.tag
-        ? "1.4rem"
-        : props.footer
-        ? "1.2rem"
-        : "1.3rem"};
-
-    text-align: ${(props) => (props.footer ? "center" : "")};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break339} {
-    font-size: ${(props) =>
-      props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.2rem"};
-  }
-`;
-
 export const MiddleText = styled.span`
+  /* fallback font size goes for desktop view */
   font-size: ${({ mobile, footer, view }) =>
     mobile ? "3rem" : footer ? "1.65rem" : view ? "1.8rem" : "1.8rem"};
   color: ${(props) => props.theme.colors.links};
@@ -195,6 +102,7 @@ export const MiddleText = styled.span`
     left: ${(props) => (props.footer ? "6px" : "")};
   }
 
+  /* font size adjustment for mobile view */ 
   @media ${(props) => props.theme.breakpoints.break864} {
     font-size: ${({ mobile, footer, view }) =>
       mobile ? "2.4rem" : footer ? "1.65rem" : view ? "1.8rem" : "1.6rem"};
@@ -222,70 +130,10 @@ export const MiddleText = styled.span`
   }
 `;
 
-export const ProjectInfoOrTechName = styled.p`
-  font-size: ${(props) =>
-    props.other ? "2rem" : props.tech ? "1.5rem" : "2.3rem"};
-  color: ${(props) =>
-    props.paragraph
-      ? props.theme.colors.paragraph
-      : props.blue
-      ? props.theme.colors.button3
-      : props.theme.colors.links};
-  font-weight: ${(props) => (props.tech ? "400" : "700")};
-
-  @media ${(props) => props.theme.breakpoints.break768} {
-    font-size: ${(props) =>
-      props.other ? "2rem" : props.tech ? "1.5rem" : "2rem"};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break585} {
-    font-size: ${(props) =>
-      props.other ? "2rem" : props.tech ? "1.3rem" : "2rem"};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break504} {
-    font-size: ${(props) =>
-      props.other ? "1.85rem" : props.tech ? "1.3rem" : "1.85rem"};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break422} {
-    font-size: ${(props) =>
-      props.other ? "1.6rem" : props.tech ? "1.2rem" : "1.5rem"};
-  }
-`;
-
-export const DivSocialsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  width: 40px;
-  position: fixed;
-  bottom: 0;
-  left: ${(props) => (props.socials ? "40px" : null)};
-  right: ${(props) => (props.contact ? "40px" : null)};
-
-  @media ${(props) => props.theme.breakpoints.break1330} {
-    left: ${(props) => (props.socials ? "35px" : null)};
-    right: ${(props) => (props.contact ? "35px" : null)};
-  }
-
-  @media ${(props) => props.theme.breakpoints.break768} {
-    display: ${(props) => (props.vertical ? "" : "none")};
-  }
-`;
-
 export const DivSocialsHorizontal = styled.div`
   display: flex;
   justify-content: center;
   justify-self: end;
-`;
-
-export const LineSocials = styled.span`
-  height: 160px;
-  width: 1px;
-  margin-top: 2rem;
-  background: ${(props) => props.theme.colors.links};
 `;
 
 export const AnchorSocials = styled.a`
@@ -322,37 +170,83 @@ export const DivSocialsIcon = styled.div`
   }
 `;
 
-export const SectionTitleAndLine = styled.div`
+/* Socials + vertical line in desktop view */
+export const DivSocialsContainer = styled.div`
   display: flex;
-  justify-content: start;
+  flex-direction: column;
   align-items: center;
-  gap: 6rem;
-  margin-bottom: 4rem;
+  gap: 0.5rem;
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: ${(props) => (props.socials ? "40px" : null)};
+  right: ${(props) => (props.contact ? "40px" : null)};
 
-  @media ${(props) => props.theme.breakpoints.break864} {
-    gap: 2rem;
+  /* Adjustment because left and right margin decreases */
+  @media ${(props) => props.theme.breakpoints.break1330} {
+    left: ${(props) => (props.socials ? "35px" : null)};
+    right: ${(props) => (props.contact ? "35px" : null)};
+  }
+
+  /* hide all when changing to mobile view */
+  @media ${(props) => props.theme.breakpoints.break768} {
+    display: ${(props) => (props.vertical ? "" : "none")};
+  }
+`;
+
+export const LineSocials = styled.span`
+  height: 160px;
+  width: 1px;
+  margin-top: 2rem;
+  background: ${(props) => props.theme.colors.links};
+`;
+
+export const SectionMiniParagraph = styled.p`
+  color: ${(props) =>
+    props.blue ? props.theme.colors.button3 : props.theme.colors.paragraph};
+  margin-bottom: ${(props) =>
+    props.project
+      ? "0.6rem"
+      : props.other || props.nomargin
+      ? "0rem"
+      : props.welcome
+      ? "2rem"
+      : "2rem"};
+  font-weight: ${(props) =>
+    props.blacky ? "700" : props.semiblacky ? "500" : ""};
+  font-size: ${(props) => (props.other ? "1.2rem" : props.tag ? "1.4rem" : "")};
+  opacity: ${(props) => (props.hidden ? "0" : "1")};
+  transition: ${(props) => (props.hidden ? "opacity 0.3s ease" : "")};
+
+  /* Font size adjustment for mobile view */
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) =>
+      props.other
+        ? "1.2rem"
+        : props.tag
+        ? "1.4rem"
+        : props.footer
+        ? "1.4rem"
+        : "1.3rem"};
   }
 
   @media ${(props) => props.theme.breakpoints.break422} {
-    gap: 1rem;
+    font-size: ${(props) =>
+      props.other
+        ? "1.2rem"
+        : props.tag
+        ? "1.4rem"
+        : props.footer
+        ? "1.2rem"
+        : "1.3rem"};
+
+    text-align: ${(props) => (props.footer ? "center" : "")};
   }
-`;
 
-export const SectionLine = styled.span`
-  width: 100%;
-  height: 1px;
-  /* background: ${(props) => props.theme.colors.button2}; */
-  background: ${(props) => props.theme.colors.links};
-  opacity: 0.2;
-  margin-top: 9px;
-
-  @media ${(props) => props.theme.breakpoints.break504} {
-    margin-top: 5px;
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${(props) =>
+      props.other ? "1.2rem" : props.tag ? "1.4rem" : "1.2rem"};
   }
-`;
-
-export const SectionParagraphColor = styled.span`
-  color: ${(props) => props.theme.colors.button3};
 `;
 
 export const SectionTitle = styled.h1`
@@ -480,6 +374,119 @@ export const SectionTitle = styled.h1`
   }
 `;
 
+export const SectionParagraph = styled.p`
+  font-size: 2rem;
+  max-width: 600px;
+  color: ${(props) => props.theme.colors.paragraph};
+  line-height: 1.6;
+  font-weight: 100;
+  margin-bottom: 5rem;
+
+  /* Font size adjustment for mobile view */
+  @media ${(props) => props.theme.breakpoints.break1081} {
+    font-size: 1.8rem;
+    max-width: 650px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    font-size: ${(props) => (props.tech ? "1.7rem" : "1.6rem")};
+    line-height: 1.5;
+    max-width: 550px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) => (props.tech ? "1.6rem" : "1.4rem")};
+    max-width: 400px;
+    margin-bottom: 3rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) => (props.tech ? "1.45rem" : "1.3rem")};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break339} {
+    font-size: ${(props) => (props.tech ? "1.3rem" : "1.1rem")};
+  }
+`;
+
+export const SectionParagraphColor = styled.span`
+  color: ${(props) => props.theme.colors.button3};
+`;
+
+export const PageSection = styled.section`
+  opacity: ${(props) => (props.showSection ? "1" : "0")};
+  transition: opacity 1.5s;
+  padding: 0 2.5rem;
+  max-width: 1120px;
+  margin-bottom: ${(props) =>
+    props.about ? "10rem" : props.footer ? "0" : "25rem"};
+
+  @media ${(props) => props.theme.breakpoints.break768} {
+    padding: 0;
+  }
+`;
+
+export const SectionTitleAndLine = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 6rem;
+  margin-bottom: 4rem;
+
+  @media ${(props) => props.theme.breakpoints.break864} {
+    gap: 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    gap: 1rem;
+  }
+`;
+
+export const SectionLine = styled.span`
+  width: 100%;
+  height: 1px;
+  background: ${(props) => props.theme.colors.links};
+  opacity: 0.2;
+  margin-top: 9px; /* Adjustment to center */
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    margin-top: 5px; /* Adjustment to center */
+  }
+`;
+
+export const ProjectInfoOrTechName = styled.p`
+  font-size: ${(props) =>
+    props.other ? "2rem" : props.tech ? "1.5rem" : "2.3rem"};
+  color: ${(props) =>
+    props.paragraph
+      ? props.theme.colors.paragraph
+      : props.blue
+      ? props.theme.colors.button3
+      : props.theme.colors.links};
+  font-weight: ${(props) => (props.tech ? "400" : "700")};
+
+  /* Font size adjustment for mobile view */
+  @media ${(props) => props.theme.breakpoints.break768} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.5rem" : "2rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break585} {
+    font-size: ${(props) =>
+      props.other ? "2rem" : props.tech ? "1.3rem" : "2rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break504} {
+    font-size: ${(props) =>
+      props.other ? "1.85rem" : props.tech ? "1.3rem" : "1.85rem"};
+  }
+
+  @media ${(props) => props.theme.breakpoints.break422} {
+    font-size: ${(props) =>
+      props.other ? "1.6rem" : props.tech ? "1.2rem" : "1.5rem"};
+  }
+`;
+
 export const SectionDivSeparator = styled.div`
   width: 100%;
   display: flex;
@@ -493,7 +500,6 @@ export const SectionSeparator = styled.hr`
   border: 0;
   background: ${(props) => props.theme.colors.links};
   opacity: 0.2;
-  margin: 7rem 0 10rem;
   margin: ${(props) => (props.about ? "2rem 0 10rem" : "7rem 0 10rem")};
 
   @media ${(props) => props.theme.breakpoints.break504} {

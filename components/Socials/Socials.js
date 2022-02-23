@@ -1,8 +1,12 @@
+/*
+  Left socials components in desktop view.
+*/
+
 import {
   DivSocialsContainer,
-  LineSocials,
   AnchorSocials,
   DivSocialsIcon,
+  LineSocials,
 } from "../../globalcomponents";
 
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";

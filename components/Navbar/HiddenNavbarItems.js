@@ -1,10 +1,14 @@
+/*
+  HiddenNavbar component
+*/
+
 import {
+  AnchorNavMenuOrShow,
   NavNumber,
   MiddleText,
-  AnchorNavMenuOrShow,
 } from "../../globalcomponents";
 
-import { NavNumberDiv, NavNumberWrapperDiv } from "./NavbarStyles";
+import { NavNumberWrapperDiv, NavNumberDiv } from "./NavbarStyles";
 
 import { AiFillCaretRight } from "react-icons/ai";
 
@@ -17,9 +21,7 @@ const HiddenNavbarItems = ({ name, id, number, closeNav }) => {
         <NavNumberWrapperDiv>
           <NavNumberDiv>
             <NavNumber mobile>{number}</NavNumber>
-            <MiddleText nav mobile>
-              {name}
-            </MiddleText>
+            <MiddleText mobile>{name}</MiddleText>
           </NavNumberDiv>
           <AiFillCaretRight className="icon mobile" />
         </NavNumberWrapperDiv>

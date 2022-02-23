@@ -1,17 +1,21 @@
+/*
+  Footer section component.
+*/
+
 import { useState, useEffect, useRef } from "react";
 
 import HorizontalSocials from "../Socials/HorizontalSocials";
 
 import {
   PageSection,
-  MiddleText,
   SectionMiniParagraph,
+  MiddleText,
 } from "../../globalcomponents";
 
 import {
-  FooterMobileOrMailDiv,
-  FooterOrBannerDiv,
   FooterSectionDiv,
+  FooterOrBannerDiv,
+  FooterMobileOrMailDiv,
 } from "./FooterStyles";
 
 const Footer = ({ windowHeight, windowScroll }) => {

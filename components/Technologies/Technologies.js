@@ -1,3 +1,7 @@
+/*
+  Technologies section component.
+*/
+
 import { useState, useEffect, useRef } from "react";
 
 import {
@@ -12,16 +16,6 @@ import {
 
 import { SectionButton } from "../../globalcomponents/Buttons";
 
-// import {
-//   TechButton,
-//   TechButtonsDiv,
-//   TechDetailBrandDiv,
-//   TechDetailDiv,
-//   TechInfoDiv,
-//   TechParagraph,
-//   TechMiniParagraph,
-// } from "./TechnologiesStyles";
-
 import {
   TechInfoDiv,
   TechInfoIntroDiv,
@@ -34,9 +28,9 @@ import {
 import { DiReact } from "react-icons/di";
 import { FaDatabase } from "react-icons/fa";
 import { GoTools } from "react-icons/go";
+import { AiFillCaretRight } from "react-icons/ai";
 
 import data from "../../utils/data";
-import { AiFillCaretRight } from "react-icons/ai";
 
 const Technologies = ({ windowHeight, windowScroll }) => {
   const [showSection, setShowSection] = useState(false);
@@ -71,8 +65,8 @@ const Technologies = ({ windowHeight, windowScroll }) => {
 
       <SectionParagraph tech>
         These are the{" "}
-        <SectionParagraphColor>technologies</SectionParagraphColor> I’ve been
-        working with recently:
+        <SectionParagraphColor>technologies</SectionParagraphColor> I&apos;ve
+        been working with recently:
       </SectionParagraph>
 
       <TechInfoDiv>

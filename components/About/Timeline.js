@@ -1,10 +1,15 @@
+/*
+  Timeline sub-section component.
+*/
+
 import { useState } from "react";
 
 import {
   SectionTitle,
-  MiddleText,
   AnchorNavMenuOrShow,
+  MiddleText,
 } from "../../globalcomponents";
+
 import { AiFillCaretRight } from "react-icons/ai";
 
 import TimelineDetailed from "./TimelineDetailed";

@@ -1,3 +1,7 @@
+/*
+  Styled components for Projects Section
+*/
+
 import styled from "styled-components";
 
 export const FooterSectionDiv = styled.div`

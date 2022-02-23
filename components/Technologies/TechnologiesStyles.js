@@ -1,3 +1,7 @@
+/*
+  Styled components for Projects Section
+*/
+
 import styled from "styled-components";
 
 export const TechInfoDiv = styled.div`
@@ -12,24 +16,6 @@ export const TechInfoDiv = styled.div`
   }
 `;
 
-// export const TechInfoIntroDiv = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin: 0 4.4rem;
-//   min-width: 150px;
-
-//   & .icon {
-//     color: ${(props) => props.theme.colors.links};
-//   }
-
-//   & :nth-child(1) {
-//     & .first {
-//       margin-top: 2rem;
-//     }
-//   }
-// `;
-
 export const TechInfoIntroDiv = styled.div`
   display: grid;
   align-items: center;
@@ -43,14 +29,13 @@ export const TechInfoIntroDiv = styled.div`
 
   & :nth-child(1) {
     & .first {
-      margin-top: 2rem;
+      margin-top: 2rem; /* adjustment */
     }
   }
 
   @media ${(props) => props.theme.breakpoints.break997} {
     grid-template-columns: 190px 1fr;
     align-items: start;
-    /* width: 100%; */
     margin: 0;
     gap: 4rem;
   }
@@ -104,6 +89,7 @@ export const TechInfoTechnologiesDiv = styled.div`
 export const TechNameAndArrowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 
   & .icon {
@@ -119,7 +105,6 @@ export const TechNameAndArrowWrapper = styled.div`
 
   @media ${(props) => props.theme.breakpoints.break997} {
     width: auto;
-    align-items: center;
 
     & .icon {
       flex-basis: auto;

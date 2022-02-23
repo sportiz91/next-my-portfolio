@@ -1,9 +1,13 @@
+/*
+  OtherProjects sub-section component.
+*/
+
 import {
   SectionTitle,
-  SectionMiniParagraph,
   AnchorNavMenuOrShow,
   MiddleText,
   ProjectInfoOrTechName,
+  SectionMiniParagraph,
 } from "../../globalcomponents";
 
 import {

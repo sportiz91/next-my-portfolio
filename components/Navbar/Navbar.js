@@ -22,10 +22,10 @@ import data from "../../utils/data";
   When <Link> from next have a React component (can be styled component too) as child,
   Then we have to passHref too (to avoid warnings and future deployment problems).
 */
-const Navbar = () => {
+const Navbar = ({ state }) => {
   return (
     <>
-      <NavDivOne>
+      <NavDivOne state={state}>
         <Link href="/" passHref>
           <AnchorLogo>
             <DiCssdeck size="4rem" />
@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link key={index} href={item.id} passHref>
               <AnchorNavMenuOrShow>
                 <NavNumber>{item.number}</NavNumber>
-                <MiddleText nav>{item.name}</MiddleText>
+                <MiddleText>{item.name}</MiddleText>
                 <AiFillCaretRight className="icon" />
               </AnchorNavMenuOrShow>
             </Link>

@@ -1,3 +1,7 @@
+/*
+  Global Buttons components used across all the App.
+*/
+
 import styled from "styled-components";
 
 export const SectionButton = styled.a`

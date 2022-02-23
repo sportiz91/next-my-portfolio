@@ -1,3 +1,7 @@
+/*
+  Description component for desktop view
+*/
+
 import { SectionMiniParagraph } from "../../globalcomponents";
 
 import {

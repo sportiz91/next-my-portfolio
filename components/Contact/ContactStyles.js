@@ -11,7 +11,8 @@ export const ContactText = styled.p`
   transition: color 0.5s ease;
 
   & :hover {
-    bottom: 6px;
+    bottom: ${(props) => (props.vertical ? "" : "6px")};
+    left: ${(props) => (props.vertical ? "6px" : "")};
     color: ${(props) => props.theme.colors.button3};
   }
 

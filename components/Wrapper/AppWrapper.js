@@ -126,7 +126,7 @@ const AppWrapper = () => {
         state={mobileNavbar}
         initialLoad={initialLoad}
       >
-        <Navbar />
+        <Navbar state={mobileNavbar} />
 
         <BurgerDiv onClick={handleClick} state={mobileNavbar}>
           <BurgerSpan state={mobileNavbar} />

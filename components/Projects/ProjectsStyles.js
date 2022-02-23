@@ -1,3 +1,7 @@
+/*
+  Styled components for Projects Section
+*/
+
 import styled from "styled-components";
 
 export const ProjectsWrapper = styled.div`
@@ -72,8 +76,6 @@ export const ProjectDiv = styled.div`
   }
 `;
 
-export const ProjectWrapper = styled.div``;
-
 export const ProjectImgDiv = styled.div`
   grid-area: 1 / 1 / 2 / 8;
   height: 350px;
@@ -123,13 +125,6 @@ export const ProjectImgAnchor = styled.a`
   height: 100%;
   width: 100%;
   position: absolute;
-
-  &:hover div {
-    &:before {
-      background: ${(props) => props.theme.colors.button3};
-      opacity: 0.2;
-    }
-  }
 `;
 
 export const ProjectImgOverlay = styled.div`
@@ -145,7 +140,6 @@ export const ProjectImgOverlay = styled.div`
     background: ${(props) => props.theme.colors.button3};
     opacity: 0.2;
     border-radius: 10px;
-    transition: 0.5s ease;
   }
 
   @media ${(props) => props.theme.breakpoints.break1280} {
@@ -198,6 +192,7 @@ export const ProjectInfoDescription = styled.div`
     margin: ${(props) => (props.other ? "1.5rem 0 3rem" : "1rem 0")};
   }
 
+  /* Font Size adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break504} {
     font-size: 1.4rem;
   }
@@ -220,6 +215,7 @@ export const ProjectInfoTags = styled.div`
     justify-content: start;
   }
 
+  /* Font Size adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break504} {
     & p {
       font-size: 1.3rem;
@@ -253,3 +249,5 @@ export const ProjectSocialsAnchor = styled.a`
     color: ${(props) => props.theme.colors.button3};
   }
 `;
+
+export const ProjectWrapper = styled.div``;

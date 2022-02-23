@@ -1,23 +1,20 @@
 /*
-  IMPORTANT THING TO NOTE: Whenever I have an overflow (x in this case), the resulting scroll bar if I overflow: auto or overflow: scroll
-  will have the width/height of the current overflow. In here we have a wrapper div of about 1300px, but the max-width was determined at about
-  945px. So, an overflow-x of 1300-945 is made. Maximum scroll width will be of that amount (356). To overcome that, I have to make the last
-  div 100%.
+  This component is shown by default, or when you click view timeline button.
 */
 
 import { useState, useEffect, useRef } from "react";
 
 import {
+  TimeLineWrapper,
+  TimeLineDiv,
+  TimelineDetailedWrapperDiv,
+  TimeLineDetailedWrappingNode,
+  TimeLineDetailedDiv,
   TimeLinedDetailedYear,
   TimeLineDetailedDescription,
-  TimeLineDetailedWrappingNode,
-  TimeLineWrapper,
-  TimeLineDetailedDiv,
-  TimelineDetailedWrapperDiv,
-  TimeLineDiv,
   TimeLineCirclesDiv,
-  TimeLineCircle,
   TimeLineCircleWrapper,
+  TimeLineCircle,
 } from "./TimeLineStyles";
 
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
@@ -40,6 +37,8 @@ const TimelineDetailed = () => {
     const year = yearRef.current;
     const scroll = year.offsetLeft;
 
+    console.log(`scroll: ${scroll}`);
+
     wrapper.scrollTo({ left: scroll, behavior: "smooth" });
   };
 
@@ -49,12 +48,15 @@ const TimelineDetailed = () => {
   };
 
   const touchScroll = useIdle({
-    timeout: 50,
+    timeout: 200,
     onIdle: finishScrolling,
   });
 
   const handleScroll = () => {
     const { scrollLeft } = wrapperRef.current;
+
+    console.log(`scrollLeft: ${scrollLeft}`);
+
     const style =
       nodeRef.current.currentStyle || window.getComputedStyle(nodeRef.current);
     const margin = parseInt(style.marginRight.split("p")[0]);
@@ -85,6 +87,14 @@ const TimelineDetailed = () => {
     scrollToTargetSlide();
   }, [targetSlide]);
 
+  //Structure:
+  //TimeLineWrapper -> TimeLineDiv + Circle Buttons Div.
+  //TimeLineDiv -> Margin Top and Bottom (separation of circles buttons)
+  //TimelineDetailedWrapperDiv -> ref + handleScroll
+  //TimeDetailedWrappingNode -> Margin right. Only the first node has the ref, in order to calculate the margin
+  //This is useful when scrolling, to calculate the activeSlide.
+  //TimeLineDetailedDiv -> node without margin right. Height and width determined. The last one must be 100%, in order
+  //For scrolling x bar to be the same width as the first part.
   return (
     <TimeLineWrapper>
       <TimeLineDiv>

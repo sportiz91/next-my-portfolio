@@ -1,8 +1,12 @@
+/*
+  Hero section component.
+*/
+
 import { WelcomeSection, WelcomeButtonsDiv } from "./WelcomeStyles";
 
 import {
-  SectionTitle,
   SectionMiniParagraph,
+  SectionTitle,
   SectionParagraph,
   SectionParagraphColor,
 } from "../../globalcomponents";
@@ -22,7 +26,9 @@ const Welcome = () => {
 
   return (
     <WelcomeSection showSection={showSection}>
-      <SectionMiniParagraph blue>Hi, my name is</SectionMiniParagraph>
+      <SectionMiniParagraph blue semiblacky>
+        Hi, my name is
+      </SectionMiniParagraph>
       <SectionTitle welcome primary>
         Santiago Ortiz.
       </SectionTitle>

@@ -1,3 +1,7 @@
+/*
+  Description component for mobile view
+*/
+
 import { useState } from "react";
 
 import { SectionMiniParagraph } from "../../globalcomponents";
