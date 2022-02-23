@@ -6,7 +6,7 @@
 
 <div align="center">
 
-**[santiagoportiz.com](https://next-my-portfolio.vercel.app/)**
+**[santiagoportiz.tech](https://santiagoportiz.tech/)**
 
 This is the first iteration of my Portfolio Website. Built with [NEXT.js](https://nextjs.org/) and hosted with [Vercel](https://vercel.com/).
 
