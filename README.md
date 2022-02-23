@@ -12,6 +12,6 @@ This is the first iteration of my Portfolio Website. Built with [NEXT.js](https:
 
 <br>
 
-![alt text for screen readers](./public/Images/README.png "Text to show on mouseover").
-
 </div>
+
+![demo](https://raw.githubusercontent.com/sportiz91/next-my-portfolio/master/public/Images/README.png)
