@@ -10,6 +10,8 @@
 
 This is the first iteration of my Portfolio Website. Built with [NEXT.js](https://nextjs.org/) and hosted with [Vercel](https://vercel.com/).
 
-![alt text for screen readers](/public/Images/README.png "Text to show on mouseover").
+<br>
+
+![alt text for screen readers](./public/Images/README.png "Text to show on mouseover").
 
 </div>
