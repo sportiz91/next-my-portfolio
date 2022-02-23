@@ -14,4 +14,4 @@ This is the first iteration of my Portfolio Website. Built with [NEXT.js](https:
 
 </div>
 
-![demo](https://raw.githubusercontent.com/sportiz91/next-my-portfolio/master/public/Images/README.png)
+![demo](https://raw.githubusercontent.com/sportiz91/next-my-portfolio/master/public/Images/README.PNG)
