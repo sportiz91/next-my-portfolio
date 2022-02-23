@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" style="border-bottom:0;">
     <h1 style="font-weight:700; border-bottom:0;">
         Welcome to my Personal Website
     </h1>
