@@ -1,8 +1,8 @@
 <div align="center">
-    <h3 style="font-weight:700; border-bottom: 0; font-size: 30px">
+    <h3 style="font-weight:700; border-bottom: 0; font-size: 68px">
         Welcome to my Personal Website!
     </h3>
-    <h3 style="font-weight:700; font-size: 30px">
+    <h3 style="font-weight:700; font-size: 68px">
         santiagoportiz.com - v1
     </h3>
 </div>
