@@ -1,7 +1,7 @@
-<div align="center" border="none" id="no-line">
-
-# **Welcome to my Personal Website!**
-
+<div align="center">
+    <h1 style="font-weight:700; border-bottom:0;">
+        Welcome to my Personal Website
+    </h1>
 </div>
 
 <div align="center">
