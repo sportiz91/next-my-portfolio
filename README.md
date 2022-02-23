@@ -1,16 +1,15 @@
 <div align="center">
-    <h3 style="font-weight:700; border-bottom: 0; font-size: 68px">
-        Welcome to my Personal Website!
-    </h3>
-    <h3 style="font-weight:700; font-size: 68px">
-        santiagoportiz.com - v1
-    </h3>
-</div>
 
----
+# **Welcome to my Portfolio Website!**
+
+</div>
 
 <div align="center">
 
-This is the first iteration of [santiagoportiz.com](https://next-my-portfolio.vercel.app/). Built with [NEXT.js](https://nextjs.org/) and hosted with [Vercel](https://vercel.com/).
+**[santiagoportiz.com](https://next-my-portfolio.vercel.app/)**
+
+This is the first iteration of my Portfolio Website. Built with [NEXT.js](https://nextjs.org/) and hosted with [Vercel](https://vercel.com/).
+
+![alt text for screen readers](/public/Images/README.png "Text to show on mouseover").
 
 </div>
