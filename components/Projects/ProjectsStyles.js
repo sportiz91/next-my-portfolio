@@ -13,7 +13,7 @@ export const ProjectsWrapper = styled.div`
   @media ${(props) => props.theme.breakpoints.break1280} {
     display: grid;
     grid-template-columns: repeat(auto-fit, 420px);
-    gap: 4rem;
+    column-gap: 4rem;
   }
 
   @media ${(props) => props.theme.breakpoints.break864} {

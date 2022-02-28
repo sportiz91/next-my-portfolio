@@ -46,13 +46,15 @@ const ProjectMobileCardInside = ({ item }) => {
             })}
           </ProjectInfoTags>
           <ProjectSocialsDiv className="socials">
-            <ProjectSocialsAnchor
-              href={item.links[0]}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiFillGithub size={"2.5rem"} />
-            </ProjectSocialsAnchor>
+            {item.title === "Inverfree Website" ? null : (
+              <ProjectSocialsAnchor
+                href={item.links[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub size={"2.5rem"} />
+              </ProjectSocialsAnchor>
+            )}
 
             <ProjectSocialsAnchor
               href={item.links[1]}

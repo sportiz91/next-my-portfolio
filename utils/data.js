@@ -24,6 +24,17 @@ export default {
       links: ["https://github.com/sportiz91/next-my-portfolio", "#!"],
       img: "/Images/Project2.png",
     },
+    {
+      title: "Inverfree Website",
+      description:
+        "Inverfree was a business I used to have a little ago. This was my first webapp created with WordPress.",
+      tags: ["WordPress", "Custom CSS"],
+      links: [
+        "https://github.com/sportiz91/next-my-portfolio",
+        "https://inverfree.com",
+      ],
+      img: "/Images/Project3.png",
+    },
   ],
 
   other: [
