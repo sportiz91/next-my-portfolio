@@ -28,7 +28,7 @@ const HorizontalSocials = () => {
       </AnchorSocials>
 
       <AnchorSocials
-        href="https://www.linkedin.com/in/santiago-pablo-ortiz-12151266/"
+        href="https://www.linkedin.com/in/santiagoportiz/"
         target="_blank"
         rel="noopener noreferrer"
       >
