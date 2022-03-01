@@ -36,6 +36,11 @@ export const AboutMiniParagraph = styled.p`
     padding: 0;
   }
 
+  & a {
+    color: ${(props) => props.theme.colors.button3};
+    text-decoration: none;
+  }
+
   /* Font Size adjustment for mobile view */
   @media ${(props) => props.theme.breakpoints.break422} {
     font-size: 1.45rem;

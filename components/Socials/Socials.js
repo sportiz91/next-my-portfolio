@@ -9,7 +9,7 @@ import {
   LineSocials,
 } from "../../globalcomponents";
 
-import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 const Socials = () => {
   return (
@@ -35,12 +35,12 @@ const Socials = () => {
       </AnchorSocials>
 
       <AnchorSocials
-        href="https://www.instagram.com/santimarkets/"
+        href="https://twitter.com/sportiz91"
         target="_blank"
         rel="noopener noreferrer"
       >
         <DivSocialsIcon>
-          <FiInstagram size={"2rem"} />
+          <FiTwitter size={"2rem"} />
         </DivSocialsIcon>
       </AnchorSocials>
 

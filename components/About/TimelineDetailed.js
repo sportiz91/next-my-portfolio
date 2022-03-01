@@ -37,7 +37,7 @@ const TimelineDetailed = () => {
     const year = yearRef.current;
     const scroll = year.offsetLeft;
 
-    console.log(`scroll: ${scroll}`);
+    // console.log(`scroll: ${scroll}`);
 
     wrapper.scrollTo({ left: scroll, behavior: "smooth" });
   };
@@ -55,7 +55,7 @@ const TimelineDetailed = () => {
   const handleScroll = () => {
     const { scrollLeft } = wrapperRef.current;
 
-    console.log(`scrollLeft: ${scrollLeft}`);
+    // console.log(`scrollLeft: ${scrollLeft}`);
 
     const style =
       nodeRef.current.currentStyle || window.getComputedStyle(nodeRef.current);

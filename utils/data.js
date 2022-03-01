@@ -83,18 +83,20 @@ export default {
   timeline: [
     { year: "2013", description: "Graduated - Bachelor in Economics" },
     {
-      year: "2014",
-      description: "Worked as trader/financial analyst",
+      year: "2013",
+      description: "Worked as Financial Analyst / Trader",
     },
     { year: "2016", description: "Graduated - Master in Finance" },
+    { year: "2017", description: "Worked as Head of Trading Desk" },
     {
-      year: "2018",
+      year: "2019",
       description:
-        "Started working as independent financial advisor / personal brand & business",
+        "Worked as Independent Financial Advisor / Personal Brand (Inverfree)",
     },
     {
       year: "2020",
-      description: "Created my first ever website with WordPress",
+      description:
+        "Created my first ever website with WordPress (Inverfree.com)",
     },
     { year: "2020", description: "Started my Full Stack & MERN Journey" },
   ],

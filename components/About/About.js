@@ -68,7 +68,14 @@ const About = ({ windowHeight, windowScroll }) => {
               MERN Full Stack Developer.
             </SectionParagraphColor>{" "}
             My interest in web development started in 2020 when I created my
-            first WordPress website for a small business I had at that time.{" "}
+            first WordPress website for a small business I had at that time{" "}
+            <a
+              href="https://inverfree.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              (Inverfree)
+            </a>
           </AboutMiniParagraph>
 
           <AboutMiniParagraph>
@@ -153,7 +160,7 @@ const About = ({ windowHeight, windowScroll }) => {
 
         <AboutImgDiv>
           <AboutImgOverlay>
-            <AboutImg src="/Images/me.jpeg" alt="profile-picture" />
+            <AboutImg src="/Images/li4.jpeg" alt="profile-picture" />
             <AboutImgOverflow className="overflow" />
           </AboutImgOverlay>
         </AboutImgDiv>

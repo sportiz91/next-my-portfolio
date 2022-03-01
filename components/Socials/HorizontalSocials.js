@@ -8,7 +8,11 @@ import {
   DivSocialsIcon,
 } from "../../globalcomponents";
 
-import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillTwitterSquare,
+} from "react-icons/ai";
 
 const HorizontalSocials = () => {
   return (
@@ -34,12 +38,12 @@ const HorizontalSocials = () => {
       </AnchorSocials>
 
       <AnchorSocials
-        href="https://www.instagram.com/santimarkets/"
+        href="https://twitter.com/sportiz91"
         target="_blank"
         rel="noopener noreferrer"
       >
         <DivSocialsIcon>
-          <AiFillInstagram className="icon" />
+          <AiFillTwitterSquare className="icon" />
         </DivSocialsIcon>
       </AnchorSocials>
     </DivSocialsHorizontal>
