@@ -122,6 +122,7 @@ export const AboutImgOverflow = styled.div`
 `;
 
 export const AboutImg = styled.img`
+  object-fit: cover;
   height: 100%;
   width: 100%;
   border-radius: 5px;
